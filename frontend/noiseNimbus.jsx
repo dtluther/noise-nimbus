@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 document.addEventListener('DOMContentLoaded', () => {
   // const store = configureStore();
