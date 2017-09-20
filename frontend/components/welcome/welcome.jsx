@@ -11,13 +11,13 @@ const sessionLinks = () => (
 
 const welcomeMessage = (currentUser, logout) => (
   <div>
-    <h1>Welcome, {currentUser}</h1>
+    <h1>Welcome, {currentUser.username}</h1>
     <button onClick={logout}>Log Out</button>
   </div>
 );
 
 const Welcome = ({ currentUser, logout}) => (
-  currentUser ? welcomeMessage() : sessionLinks()
+  currentUser ? welcomeMessage(currentUser, logout) : sessionLinks()
 );
 
 export default Welcome;
