@@ -12,11 +12,9 @@ class SessionForm extends React.Component {
       password: "" };
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   if (newProps.loggedIn) {
-  //     this.props.history.push('/');
-  //   }
-  // }
+  componentDidReceiveProps() {
+    console.log('I received props', this.state);
+  }
 
   update(field) {
     return e => {
@@ -29,47 +27,17 @@ class SessionForm extends React.Component {
     return e => {
       e.preventDefault();
       const user = Object.assign({}, this.state);
-      this.props.processForm(user);
-      this.props.history.push(`/user/${this.props.currentUser.username}`);
+      console.log('props before process form', this.props);
+      this.props.processForm(user)
+        .then(() => {
+          console.log('state after submit', this.state);
+          console.log('props', this.props)
+          this.props.history.push(`/users/${this.state.username}`);});
+        //                                            why does this.props.currentUser.username not work?
     };
   }
 
-  sessionLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign Up Instead!</Link>;
-    } else {
-      return <Link to="/login">Log In Instead!</Link>;
-    }
-  }
-
-  signup() {
-    return (
-      <div className="signup-inputs-container">
-        <section className="signup-inputs">
-
-          <input className="signup-input"
-            type="text"
-            onChange={this.update('email')}
-            placeholder="E-mail"
-          />
-
-          <br/>
-
-          <input className="signup-input"
-            type="text"
-            onChange={this.update('first_name')}
-            placeholder="First Name"
-          />
-
-          <br/>
-
-        </section>
-      </div>
-    );
-  }
-
   renderErrors() {
-    console.log(this.props);
     return (
       <ul>
         {
@@ -83,6 +51,34 @@ class SessionForm extends React.Component {
     );
   }
 
+  signup() {
+    return (
+      <div className="signup-inputs-container">
+        <section className="signup-inputs">
+
+          <input className="signup-input"
+            type="text"
+            value={this.state.email}
+            onChange={this.update('email')}
+            placeholder="E-mail"
+          />
+
+          <br/>
+
+          <input className="signup-input"
+            type="text"
+            value={this.state.first_name}
+            onChange={this.update('first_name')}
+            placeholder="First Name"
+          />
+
+          <br/>
+
+        </section>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="login-form-container">
@@ -91,8 +87,6 @@ class SessionForm extends React.Component {
           Welcome to NoiseNimbus!
 
           <br/>
-
-          Please {this.props.formType} or {this.sessionLink()}
 
           {this.renderErrors()}
 
@@ -104,12 +98,14 @@ class SessionForm extends React.Component {
             <br/>
               <input className="login-input"
                 type="text"
+                value={this.state.username}
                 onChange={this.update('username')}
                 placeholder="Username"
               />
             <br/>
               <input className="login-input"
                 type="text"
+                value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />

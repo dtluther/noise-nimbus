@@ -4,6 +4,7 @@ import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
+  console.log('login form state', state);
   return {
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser),
