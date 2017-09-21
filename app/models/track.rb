@@ -4,8 +4,8 @@ class Track < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
   has_many :comments
-  has_many :plays
-  has_many :user_listens,
-    through: plays,
-    source: users
+  # has_many :plays
+  # has_many :user_listens,
+  #   through: plays,
+  #   source: users
 end
