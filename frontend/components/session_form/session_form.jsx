@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit()} className="login-form-box">
+        <form onSubmit={this.handleSubmit()} className="session-form-box">
 
           Welcome to NoiseNimbus!
 
@@ -109,7 +109,8 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-            <input type="submit" value="Submit" />
+            <br/>
+            <input className="session-button" type="submit" value="Submit" />
           </div>
         </form>
       </div>

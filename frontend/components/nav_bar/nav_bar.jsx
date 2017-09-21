@@ -4,6 +4,11 @@ import Modal from 'react-modal';
 import SessionFormContainer from '../session_form/session_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import LoginFormContainer from '../session_form/login_form_container';
+import Img from 'react-image';
+
+// const modalStyle = {
+//   contentLabel
+// }
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -38,8 +43,8 @@ class NavBar extends React.Component {
   signupModal() {
     return (
       <div>
-        <button onClick={this.openSignupModal}>Sign Up</button>
-        <Modal className="session-buttons" id="signup-button"
+        <button className="session-button" onClick={this.openSignupModal}>Sign Up</button>
+        <Modal className="session-modal"
           isOpen={this.state.signupModalIsOpen}
           onAfterOpen={this.afterOpenSignupModal}
           onRequestClose={this.closeSignupModal}
@@ -71,15 +76,14 @@ class NavBar extends React.Component {
   loginModal() {
     return (
       <div>
-        <button onClick={this.openLoginModal}>Log In</button>
-        <Modal className="session-buttons" id="login-button"
+        <button className="session-button" onClick={this.openLoginModal}>Log In</button>
+        <Modal className="session-modal"
           isOpen={this.state.loginModalIsOpen}
           onAfterOpen={this.afterOpenLoginModal}
           onRequestClose={this.closeLoginModal}
           contentLabel="Login Modal"
         >
-          <h2>Hello</h2>
-          <div>I am a modal
+          <div>
             <LoginFormContainer welcomeState={this.state} />
           </div>
 
@@ -102,12 +106,13 @@ class NavBar extends React.Component {
     if (currentUser) {
       return (
         <div>
-          <button onClick={this.handleLogout()}>Log Out</button>
+          <button className="session-button"
+             onClick={this.handleLogout()}>Log Out</button>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="session-buttons">
           {this.signupModal()}
           {this.loginModal()}
         </div>
@@ -118,8 +123,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav-bar">
-
-        <h2>NoiseNimbus</h2>
+        <h2 className="noise-nimbus">NOISENIMBUS</h2>
 
         {this.sessionButtons()}
 

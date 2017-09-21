@@ -8,7 +8,7 @@ import UserPageContainer from './user_page/user_page_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
+  <div className="mother-app">
 
     <NavBarContainer />
 
