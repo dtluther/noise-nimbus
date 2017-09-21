@@ -1,0 +1,62 @@
+.logo-button {
+  background-color: inherit;
+  border-width: 0.1px;
+  border-color: #1c1838;
+  color: white;
+  padding: auto auto;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Righteous', cursive;
+  /*font-family: 'Permanent Marker', cursive;
+  font-family: 'Quantico', sans-serif;
+  font-family: 'Inder', sans-serif;*/
+  font-size: 20px;
+}
+
+.nav-bar {
+  /*position: fixed;*/
+  padding: 0 15%;
+  height: 46px;
+  color: white;
+  background-color: #463f72;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-bar * {
+  display: flex;
+
+}
+
+.session-button {
+  height: 100%;;
+  width: 95px;
+  background-color: inherit;
+  border-width: 0.1px;
+  border-color: #1c1838;
+  color: white;
+  padding: 0 30px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.session-modal {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 600px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form-box * {
+  display: flex;
+  flex-direction: column;
+}

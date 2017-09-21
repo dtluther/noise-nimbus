@@ -1,0 +1,8 @@
+footer {
+  background-color: green;
+}
+
+footer .play-bar {
+  background-color: darkblue;
+  color: white;
+}

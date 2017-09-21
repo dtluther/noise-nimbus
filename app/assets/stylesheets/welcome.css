@@ -1,0 +1,21 @@
+.welcome-greeting {
+  height: 450px;
+}
+
+.demo-login {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  top: 200px;
+}
+
+.search-or-upload {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pending {
+  background-color: lightblue;
+  height: 600px;
+}

@@ -12,10 +12,6 @@ class SessionForm extends React.Component {
       password: "" };
   }
 
-  componentDidReceiveProps() {
-    console.log('I received props', this.state);
-  }
-
   update(field) {
     return e => {
       e.preventDefault();
@@ -31,7 +27,7 @@ class SessionForm extends React.Component {
       this.props.processForm(user)
         .then(() => {
           console.log('state after submit', this.state);
-          console.log('props', this.props)
+          console.log('props', this.props);
           this.props.history.push(`/users/${this.state.username}`);});
         //                                            why does this.props.currentUser.username not work?
     };

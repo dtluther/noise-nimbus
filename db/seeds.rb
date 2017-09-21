@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create!(
+  email: 'Guest@someurl.somedomain',
+  first_name: 'Guest',
+  username: 'Guest',
+  password: 'password'
+)
 4.times do
   User.create!(
     email: Faker::Internet.unique.email,

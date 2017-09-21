@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
-import SessionFormContainer from '../session_form/session_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import LoginFormContainer from '../session_form/login_form_container';
+import SearchBarContainer from '../search_bar/search_bar_container';
 import Img from 'react-image';
 
 const modalStyle = {
@@ -131,7 +131,10 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav-bar">
-        <h2 className="noise-nimbus">NOISENIMBUS</h2>
+        <button className="logo-button">NOISENIMBUS logo</button>
+
+        <SearchBarContainer />
+
 
         {this.sessionButtons()}
 

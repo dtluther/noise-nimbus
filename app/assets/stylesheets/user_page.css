@@ -1,0 +1,48 @@
+.user-page {
+  overflow-y: scroll;
+}
+
+.user-header {
+  height: 260px;
+  background-color: lightblue;
+}
+
+.tracks-or-listens {
+  margin-bottom: 0;
+}
+
+.user-page .tracks-or-listens {
+  background-color: #f5edff;
+
+}
+
+li {
+  height: 300px;
+}
+.tracks-or-listens-links {
+  font-family: system-ui;
+  height: 33px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 20%;
+  border-bottom: 1px solid #dac5f3;
+}
+
+.tracks-or-listens-links a {
+  height: 100%;
+  background-color: transparent;
+  border-bottom: none;
+  color: black;
+  cursor: pointer;
+
+}
+.tracks-or-listens-links a:hover {
+  border-bottom: 1px solid #463f72;
+  transition: border-bottom 3s;
+}
+
+.tracks-or-listens-index {
+  margin-top: 10px;
+  height: 100%;
+  border: 2px solid black;
+}
