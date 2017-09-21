@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-
+    console.log('session form props', props);
     this.state = {
       email: "",
       first_name: "",
@@ -12,11 +12,11 @@ class SessionForm extends React.Component {
       password: "" };
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
+  // componentWillReceiveProps(newProps) {
+  //   if (newProps.loggedIn) {
+  //     this.props.history.push('/');
+  //   }
+  // }
 
   update(field) {
     return e => {
@@ -30,6 +30,7 @@ class SessionForm extends React.Component {
       e.preventDefault();
       const user = Object.assign({}, this.state);
       this.props.processForm(user);
+      this.props.history.push(`/user/${this.props.currentUser.username}`);
     };
   }
 
