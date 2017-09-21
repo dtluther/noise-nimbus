@@ -49,12 +49,17 @@
   cursor: pointer;
 }
 
-.session-modal {
-  height: 100%;
+/*.session-modal {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 50%;
+  height: 600px;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+}*/
 
 .session-form-box * {
   display: flex;
