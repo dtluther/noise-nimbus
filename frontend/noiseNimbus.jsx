@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import configureStore from './store/store';
-import Root from './components/root';
+// import Root from './components/root';
 
 import { signup, login, logout } from './actions/session_actions';
 window.signup = signup;
@@ -24,5 +24,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // TESTING END
 
   const root = document.getElementById('root');
-  ReactDOM.render(<Root store={store}/>, root);
+  ReactDOM.render(<h1>reacting</h1>, root);
 });
