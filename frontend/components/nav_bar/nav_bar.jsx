@@ -89,17 +89,17 @@ class NavBar extends React.Component {
     );
   }
 
-  handleLogout() {
-    this.props.logout;
-    this.history.location.push("/");
-  }
+  // handleLogout() {
+  //   this.props.logout;
+  //   this.history.location.push("/");
+  // }
 
   sessionButtons() {
     const { currentUser, logout } = this.props;
     if (currentUser) {
       return (
         <div>
-          <button onClick={this.handleLogout()}>Log Out</button>
+          <button onClick={logout}>Log Out</button>
         </div>
       );
     } else {
