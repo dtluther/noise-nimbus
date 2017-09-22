@@ -9,7 +9,7 @@ class Track < ApplicationRecord
     through: :plays,
     source: :listener
 
-  validates :title, :genre, :user_id, presence: true
+  validates :title, :genre, :track_url, :user_id, presence: true
 
   has_attached_file :track, default_url: "noise_nimbus_purple.png"
   validates_attachment_content_type :track, content_type: /\Aimage\/.*\z/
