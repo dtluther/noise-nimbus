@@ -21,20 +21,21 @@ User.create!(
   )
 end
 
-genres = %w(
-  pop
-  rock
-  hip-hop
-  rap country
-  alternative
-  jazz
-  R&B
-  soul
-)
-
-4.times do
-  Track.create!(
-    title: Faker::ChuckNorris.fact,
-    genre: genres.sample
-  )
-end
+# genres = %w(
+#   pop
+#   rock
+#   hip-hop
+#   rap country
+#   alternative
+#   jazz
+#   R&B
+#   soul
+# )
+#
+# 4.times do |i|
+#   Track.create!(
+#     title: Faker::ChuckNorris.fact,
+#     genre: genres.sample,
+#     user_id: i
+#   )
+# end
