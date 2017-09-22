@@ -7,11 +7,11 @@
   text-align: center;
   border-radius: 3px;
   cursor: pointer;
-  font-family: 'Righteous', cursive;
-  /*font-family: 'Permanent Marker', cursive;
-  font-family: 'Quantico', sans-serif;
-  font-family: 'Inder', sans-serif;*/
-  font-size: 20px;
+  /*font-family: 'Righteous', cursive;
+  font-family: 'Permanent Marker', cursive;
+  font-family: 'Quantico', sans-serif;*/
+  font-family: 'Inder', sans-serif;
+  font-size: 1vw;
 }
 
 .nav-bar {
@@ -40,6 +40,11 @@
   text-align: center;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.submit-button {
+  background-color: #463f72;
+  color: white;
 }
 
 .session-modal {

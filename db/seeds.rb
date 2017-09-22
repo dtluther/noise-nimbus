@@ -21,9 +21,20 @@ User.create!(
   )
 end
 
-User.create!(
-  email: '@aa.io',
-  first_name: 'jeff',
-  username: 'jeffy',
-  password: 'password'
+genres = %w(
+  pop
+  rock
+  hip-hop
+  rap country
+  alternative
+  jazz
+  R&B
+  soul
 )
+
+4.times do
+  Track.create!(
+    title: Faker::ChuckNorris.fact,
+    genre: genres.sample
+  )
+end

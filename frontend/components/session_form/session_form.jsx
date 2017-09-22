@@ -23,11 +23,8 @@ class SessionForm extends React.Component {
     return e => {
       e.preventDefault();
       const user = Object.assign({}, this.state);
-      console.log('props before process form', this.props);
       this.props.processForm(user)
         .then(() => {
-          console.log('state after submit', this.state);
-          console.log('props', this.props);
           this.props.history.push(`/users/${this.state.username}`);});
         //                                            why does this.props.currentUser.username not work?
     };
@@ -106,7 +103,7 @@ class SessionForm extends React.Component {
                 placeholder="Password"
               />
             <br/>
-            <input className="session-button" type="submit" value="Submit" />
+            <input className="submit-button" type="submit" value="Submit" />
           </div>
         </form>
       </div>

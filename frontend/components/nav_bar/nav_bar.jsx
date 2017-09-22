@@ -6,17 +6,6 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SearchBarContainer from '../search_bar/search_bar_container';
 import Img from 'react-image';
 
-const modalStyle = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
-
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -55,7 +44,6 @@ class NavBar extends React.Component {
           isOpen={this.state.signupModalIsOpen}
           onAfterOpen={this.afterOpenSignupModal}
           onRequestClose={this.closeSignupModal}
-          styles={modalStyle}
           contentLabel="Signup Modal"
         >
           <div>
@@ -88,7 +76,6 @@ class NavBar extends React.Component {
           isOpen={this.state.loginModalIsOpen}
           onAfterOpen={this.afterOpenLoginModal}
           onRequestClose={this.closeLoginModal}
-          styles={modalStyle}
           contentLabel="Login Modal"
         >
           <div>

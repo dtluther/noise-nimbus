@@ -16,7 +16,7 @@ const App = () => (
     <section className="main-container">
       <Switch>
         <AuthRoute exact path="/" component={WelcomeContainer} />
-        <Route path="/users/:username" component={UserPageContainer} />
+        <ProtectedRoute path="/users/:username" component={UserPageContainer} />
       </Switch>
     </section>
 
