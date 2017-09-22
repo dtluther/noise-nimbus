@@ -1,4 +1,24 @@
 
+logoButton() {
+  if (this.props.currentUser) {
+    return (
+      <div className="logo">
+        <img className="logo"
+          src="app/assets/images/noise_nimbus_purple.png"
+          onClick={this.props.history.push(`/users/${this.props.currentUser.username}`)}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div className="logo">
+        <img className="logo-button"
+          src="app/assets/images/noise_nimbus_purple.png"
+        />
+      </div>
+    );
+  }
+}
 
   sessionLink() {
     if (this.props.formType === 'login') {

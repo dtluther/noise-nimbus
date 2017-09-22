@@ -29,7 +29,6 @@ class NavBar extends React.Component {
   }
 
   afterOpenSignupModal() {
-    Modal.modalStyle;
   }
 
   closeSignupModal() {
@@ -96,11 +95,34 @@ class NavBar extends React.Component {
     };
   }
 
+  logoButton() {
+    if (this.props.currentUser) {
+      return (
+        <div className="logo">
+          <img className="logo"
+            src="app/assets/images/noise_nimbus_purple.png"
+            onClick={() => this.props.history.push(`/users/${this.props.currentUser.username}`)}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <div className="logo">
+          <img className="logo-button"
+            src="app/assets/images/noise_nimbus_purple.png"
+          />
+        </div>
+      );
+    }
+  }
+
   sessionButtons() {
     const { currentUser, logout } = this.props;
     if (currentUser) {
       return (
         <div>
+          <button className="session-button upload"
+            onClick={() => this.props.history.push('/upload')}>Upload</button>
           <button className="session-button"
              onClick={this.handleLogout()}>Log Out</button>
         </div>

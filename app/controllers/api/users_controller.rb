@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   def create
+    puts params
     @user = User.new(user_params)
     if @user.save
       login!(@user)
@@ -25,7 +26,8 @@ class Api::UsersController < ApplicationController
         :email,
         :first_name,
         :username,
-        :password
+        :password,
+        :image
     )
   end
 end

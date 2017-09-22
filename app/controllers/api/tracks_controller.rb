@@ -32,7 +32,8 @@ class Api::TracksController < ApplicationController
       .permit(
         :title,
         :genre,
-        :user_id
+        :user_id,
+        :track_url
       )
   end
 end
