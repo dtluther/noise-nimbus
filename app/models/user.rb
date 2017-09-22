@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, :username, uniqueness: true
 
-  has_attached_file :image, default_url: "app/assets/images/noise_nimbus_purple.png"
+  has_attached_file :image, default_url: "noise_nimbus_purple.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token

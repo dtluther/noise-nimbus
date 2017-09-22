@@ -11,7 +11,7 @@ class Track < ApplicationRecord
 
   validates :title, :genre, :user_id, presence: true
 
-  has_attached_file :track, default_url: "app/assets/images/noise_nimbus_purple.png"
+  has_attached_file :track, default_url: "noise_nimbus_purple.png"
   validates_attachment_content_type :track, content_type: /\Aimage\/.*\z/
 
 end
