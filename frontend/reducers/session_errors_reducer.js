@@ -3,9 +3,11 @@ import {
   RECEIVE_SESSION_ERRORS
 } from '../actions/session_actions';
 
+const _nullErrors = {
+  session: []
+};
 
-
-const sessionErrorsReducer = (oldState = [], action) => {
+const sessionErrorsReducer = (oldState = _nullErrors, action) => {
   Object.freeze(oldState);
   switch(action.type) {
     case RECEIVE_SESSION_ERRORS:
