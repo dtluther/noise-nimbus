@@ -22,12 +22,9 @@ class Welcome extends React.Component {
   demoLogin() {
     return e => {
       e.preventDefault();
-      const user = {
-        email: "guest@someurl@somedomain",
-        first_name: "Guest",
-        username: "Guest",
-        password: "password"
-      };
+      const user = new FormData();
+      user.append("user[username]", "Guest");
+      user.append("user[password]", "password");
       this.props.login(user)
         .then( () => this.props.history.push(`/users/Guest`));
     };

@@ -43,10 +43,14 @@ class SessionForm extends React.Component {
       e.preventDefault();
       const formData = new FormData();
       // debugger;
-      formData.append("user[email]", this.state.email);
-      formData.append("user[first_name]", this.state.first_name);
       formData.append("user[username]", this.state.username);
       formData.append("user[password]", this.state.password);
+      if (this.state.email) {
+        formData.append("user[email]", this.state.email);
+      }
+      if (this.state.first_name) {
+        formData.append("user[first_name]", this.state.first_name);
+      }
       if (this.state.imageFile) {
         formData.append("user[image]", this.state.imageFile);
       }
@@ -59,6 +63,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    console.log('inside renderErrors this.props.errors', this.props.errors);
     return (
       <ul>
         {
@@ -93,10 +98,11 @@ class SessionForm extends React.Component {
             placeholder="First Name"
           />
 
-        <input className="profile-picture"
-          type="file"
-          onChange={this.updateFile()}
-        />
+          <input className="profile-picture"
+            type="file"
+            onChange={this.updateFile()}
+          />
+          <img src={this.state.imageUrl} />
 
 
           <br/>

@@ -2,7 +2,7 @@ import {
   RECEIVE_TRACKS,
   RECEIVE_TRACK,
   RECEIVE_TRACK_ERRORS
-} from '../action/track_actions';
+} from '../actions/track_actions';
 
 const _nullErrors = {
   tracks: []

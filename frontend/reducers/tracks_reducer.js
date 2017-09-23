@@ -18,4 +18,6 @@ const tracksReducer = (oldState = {}, action) => {
     default:
       return oldState;
   }
-}
+};
+
+export default tracksReducer;

@@ -5,7 +5,7 @@ import tracksErrorsReducer from './tracks_errors_reducer';
 
 const errorsReducer = combineReducers({
   session: sessionErrorsReducer,
-  tracks: tracksErrorsReducer
+  // tracks: tracksErrorsReducer
 });
 
 export default errorsReducer;

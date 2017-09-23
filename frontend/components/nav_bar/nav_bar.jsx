@@ -15,34 +15,30 @@ class NavBar extends React.Component {
       loginModalIsOpen: false
     };
 
-    this.openSignupModal = this.openSignupModal.bind(this);
-    this.afterOpenSignupModal = this.afterOpenSignupModal.bind(this);
-    this.closeSignupModal = this.closeSignupModal.bind(this);
+    this.handleOpenSignupModal = this.handleOpenSignupModal.bind(this);
+    this.handleCloseSignupModal = this.handleCloseSignupModal.bind(this);
 
-    this.openLoginModal = this.openLoginModal.bind(this);
-    this.afterOpenLoginModal = this.afterOpenLoginModal.bind(this);
-    this.closeLoginModal = this.closeLoginModal.bind(this);
+    this.handleOpenLoginModal = this.handleOpenLoginModal.bind(this);
+    this.handleCloseLoginModal = this.handleCloseLoginModal.bind(this);
   }
 
-  openSignupModal() {
+  handleOpenSignupModal() {
     this.setState({signupModalIsOpen: true});
   }
 
-  afterOpenSignupModal() {
-  }
-
-  closeSignupModal() {
+  handleCloseSignupModal() {
     this.setState({ signupModalIsOpen: false });
+    this.props.clearSessionErrors();
   }
 
   signupModal() {
     return (
       <div>
-        <button className="session-button" onClick={this.openSignupModal}>Sign Up</button>
+        <button className="session-button" onClick={this.handleOpenSignupModal}>Sign Up</button>
         <Modal className="session-modal"
           isOpen={this.state.signupModalIsOpen}
-          onAfterOpen={this.afterOpenSignupModal}
-          onRequestClose={this.closeSignupModal}
+          onAfterOpen={this.handleAfterOpenSignupModal}
+          onRequestClose={this.handleCloseSignupModal}
           contentLabel="Signup Modal"
         >
           <div>
@@ -55,26 +51,23 @@ class NavBar extends React.Component {
     );
   }
 
-  openLoginModal() {
+  handleOpenLoginModal() {
     this.setState({loginModalIsOpen: true});
   }
 
-  afterOpenLoginModal() {
-
-  }
-
-  closeLoginModal() {
+  handleCloseLoginModal() {
     this.setState({ loginModalIsOpen: false });
+    this.props.clearSessionErrors();
   }
 
   loginModal() {
     return (
       <div>
-        <button className="session-button" onClick={this.openLoginModal}>Log In</button>
+        <button className="session-button" onClick={this.handleOpenLoginModal}>Log In</button>
         <Modal className="session-modal"
           isOpen={this.state.loginModalIsOpen}
           onAfterOpen={this.afterOpenLoginModal}
-          onRequestClose={this.closeLoginModal}
+          onRequestClose={this.handleCloseLoginModal}
           contentLabel="Login Modal"
         >
           <div>

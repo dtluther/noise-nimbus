@@ -13,7 +13,10 @@ export const login = user => {
   return $.ajax({
     method: 'POST',
     url: '/api/session',
-    data: { user }
+    dataType: "JSON",
+    contentType: false,
+    processData: false,
+    data: user
   });
 };
 
