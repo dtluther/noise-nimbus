@@ -4,10 +4,19 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
+// TESTING START
 import { signup, login, logout } from './actions/session_actions';
 window.signup = signup;
 window.login = login;
 window.logout = logout;
+
+import { createTrack, showTrack, deleteTrack, updateTrack } from './util/track_api_util';
+window.createTrack = createTrack;
+window.showTrack = showTrack;
+window.deleteTrack = deleteTrack;
+window.updateTrack = updateTrack;
+
+// TESTING END
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

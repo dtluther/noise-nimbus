@@ -3,7 +3,7 @@ import { Route, Link, Switch } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import WelcomeContainer from './welcome/welcome_container';
 import UserPageContainer from './user_page/user_page_container';
-import UploadContainer from './upload_page/upload_page_container';
+import UploadPageContainer from './upload_page/upload_page_container';
 import PlayBarContainer from './play_bar/play_bar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -17,7 +17,7 @@ const App = () => (
       <Switch>
         <AuthRoute exact path="/" component={WelcomeContainer} />
         <ProtectedRoute path="/users/:username" component={UserPageContainer} />
-        <ProtectedRoute path="/upload" component={UploadContainer}
+        <ProtectedRoute path="/upload" component={UploadPageContainer} />
       </Switch>
     </section>
 
