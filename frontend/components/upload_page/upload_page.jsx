@@ -1,6 +1,16 @@
 import React from 'react';
 
 class UploadPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: "",
+      genere: "",
+      user_id: this.props.currentUser.id
+
+    };
+  }
 
   render() {
     return (

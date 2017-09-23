@@ -4,11 +4,7 @@ import {
   RECEIVE_TRACK_ERRORS
 } from '../actions/track_actions';
 
-const _nullErrors = {
-  tracks: []
-};
-
-const tracksErrorsReducer = (oldState = _nullErrors, action) => {
+const tracksErrorsReducer = (oldState = [], action) => {
   Object.freeze(oldState);
   switch(action.type) {
     case RECEIVE_TRACK_ERRORS:

@@ -36,7 +36,6 @@ genres = %w(
   Track.create!(
     title: Faker::ChuckNorris.fact,
     genre: genres.sample,
-    track_url: "test_url#{i}",
     user_id: i+1
   )
 end
