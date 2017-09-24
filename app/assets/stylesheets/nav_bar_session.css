@@ -10,15 +10,17 @@
   /*font-family: 'Righteous', cursive;
   font-family: 'Permanent Marker', cursive;
   font-family: 'Quantico', sans-serif;*/
-  font-family: 'Inder', sans-serif;
-  font-size: 1vw;
+  /*font-family: 'Inder', sans-serif;*/
+  font-family: Interstate, "Lucida Grande", Arial, sans-serif;
+  min-width: 80px;
+  height: auto;
 }
 
 .nav-bar {
   /*position: fixed;*/
-  padding: 0 15%;
+  padding: 0 30px;
   height: 46px;
-  color: white;
+  color: #ccc;
   background-color: #463f72;
   display: flex;
   justify-content: space-between;
@@ -30,16 +32,21 @@
 }
 
 .session-button {
+  font-family: Interstate, "Lucida Grande", Arial, sans-serif;
   height: 45px;;
   width: 95px;
   background-color: inherit;
-  border-width: 0.1px;
-  border-color: #1c1838;
-  color: white;
+  border: none;
+  /*border-width: 0.1px;
+  border-color: #1c1838;*/
+  /*border-radius: 3px;*/
+  color: #ccc;
   padding: 0 30px;
   text-align: center;
-  border-radius: 3px;
   cursor: pointer;
+}
+.session-button:hover{
+  color: white;
 }
 
 .submit-button {

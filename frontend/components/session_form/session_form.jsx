@@ -39,10 +39,8 @@ class SessionForm extends React.Component {
 
   handleSubmit() {
     return e => {
-      console.log('sessionForm.handleSubmit is happening');
       e.preventDefault();
       const formData = new FormData();
-      // debugger;
       formData.append("user[username]", this.state.username);
       formData.append("user[password]", this.state.password);
       if (this.state.email) {
@@ -54,7 +52,7 @@ class SessionForm extends React.Component {
       if (this.state.imageFile) {
         formData.append("user[image]", this.state.imageFile);
       }
-      const user = Object.assign({}, this.state);
+      console.log('in sessionForm.handleSubmit, formData:', formData);
       this.props.processForm( formData )
         .then(() => {
           this.props.history.push(`/users/${this.state.username}`);});
@@ -63,7 +61,6 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    console.log('inside renderErrors this.props.errors', this.props.errors);
     return (
       <ul>
         {
@@ -117,7 +114,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit()} className="session-form-box">
 
-          Welcome to NoiseNimbus!
+          <h1>Welcome to NoiseNimbus!</h1>
 
           <br/>
 
@@ -128,22 +125,22 @@ class SessionForm extends React.Component {
           </div>
 
           <div className="login-form">
-            <br/>
+              <br/>
               <input className="login-input"
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 placeholder="Username"
               />
-            <br/>
+              <br/>
               <input className="login-input"
                 type="text"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-            <br/>
-            <input className="submit-button" type="submit" value="Submit" />
+              <br/>
+              <input className="submit-button" type="submit" value="Submit" />
           </div>
         </form>
       </div>

@@ -13,7 +13,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, :username, uniqueness: true
 
-  has_attached_file :image, default_url: "noise_nimbus_purple.png"
+  # Free Pic from 'https://freeiconshop.com/icon/avatar-icon-glyph/person-solid/'
+  has_attached_file :image, default_url: "https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/users/images/default_image/person-solid.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token

@@ -1,2 +1,2 @@
-json.extract! track, :id, :title, :genre, :track_url
-# json.image_url asset.path(track.image.url)
+json.extract! track, :id, :title, :genre
+json.track_upload_url asset_path(track.track_upload.url)

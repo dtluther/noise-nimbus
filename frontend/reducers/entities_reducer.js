@@ -1,4 +1,4 @@
-import { combineReducers } from 'react-redux';
+import { combineReducers } from 'redux';
 import tracksReducer from './tracks_reducer';
 
 const entitiesReducer = combineReducers({

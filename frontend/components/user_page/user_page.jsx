@@ -9,9 +9,11 @@ class UserPage extends React.Component {
     return (
       <div className="user-page">
         <section className="user-header">
-          <h1>User Header</h1>
-          <img className="user-image"
-            src={this.props.currentUser.image_url} />
+          <h1>{this.props.currentUser.username}</h1>
+          <div className="user-image-container">
+            <img className="user-image" height="200px" width="200px"
+              src={this.props.currentUser.image_url} />
+          </div>
         </section>
 
         <section className="tracks-or-listens">

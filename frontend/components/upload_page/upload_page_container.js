@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import UploadPage from './upload_page';
+import UploadForm from './upload_page';
 import { createTrack } from '../../actions/track_actions';
 
 const mapStateToProps = state => {
@@ -18,4 +18,4 @@ const mapDistpatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDistpatchToProps
-)(UploadPage);
+)(UploadForm);

@@ -23,9 +23,9 @@
 
 
 .mother-app .main-container {
-  max-width: 1240px;
+  /*max-width: 1240px;*/
   background-color: lightgray;
-  margin: 0 15%;
+  /*margin: 0 15%;*/
   padding: 0 0;
 }
 

@@ -33,7 +33,7 @@ class Api::TracksController < ApplicationController
         :title,
         :genre,
         :user_id,
-        :track_url
+        :track_upload
       )
   end
 end
