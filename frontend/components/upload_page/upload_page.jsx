@@ -49,7 +49,8 @@ class UploadForm extends React.Component {
       trackUpload.append("track[user_id]", this.state.user_id);
       trackUpload.append("track[track_upload]", this.state.trackFile);
       console.log('before upload track_upload is:', trackUpload);
-      this.props.createTrack(trackUpload);
+      this.props.createTrack(trackUpload)
+        .then(() => this.props.history.push(`/tracks/${this.state.title}`));
 
       // const formData = new FormData();
 

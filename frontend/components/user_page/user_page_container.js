@@ -5,7 +5,8 @@ const mapStateToProps = (state, ownProps) => {
   console.log('USER state', state);
   console.log('USER ownprops', ownProps);
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    entities: state.entities
   };
 };
 

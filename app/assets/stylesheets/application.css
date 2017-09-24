@@ -23,16 +23,22 @@
 
 
 .mother-app .main-container {
+  padding-top: 46px;
   /*max-width: 1240px;*/
   background-color: lightgray;
-  /*margin: 0 15%;*/
-  padding: 0 0;
+  z-index: 100;
 }
 
+header {
+  height: 46px;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  z-index: 200;
+}
 footer {
   height: 46px;
   width: 100%;
   position: fixed;
   bottom: 0%;
-  background-attachment: scroll;
 }

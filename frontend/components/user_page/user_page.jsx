@@ -6,6 +6,7 @@ class UserPage extends React.Component {
   }
 
   render() {
+    console.log('user page, this.props', this.props);
     return (
       <div className="user-page">
         <section className="user-header">

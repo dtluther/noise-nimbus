@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import UploadForm from './upload_page';
 import { createTrack } from '../../actions/track_actions';
 
@@ -15,7 +16,7 @@ const mapDistpatchToProps = dispatch => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDistpatchToProps
-)(UploadForm);
+)(UploadForm));
