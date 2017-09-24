@@ -30,7 +30,7 @@ export const fetchTracks = () => dispatch => {
 
 export const createTrack = track => dispatch => {
   return TrackAPIUtil.createTrack(track)
-    .then(trackRes => dispatch(receiveTracks(trackRes)));
+    .then(trackRes => dispatch(receiveTrack(trackRes)));
 };
 
 export const fetchTrack = id => dispatch => {
