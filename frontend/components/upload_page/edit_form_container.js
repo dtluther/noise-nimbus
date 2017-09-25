@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import UploadForm from './upload_page';
+import UploadForm from './upload_form';
 import { createTrack } from '../../actions/track_actions';
 
 const mapStateToProps = state => {

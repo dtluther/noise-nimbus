@@ -90,13 +90,14 @@ class NavBar extends React.Component {
   }
 
   logoButton() {
+    let logoButton =
+      (<img
+        src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/users/images/default_image/noise_nimbus_logo.png"
+      />);
     if (this.props.currentUser) {
       return (
         <div className="logo">
-          <img className="logo"
-            src="app/assets/images/noise_nimbus_purple.png"
-            onClick={() => this.props.history.push(`/users/${this.props.currentUser.username}`)}
-          />
+          {logoButton}
         </div>
       );
     } else {
@@ -135,6 +136,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav-bar">
+        {this.logoButton()}
         <button className="logo-button">NOISENIMBUS logo</button>
 
         <SearchBarContainer />

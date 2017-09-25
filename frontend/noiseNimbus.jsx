@@ -10,9 +10,10 @@ window.signup = signup;
 window.login = login;
 window.logout = logout;
 
-import { createTrack, showTrack, deleteTrack, updateTrack } from './util/track_api_util';
+import { fetchTracks, createTrack, fetchTrack, deleteTrack, updateTrack } from './actions/track_actions';
+window.fetchTracks = fetchTracks;
 window.createTrack = createTrack;
-window.showTrack = showTrack;
+window.fetchTrack = fetchTrack;
 window.deleteTrack = deleteTrack;
 window.updateTrack = updateTrack;
 

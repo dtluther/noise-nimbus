@@ -1,8 +1,16 @@
 import * as SessionAPIUtil from '../util/session_api_util';
 
+export const RECEIVE_NEW_USER = 'RECEIVE_NEW_USER';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_SESSION_ERRORS = 'CLEAR_ERRORS';
+
+const receiveNewUser = newUser => {
+  return {
+    type: RECEIVE_NEW_USER,
+    newUser
+  };
+};
 
 const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -25,6 +33,7 @@ export const signup = user => dispatch => (
 );
 
 export const login = user => dispatch => {
+  // debugger;
   console.log('user in login', user);
   return SessionAPIUtil.login(user)
     .then(userRes => dispatch(receiveCurrentUser(userRes)),

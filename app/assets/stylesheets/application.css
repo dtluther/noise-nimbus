@@ -17,13 +17,14 @@
 .mother-app {
   min-height: 100%;
   /*position: relative;*/
-  margin: 0 auto;
-  background-color: magenta;
+  /*margin: 0 auto;*/
+  background-color: lightpink;
 }
 
 
 .mother-app .main-container {
   padding-top: 46px;
+  margin: 0 30px;
   /*max-width: 1240px;*/
   background-color: lightgray;
   z-index: 100;
