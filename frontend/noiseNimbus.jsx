@@ -17,6 +17,9 @@ window.fetchTrack = fetchTrack;
 window.deleteTrack = deleteTrack;
 window.updateTrack = updateTrack;
 
+import { fetchAllUsers } from './actions/user_actions';
+window.fetchAllUsers = fetchAllUsers;
+
 // TESTING END
 
 document.addEventListener('DOMContentLoaded', () => {

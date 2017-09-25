@@ -42,7 +42,9 @@ class NavBar extends React.Component {
           contentLabel="Signup Modal"
         >
           <div>
-            <SignupFormContainer />
+            <SignupFormContainer
+              handleCloseSignupModal={this.handleCloseSignupModal}
+              />
           </div>
 
         </Modal>
@@ -71,7 +73,9 @@ class NavBar extends React.Component {
           contentLabel="Login Modal"
         >
           <div>
-            <LoginFormContainer welcomeState={this.state} />
+            <LoginFormContainer
+              welcomeState={this.state}
+              handleCloseLoginModal={this.handleCloseLoginModal} />
           </div>
 
         </Modal>

@@ -4,7 +4,8 @@ class Api::TracksController < ApplicationController
   end
 
   def show
-    @track = Track.find_by(title: params[:title])
+    # Track.where('title ILIKE ?', "%#{params[:id]}%")
+    @track = Track.find_by(title: params[:id])
     if @track
       render "api/tracks/show"
     else
@@ -23,7 +24,7 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-    @track = Track.find_by(id: params[:id])
+    @track = Track.find_by(title: params[:id])
 
     if @track
       @track.update_attributes(track_params)
@@ -36,12 +37,12 @@ class Api::TracksController < ApplicationController
 
   def destroy
     track = Track.find_by(id: params[:id])
-
-    if track && track.artist_id == current_user.id
+    byebug
+    if track && track.user_id == current_user.id
       track.destroy!
       render track
     else
-      render json: ["Track does not exisit/You don't have the authority to delete this track."], status: 422
+      render json: ["Track does not exist/You don't have the authority to delete this track."], status: 422
     end
   end
 

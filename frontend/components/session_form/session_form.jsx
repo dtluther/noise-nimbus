@@ -11,7 +11,11 @@ class SessionForm extends React.Component {
       imageFile: null,
       imageUrl: null,
       username: "",
-      password: "" };
+      password: ""
+    };
+
+    // this.handleCloseSignupModal = this.props.handleCloseSignupModal.bind(this);
+    // this.handleCloseLoginModal = this.props.handleCloseLoginModal.bind(this);
   }
 
   update(field) {
@@ -55,8 +59,13 @@ class SessionForm extends React.Component {
       console.log('in sessionForm.handleSubmit, formData:', formData);
       this.props.processForm( formData )
         .then(() => {
-          this.props.history.push(`/users/${this.state.username}`);});
+          this.props.history.push(`/users/${this.state.username}`);
         //                                            why does this.props.currentUser.username not work?
+          this.props.handleCloseLoginModal();
+          this.props.handleCloseSignupModal();
+          }
+        );
+
     };
   }
 

@@ -5,18 +5,26 @@ import {
   REMOVE_TRACK
 } from '../actions/track_actions';
 
+const _nullTracks = {
+  byIds: {},
+  ids: [],
+  selectedTrack: {}
+};
 
-const tracksReducer = (oldState = {}, action) => {
+const tracksReducer = (oldState = _nullTracks, action) => {
   Object.freeze(oldState);
   let nextState = merge({}, oldState);
   switch(action.type) {
     case RECEIVE_TRACKS:
-      return action.tracks;
+      nextState.byIds = action.tracks;
+      nextState.ids = Object.keys(action.tracks);
+      return nextState;
     case RECEIVE_TRACK:
-      nextState[action.track.id] = action.track;
+      nextState.selectedTrack = action.track;
       return nextState;
     case REMOVE_TRACK:
-      delete nextState[action.track.id];
+      const trackId = Object.keys(action.track)[0];
+      delete nextState.byIds[trackId];
       return nextState;
 
     default:

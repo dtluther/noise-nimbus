@@ -1,11 +1,10 @@
-import { RECEIVE_NEW_USER } from '../actions/session_actions';
+import { RECEIVE_ALL_USERS } from '../actions/user_actions';
 import merge from 'lodash/merge';
 
 const usersReducer = (oldState = {}, action) => {
   switch(action.type) {
-    case RECEIVE_NEW_USER:
-      let nextState = merge({}, oldState);
-      nextState[action.newUser.id] = action.newUser;
+    case RECEIVE_ALL_USERS:
+      return action.users;
 
     default:
       return oldState;

@@ -8,8 +8,6 @@ class UploadPage extends React.Component {
       <div className="upload-page">
         <h1>Upload Page</h1>
 
-        <br/>
-
         <UploadFormContainer />
 
       </div>

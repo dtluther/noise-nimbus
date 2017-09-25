@@ -34,6 +34,11 @@ class TrackPage extends React.Component {
   }
 
   componentWillMount() {
+    console.log('willmount props', this.props);
+    this.props.fetchTrack(this.props.match.params.title);
+  }
+
+  componentWillReceiveProps() {
     this.props.fetchTrack(this.props.match.params.title);
   }
 
