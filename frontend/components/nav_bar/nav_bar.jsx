@@ -4,7 +4,6 @@ import Modal from 'react-modal';
 import SignupFormContainer from '../session_form/signup_form_container';
 import LoginFormContainer from '../session_form/login_form_container';
 import SearchBarContainer from '../search_bar/search_bar_container';
-import Img from 'react-image';
 
 class NavBar extends React.Component {
   constructor(props) {
