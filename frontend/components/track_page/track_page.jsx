@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import UploadFormContainer from '../upload_page/upload_page';
+import EditFormContainer from '../upload_page/edit_form_container';
 
 // attributed to https://react.rocks/tag/Dropdown and https://github.com/instructure-react/react-menu
 // import { Menu, MenuTrigger, MenuOptions, MenuOption } from 'react-menus';
@@ -33,13 +33,16 @@ class TrackPage extends React.Component {
 
   }
 
-  componentWillMount() {
+  componentWillMount(newProps) {
     console.log('willmount props', this.props);
-    this.props.fetchTrack(this.props.match.params.title);
+    this.props.fetchTrackByTitle(this.props.match.params.title);
   }
 
-  componentWillReceiveProps() {
-    this.props.fetchTrack(this.props.match.params.title);
+  componentWillReceiveProps(newProps) {
+    console.log('will receive new props', newProps);
+    if (newProps.match.params.title !== this.props.match.params.title) {
+      this.props.fetchTrackByTitle(this.props.match.params.title);
+    }
   }
 
   handleOpenEditModal() {
@@ -48,7 +51,7 @@ class TrackPage extends React.Component {
 
   handleCloseEditModal() {
     this.setState({ editModalIsOpen: false });
-    this.props.clearTrackErrors();
+    // this.props.clearTrackErrors();
   }
 
   editModal() {
@@ -62,7 +65,7 @@ class TrackPage extends React.Component {
           contentLabel="Edit Modal"
         >
           <div>
-            <UploadFormContainer />
+            <EditFormContainer handleCloseEditModal={this.handleCloseEditModal} />
           </div>
 
         </Modal>
@@ -73,13 +76,15 @@ class TrackPage extends React.Component {
   handleEdit() {
     return e => {
       e.preventDefault();
+
     };
   }
 
   handleDelete() {
     return e => {
       e.preventDefault();
-      console.log(this.props);
+      this.props.deleteTrack(this.props.tracks.selectedTrack.id)
+        .then(() => this.props.history.push(`/users/${this.props.tracks.selectedTrack.username}`));
     };
   }
   render() {

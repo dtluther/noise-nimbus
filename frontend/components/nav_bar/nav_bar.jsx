@@ -16,18 +16,18 @@ class NavBar extends React.Component {
     };
 
     this.handleOpenSignupModal = this.handleOpenSignupModal.bind(this);
-    this.handleCloseSignupModal = this.handleCloseSignupModal.bind(this);
+    this.handleCloseModals = this.handleCloseModals.bind(this);
 
     this.handleOpenLoginModal = this.handleOpenLoginModal.bind(this);
-    this.handleCloseLoginModal = this.handleCloseLoginModal.bind(this);
+    // this.handleCloseLoginModal = this.handleCloseLoginModal.bind(this);
   }
 
   handleOpenSignupModal() {
     this.setState({signupModalIsOpen: true});
   }
 
-  handleCloseSignupModal() {
-    this.setState({ signupModalIsOpen: false });
+  handleCloseModals() {
+    this.setState({ signupModalIsOpen: false, loginModalIsOpen: false });
     this.props.clearSessionErrors();
   }
 
@@ -38,12 +38,12 @@ class NavBar extends React.Component {
         <Modal className="session-modal"
           isOpen={this.state.signupModalIsOpen}
           onAfterOpen={this.handleAfterOpenSignupModal}
-          onRequestClose={this.handleCloseSignupModal}
+          onRequestClose={this.handleCloseModals}
           contentLabel="Signup Modal"
         >
           <div>
             <SignupFormContainer
-              handleCloseSignupModal={this.handleCloseSignupModal}
+              handleCloseModals={this.handleCloseModals}
               />
           </div>
 
@@ -57,10 +57,10 @@ class NavBar extends React.Component {
     this.setState({loginModalIsOpen: true});
   }
 
-  handleCloseLoginModal() {
-    this.setState({ loginModalIsOpen: false });
-    this.props.clearSessionErrors();
-  }
+  // handleCloseLoginModal() {
+  //   this.setState({ loginModalIsOpen: false });
+  //   this.props.clearSessionErrors();
+  // }
 
   loginModal() {
     return (
@@ -69,13 +69,13 @@ class NavBar extends React.Component {
         <Modal className="session-modal"
           isOpen={this.state.loginModalIsOpen}
           onAfterOpen={this.afterOpenLoginModal}
-          onRequestClose={this.handleCloseLoginModal}
+          onRequestClose={this.handleCloseModals}
           contentLabel="Login Modal"
         >
           <div>
             <LoginFormContainer
               welcomeState={this.state}
-              handleCloseLoginModal={this.handleCloseLoginModal} />
+              handleCloseModals={this.handleCloseModals} />
           </div>
 
         </Modal>
@@ -92,28 +92,28 @@ class NavBar extends React.Component {
     };
   }
 
-  logoButton() {
-    let logoButton =
-      (<img
-        src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/users/images/default_image/noise_nimbus_logo.png"
-      />);
-    if (this.props.currentUser) {
-      return (
-        <div className="logo">
-          {logoButton}
-        </div>
-      );
-    } else {
-      return (
-        <div className="logo">
-          <img className="logo-button"
-            src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/users/images/000/000/001/original/noise_nimbus_purple.png
-"
-          />
-        </div>
-      );
-    }
-  }
+//   logoButton() {
+//     let logoButton =
+//       (<img
+//         src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/users/images/default_image/noise_nimbus_logo.png"
+//       />);
+//     if (this.props.currentUser) {
+//       return (
+//         <div className="logo">
+//           {logoButton}
+//         </div>
+//       );
+//     } else {
+//       return (
+//         <div className="logo">
+//           <img className="logo-button"
+//             src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/users/images/000/000/001/original/noise_nimbus_purple.png
+// "
+//           />
+//         </div>
+//       );
+//     }
+//   }
 
   sessionButtons() {
     const { currentUser, logout } = this.props;
@@ -136,10 +136,10 @@ class NavBar extends React.Component {
     }
   }
 
+  // {this.logoButton()}
   render() {
     return (
       <div className="nav-bar">
-        {this.logoButton()}
         <button className="logo-button">NOISENIMBUS logo</button>
 
         <SearchBarContainer />

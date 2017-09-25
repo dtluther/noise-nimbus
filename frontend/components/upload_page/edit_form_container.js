@@ -1,18 +1,20 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import UploadForm from './upload_form';
-import { createTrack } from '../../actions/track_actions';
+import { updateTrack } from '../../actions/track_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     tracks: state.entities.tracks,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    formType: "edit",
+    handleCloseEditModal: ownProps.handleCloseEditModal
   };
 };
 
 const mapDistpatchToProps = dispatch => {
   return {
-    createTrack: track => dispatch(createTrack(track))
+    updateTrack: track => dispatch(updateTrack(track)),
   };
 };
 

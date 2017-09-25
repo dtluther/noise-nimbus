@@ -6,7 +6,8 @@ import { createTrack } from '../../actions/track_actions';
 const mapStateToProps = state => {
   return {
     tracks: state.entities.tracks,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    formType: "upload"
   };
 };
 

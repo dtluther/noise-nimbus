@@ -61,10 +61,8 @@ class SessionForm extends React.Component {
         .then(() => {
           this.props.history.push(`/users/${this.state.username}`);
         //                                            why does this.props.currentUser.username not work?
-          this.props.handleCloseLoginModal();
-          this.props.handleCloseSignupModal();
-          }
-        );
+          this.props.handleCloseModals();
+        });
 
     };
   }

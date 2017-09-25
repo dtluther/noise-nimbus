@@ -5,7 +5,9 @@ class Api::TracksController < ApplicationController
 
   def show
     # Track.where('title ILIKE ?', "%#{params[:id]}%")
-    @track = Track.find_by(title: params[:id])
+
+    @track = params[:title] ? Track.find_by(title: params[:title]) : Track.find_by(id: params[:id])
+    # debugger;
     if @track
       render "api/tracks/show"
     else
@@ -24,20 +26,20 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-    @track = Track.find_by(title: params[:id])
+    @track = Track.find_by(id: params[:id])
+    debugger;
 
     if @track
       @track.update_attributes(track_params)
       render "api/tracks/show"
     else
-      render json: @track.errors.full_messages, status: 422
+      render json: ["Cannot update/Track doesn't exist"], status: 422
     end
   end
 
 
   def destroy
     track = Track.find_by(id: params[:id])
-    byebug
     if track && track.user_id == current_user.id
       track.destroy!
       render track

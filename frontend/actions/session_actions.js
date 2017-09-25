@@ -2,7 +2,7 @@ import * as SessionAPIUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
-export const CLEAR_SESSION_ERRORS = 'CLEAR_ERRORS';
+export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
 
 const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -25,7 +25,7 @@ export const signup = user => dispatch => (
 );
 
 export const login = user => dispatch => {
-  debugger;
+  // debugger;
   console.log('user in login', user);
   return SessionAPIUtil.login(user)
     .then(userRes => dispatch(receiveCurrentUser(userRes)),

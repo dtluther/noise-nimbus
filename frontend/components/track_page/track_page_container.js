@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import TrackPage from './track_page';
-import { fetchTrack, deleteTrack } from '../../actions/track_actions';
+import { fetchTrackByTitle, deleteTrack } from '../../actions/track_actions';
 
 const mapStateToProps = state => {
   console.log('state in track page container', state);
@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTrack: id => dispatch(fetchTrack(id)),
+    fetchTrackByTitle: title => dispatch(fetchTrackByTitle(title)),
     deleteTrack: id => dispatch(deleteTrack(id))
   };
 };

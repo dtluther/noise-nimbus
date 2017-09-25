@@ -40,25 +40,26 @@ export const createTrack = track => dispatch => {
           err => dispatch(receiveTrackErrors(err.responseJSON)));
 };
 
-// export const fetchTrack = user => dispatch => (
-//   TrackAPIUtil.showTrack(user)
-//     .then(userRes => dispatch(receiveTrack(userRes)),
-//           err => (dispatch(receiveTrackErrors(err.responseJSON))))
-// );
 export const fetchTrack = id => dispatch => {
-  return (TrackAPIUtil.showTrack(id)
+  return TrackAPIUtil.showTrack(id)
     .then(trackRes => dispatch(receiveTrack(trackRes)),
-          err => dispatch(receiveTrackErrors(err.responseJSON))));
+          err => dispatch(receiveTrackErrors(err.responseJSON)));
+};
+
+export const fetchTrackByTitle = title => dispatch => {
+  return TrackAPIUtil.showTrackByTitle(title)
+    .then(trackRes => dispatch(receiveTrack(trackRes)),
+          err => dispatch(receiveTrackErrors(err.responseJSON)));
 };
 
 export const updateTrack = track => dispatch => {
-  return TrackAPIUtil.updateTrack(track.id)
+  return TrackAPIUtil.updateTrack(track)
     .then(trackRes => dispatch(receiveTrack(trackRes)),
           err => dispatch(receiveTrackErrors(err.responseJSON)));
 };
 
 export const deleteTrack = id => dispatch => {
   return TrackAPIUtil.deleteTrack(id)
-    .then(() => dispatch(receiveTrack(null)),
+    .then(track => dispatch(removeTrack(track)),
           err => dispatch(receiveTrackErrors(err.responseJSON)));
 };

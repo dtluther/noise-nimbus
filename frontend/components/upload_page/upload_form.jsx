@@ -3,13 +3,25 @@ import React from 'react';
 class UploadForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: "",
-      genre: "",
-      user_id: this.props.currentUser.id,
-      trackFile: null,
-      trackUrl: null
-    };
+    
+    if (this.props.formType === "upload") {
+      this.state = {
+        title: "",
+        genre: "",
+        user_id: this.props.currentUser.id,
+        trackFile: null,
+        trackUrl: null
+      };
+    } else if (this.props.formType === "edit") {
+      this.state = {
+        id: this.props.tracks.selectedTrack.id,
+        title: this.props.tracks.selectedTrack.title,
+        genre: this.props.tracks.selectedTrack.genre,
+      };
+    }
+
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -42,28 +54,46 @@ class UploadForm extends React.Component {
       e.preventDefault();
       console.log('uploadPage handlesubmit is happening');
       const trackUpload = new FormData();
-      if (trackUpload.append("track[title]", this.state.title)) {
-        console.log('I ran trackUpload.append("track[Title]")');
-      }
+      trackUpload.append("track[title]", this.state.title);
       trackUpload.append("track[genre]", this.state.genre);
-      trackUpload.append("track[user_id]", this.state.user_id);
-      trackUpload.append("track[track_upload]", this.state.trackFile);
+      if (this.state.user_id) {
+        trackUpload.append("track[user_id]", this.state.user_id);
+      }
+      if (this.state.trackFile) {
+        trackUpload.append("track[track_upload]", this.state.trackFile);
+      }
       console.log('before upload track_upload is:', trackUpload);
       this.props.createTrack(trackUpload)
         .then(() => this.props.history.push(`/tracks/${this.state.title}`));
 
       console.log('after upload, it should have worked!');
-
     };
+  }
 
+  handleUpdate() {
+    return e => {
+      e.preventDefault();
+      console.log('handle update props:', this.props);
+      this.props.updateTrack(this.state)
+        .then(() => this.props.handleCloseEditModal());
+    };
   }
   render() {
+    const formTitle = this.props.formType === "upload" ? "Upload Track" : "Edit Track";
+    const trackInput =  formTitle === "Upload Track" ? (
+      <input className="track-file"
+        type="file"
+        onChange={this.updateFile()}
+      />
+    ) : null;
+    const submit = formTitle === "Upload Track" ? this.handleSubmit : this.handleUpdate;
+
     return (
       <div className="upload-page">
         <h1>Upload Page</h1>
         <form className="upload-track"
-          onSubmit={this.handleSubmit()}>
-          <h2>Upload Track</h2>
+          onSubmit={submit()}>
+          <h2>{formTitle}</h2>
 
           <input className="track-title"
             type="text"
@@ -86,10 +116,7 @@ class UploadForm extends React.Component {
 
           <br/>
 
-          <input className="track-file"
-            type="file"
-            onChange={this.updateFile()}
-          />
+          {trackInput}
 
           <br/>
 
