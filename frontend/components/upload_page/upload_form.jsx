@@ -3,7 +3,7 @@ import React from 'react';
 class UploadForm extends React.Component {
   constructor(props) {
     super(props);
-    
+
     if (this.props.formType === "upload") {
       this.state = {
         title: "",
@@ -75,7 +75,10 @@ class UploadForm extends React.Component {
       e.preventDefault();
       console.log('handle update props:', this.props);
       this.props.updateTrack(this.state)
-        .then(() => this.props.handleCloseEditModal());
+        .then(() => {
+          this.props.handleCloseEditModal();
+          this.props.history.push(`/tracks/${this.state.title}`);
+        });
     };
   }
   render() {

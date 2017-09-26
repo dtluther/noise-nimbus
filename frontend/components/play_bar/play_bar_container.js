@@ -4,7 +4,7 @@ import PlayBar from './play_bar';
 
 const mapStateToProps = state => {
   return {
-    playBarState: state
+    playBarState: state.nowPlaying
   };
 };
 

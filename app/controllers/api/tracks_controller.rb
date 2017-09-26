@@ -7,7 +7,6 @@ class Api::TracksController < ApplicationController
     # Track.where('title ILIKE ?', "%#{params[:id]}%")
 
     @track = params[:title] ? Track.find_by(title: params[:title]) : Track.find_by(id: params[:id])
-    # debugger;
     if @track
       render "api/tracks/show"
     else
@@ -27,7 +26,6 @@ class Api::TracksController < ApplicationController
 
   def update
     @track = Track.find_by(id: params[:id])
-    debugger;
 
     if @track
       @track.update_attributes(track_params)

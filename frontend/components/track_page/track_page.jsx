@@ -38,7 +38,7 @@ class TrackPage extends React.Component {
     this.props.fetchTrackByTitle(this.props.match.params.title);
   }
 
-  componentWillReceiveProps(newProps) {
+  componentDidReceiveProps(newProps) {
     console.log('will receive new props', newProps);
     if (newProps.match.params.title !== this.props.match.params.title) {
       this.props.fetchTrackByTitle(this.props.match.params.title);
