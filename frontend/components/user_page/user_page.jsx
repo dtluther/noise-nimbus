@@ -22,6 +22,22 @@ class UserPage extends React.Component {
     console.log('user page, this.props', this.props);
     const tracks = this.props.tracks;
     const selectedUser = this.props.users.selectedUser;
+
+    let tracksIndex;
+    if (tracks.ids.length > 0) {
+      console.log('> 0', tracks.ids);
+      tracksIndex = (
+        <ul className="tracks-or-listens-list">
+          {tracks.ids.map( id => (
+            <TrackIndexItem track={tracks.byIds[id]} selectedUser={selectedUser}/>
+          ))}
+        </ul>
+      );
+    } else {
+      console.log('0');
+      tracksIndex = <h1>No songs here</h1>;
+    }
+
     return (
       <div className="user-page">
         <section className="user-header">
@@ -39,11 +55,7 @@ class UserPage extends React.Component {
           </div>
 
           <div className="tracks-or-listens-index">
-            <ul className="tracks-or-listens-list">
-              {tracks.ids.map( id => (
-                <TrackIndexItem track={tracks.byIds[id]} selectedUser={selectedUser}/>
-              ))}
-            </ul>
+            {tracksIndex}
           </div>
 
 
