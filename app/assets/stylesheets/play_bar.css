@@ -2,7 +2,7 @@ footer {
   background-color: green;
 }
 
-footer .play-bar {
-  background-color: darkblue;
-  color: white;
+.play-bar {
+  height: 0px;
+  width: 100%;
 }
