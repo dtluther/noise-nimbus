@@ -1,4 +1,5 @@
 import React from 'react';
+import { TrackIndexItem } from '../track_index/track_index_item';
 
 class UserPage extends React.Component {
   constructor() {
@@ -6,20 +7,20 @@ class UserPage extends React.Component {
   }
 
   componentWillMount(newProps) {
-    console.log('user page willmount props', this.props);
+    // console.log('user page willmount props', this.props);
     this.props.fetchUser(this.props.match.params.username);
   }
 
   componentWillReceiveProps(newProps) {
-    console.log('user page will receive new props', newProps);
+    // console.log('user page will receive new props', newProps);
     if (newProps.match.params.username !== this.props.match.params.username) {
-      // this.props.history.push(`/users/${this.props.match.params.username}`);
       this.props.fetchUser(newProps.match.params.username);
     }
   }
 
   render() {
-    // console.log('user page, this.props', this.props);
+    console.log('user page, this.props', this.props);
+    const tracks = this.props.tracks;
     return (
       <div className="user-page">
         <section className="user-header">
@@ -38,9 +39,9 @@ class UserPage extends React.Component {
 
           <div className="tracks-or-listens-index">
             <ul className="tracks-or-listens-list">
-              <li>track1</li>
-              <li>track2</li>
-              <li>track3</li>
+              {tracks.ids.map( id => (
+                <TrackIndexItem track={tracks.byIds[id]}/>
+              ))}
             </ul>
           </div>
 

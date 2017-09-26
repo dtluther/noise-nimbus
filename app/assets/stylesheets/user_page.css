@@ -20,12 +20,12 @@
   width: 200px;
   height: 200px;
   position: relative;
-  top: 50%
-  transform: translate(-50%, 0);
+  top: 50%;
+  /*transform: translate(-50%, 0);*/
 }
 .user-image-container .user-image {
   width: 100%;
-  height: auto
+  height: auto;
 }
 
 .tracks-or-listens {
