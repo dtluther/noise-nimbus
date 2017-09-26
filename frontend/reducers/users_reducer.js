@@ -23,6 +23,7 @@ const usersReducer = (oldState = _nullUsers, action) => {
       nextState.selectedUser['username'] = action.user.username;
       nextState.selectedUser['first_name'] = action.user.first_name;
       nextState.selectedUser['username'] = action.user.username;
+      nextState.selectedUser['image_url'] = action.user.image_url;
       if (action.user.tracks) {
         nextState.selectedUser['trackIds'] = Object.keys(action.user.tracks);
       } else {

@@ -20,7 +20,7 @@
   width: 200px;
   height: 200px;
   position: relative;
-  top: 50%;
+  /*top: 50%;*/
   /*transform: translate(-50%, 0);*/
 }
 .user-image-container .user-image {
@@ -37,33 +37,42 @@
 
 }
 
-.tracks-or-listens-list li {
-  height: 300px;
-}
 .tracks-or-listens-links {
   font-family: system-ui;
   height: 33px;
   display: flex;
+  vertical-align: middle;
   justify-content: space-around;
-  margin: 0 20%;
+  padding: 10px 25px 0px 25px;
   border-bottom: 1px solid #dac5f3;
 }
 
 .tracks-or-listens-links a {
   height: 100%;
   background-color: transparent;
-  border-bottom: none;
   color: black;
   cursor: pointer;
 
 }
 .tracks-or-listens-links a:hover {
-  border-bottom: 1px solid #463f72;
-  transition: border-bottom 3s;
+  border-bottom: 2px solid #463f72;
 }
 
 .tracks-or-listens-index {
-  margin-top: 10px;
-  height: 100%;
-  border: 2px solid black;
+  /*margin-top: 10px;*/
+  padding: 10px 0;
+  /*border: 2px solid black;*/
+}
+
+.tracks-or-listens-index .selected-profile-pic {
+  width: 150px;
+  height: auto;
+}
+
+
+
+
+.tracks-or-listens-list li {
+  height: 300px;
+  display: flex;
 }

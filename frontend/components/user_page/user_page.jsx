@@ -21,13 +21,14 @@ class UserPage extends React.Component {
   render() {
     console.log('user page, this.props', this.props);
     const tracks = this.props.tracks;
+    const selectedUser = this.props.users.selectedUser;
     return (
       <div className="user-page">
         <section className="user-header">
           <h1>{this.props.users.selectedUser.username}</h1>
           <div className="user-image-container">
             <img className="user-image" height="200px" width="200px"
-              src={this.props.users.selectedUser.image_url} />
+              src={selectedUser.image_url} />
           </div>
         </section>
 
@@ -40,7 +41,7 @@ class UserPage extends React.Component {
           <div className="tracks-or-listens-index">
             <ul className="tracks-or-listens-list">
               {tracks.ids.map( id => (
-                <TrackIndexItem track={tracks.byIds[id]}/>
+                <TrackIndexItem track={tracks.byIds[id]} selectedUser={selectedUser}/>
               ))}
             </ul>
           </div>
