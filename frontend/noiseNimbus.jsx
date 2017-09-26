@@ -17,12 +17,12 @@ window.fetchTrack = fetchTrack;
 window.deleteTrack = deleteTrack;
 window.updateTrack = updateTrack;
 
-import { fetchAllUsers}  from './actions/user_actions';
+import { fetchAllUsers, fetchUser}  from './actions/user_actions';
 window.fetchAllUsers = fetchAllUsers;
-// window.fetchUser = fetchUser;
-
-import {fetchUser} from './util/user_api_util';
 window.fetchUser = fetchUser;
+
+// import {fetchUser} from './util/user_api_util';
+// window.fetchUser = fetchUser;
 // TESTING END
 
 document.addEventListener('DOMContentLoaded', () => {

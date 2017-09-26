@@ -4,6 +4,7 @@ import {
   RECEIVE_TRACK,
   REMOVE_TRACK
 } from '../actions/track_actions';
+import { RECEIVE_USER } from '../actions/user_actions';
 
 const _nullTracks = {
   byIds: {},
@@ -25,6 +26,12 @@ const tracksReducer = (oldState = _nullTracks, action) => {
     case REMOVE_TRACK:
       const trackId = Object.keys(action.track)[0];
       delete nextState.byIds[trackId];
+      return nextState;
+    case RECEIVE_USER:
+      nextState.byIds = action.user.tracks;
+      if (action.user.tracks) {
+        nextState.ids = Object.keys(action.user.tracks);
+      }
       return nextState;
 
     default:

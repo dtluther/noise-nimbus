@@ -34,7 +34,6 @@ export const fetchAllUsers = () => dispatch => {
 };
 
 export const fetchUser = username => dispatch => {
-  debugger;
   return (
     UserAPIUtil.fetchUser(username)
       .then(user => dispatch(receiveUser(user)),

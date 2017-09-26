@@ -10,7 +10,7 @@ const _nullUsers = {
   selectedUser: {}
 };
 
-const usersReducer = (oldState = {}, action) => {
+const usersReducer = (oldState = _nullUsers, action) => {
   Object.freeze(oldState);
   let nextState = merge({}, oldState);
   switch(action.type) {
@@ -19,9 +19,16 @@ const usersReducer = (oldState = {}, action) => {
       nextState.ids = Object.keys(action.users);
       return nextState;
     case RECEIVE_USER:
-      nextState.selectedUser = action.user;
+      nextState.selectedUser['id'] = action.user.id;
+      nextState.selectedUser['username'] = action.user.username;
+      nextState.selectedUser['first_name'] = action.user.first_name;
+      nextState.selectedUser['username'] = action.user.username;
+      if (action.user.tracks) {
+        nextState.selectedUser['trackIds'] = Object.keys(action.user.tracks);
+      } else {
+        nextState.selectedUser['trackIds'] = [];
+      }
       return nextState;
-
     default:
       return oldState;
   }

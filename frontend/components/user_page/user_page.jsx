@@ -7,25 +7,26 @@ class UserPage extends React.Component {
 
   componentWillMount(newProps) {
     console.log('user page willmount props', this.props);
-    // this.props.fetchUser(this.props.match.params.username);
+    this.props.fetchUser(this.props.match.params.username);
   }
 
-  componentDidReceiveProps(newProps) {
+  componentWillReceiveProps(newProps) {
     console.log('user page will receive new props', newProps);
-    // if (newProps.match.params.username !== this.props.match.params.username) {
-      // this.props.fetchUser(this.props.match.params.username);
-    // }
+    if (newProps.match.params.username !== this.props.match.params.username) {
+      // this.props.history.push(`/users/${this.props.match.params.username}`);
+      this.props.fetchUser(newProps.match.params.username);
+    }
   }
 
   render() {
-    console.log('user page, this.props', this.props);
+    // console.log('user page, this.props', this.props);
     return (
       <div className="user-page">
         <section className="user-header">
-          <h1>{this.props.currentUser.username}</h1>
+          <h1>{this.props.users.selectedUser.username}</h1>
           <div className="user-image-container">
             <img className="user-image" height="200px" width="200px"
-              src={this.props.currentUser.image_url} />
+              src={this.props.users.selectedUser.image_url} />
           </div>
         </section>
 

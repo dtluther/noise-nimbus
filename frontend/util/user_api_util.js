@@ -7,8 +7,9 @@ export const fetchAllUsers = () => (
 );
 
 export const fetchUser = username => {
-  $.ajax({
+  return $.ajax({
     method: 'GET',
-    url: `/api/users/${username}`
+    url: `/api/users/${username}`,
+    dataType: 'JSON'
   });
 };
