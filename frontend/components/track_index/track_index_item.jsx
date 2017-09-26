@@ -14,7 +14,7 @@ export function TrackIndexItem({ selectedUser, track }) {
     (<img src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/person-solid.png" width="150px" height="150px" />) :
     (<img src={selectedUser.image_url} width="150px" height="150px" />);
   return(
-    <li key="test123">
+    <li key={`trackli-${track.id}`}>
       <div className="selected-profile-pic">
         {profileImage}
       </div>

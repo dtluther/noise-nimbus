@@ -29,7 +29,7 @@ class UserPage extends React.Component {
       tracksIndex = (
         <ul className="tracks-or-listens-list">
           {tracks.ids.map( id => (
-            <TrackIndexItem track={tracks.byIds[id]} selectedUser={selectedUser}/>
+            <TrackIndexItem key={`trackli-${id}`} track={tracks.byIds[id]} selectedUser={selectedUser}/>
           ))}
         </ul>
       );
