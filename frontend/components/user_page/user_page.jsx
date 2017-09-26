@@ -6,13 +6,13 @@ class UserPage extends React.Component {
     super();
   }
 
-  componentWillMount(newProps) {
+  componentWillMount() {
     // console.log('user page willmount props', this.props);
     this.props.fetchUser(this.props.match.params.username);
   }
 
   componentWillReceiveProps(newProps) {
-    // console.log('user page will receive new props', newProps);
+    console.log('user page will receive new props', newProps);
     if (newProps.match.params.username !== this.props.match.params.username) {
       this.props.fetchUser(newProps.match.params.username);
     }
