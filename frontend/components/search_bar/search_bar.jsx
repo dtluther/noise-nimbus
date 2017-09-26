@@ -1,16 +1,50 @@
 import React from 'react';
 
+// class SearchBar extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//
+//   render() {
+//     return (
+//       <div className="search-bar">
+//         <input className="search-input"
+//           type="text"
+//           placeholder="Search Bar (Display for now)"
+//
+//           />
+//       </div>
+//     );
+//   }
+// // }
+//
+// export default SearchBar;
+
+
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      query: ""
+    };
+
+    this.handleChange= this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    // no default behavior for an input
+    this.setState({ query: e.currentTarget.value });
+    this.props.omnisearch(e.currentTarget.value);
   }
 
   render() {
     return (
       <div className="search-bar">
         <input className="search-input"
+          onChange={this.handleChange}
           type="text"
-          placeholder="Search Bar (Display for now)"
+          value={this.state.query}
+
           />
       </div>
     );

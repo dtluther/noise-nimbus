@@ -24,6 +24,12 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def omnisearch
+    @users = User.where("LOWER(username) LIKE ?", "%#{params[:query]}%".downcase).limit(7)
+    render json: @users
+
+  end
+
   def user_params
     params.require(:user)
       .permit(

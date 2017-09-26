@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create]
     resource :session, only: [:create, :destroy]
     resources :tracks, except: [:new, :edit]
+
+    get '/omnisearch', to: "users#omnisearch"
   end
 
   get 'api/users/:username', to: 'api/users#show', defaults: {format: :json}

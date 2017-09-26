@@ -33,13 +33,14 @@
 }
 
 .user-page .tracks-or-listens {
-  background-color: #f5edff;
+  background-color: #f8f6fc;
+  padding: 0 30px;
 
 }
 
 .tracks-or-listens-links {
   font-family: system-ui;
-  height: 33px;
+  height: 30px;
   display: flex;
   vertical-align: middle;
   justify-content: space-around;
@@ -48,9 +49,10 @@
 }
 
 .tracks-or-listens-links a {
-  height: 100%;
   background-color: transparent;
   color: black;
+  font-size: 18px;
+  font-weight: 400;
   cursor: pointer;
 
 }
@@ -59,20 +61,47 @@
 }
 
 .tracks-or-listens-index {
-  /*margin-top: 10px;*/
-  padding: 10px 0;
-  /*border: 2px solid black;*/
+  margin: 20px 0;
 }
 
-.tracks-or-listens-index .selected-profile-pic {
-  width: 150px;
+.selected-profile-pic {
+  width: 160px;
+  box-shadow: rgba(0,0,0,.1)0 0 0 1px inset;
   height: auto;
 }
 
+.track-controls {
+  display: flex;
+}
 
+.fa-play-circle {
+  /*color: #463f72;*/
+  margin-left: 10px;
+  margin-right: 20px
+}
+
+.track-details {
+  padding-top: 10px;
+  font-family: Interstate, "Lucida Grande", Arial, sans-serif;
+}
+
+.user-track-artist {
+  font-size: 12px;
+  color: #999;
+}
+
+.user-track-title {
+  font-size: 15px;
+  color: #333;
+}
+
+.waveform {
+  padding-top: 10px
+}
 
 
 .tracks-or-listens-list li {
-  height: 300px;
+  margin-bottom: 15px;
+  /*height: 300px;*/
   display: flex;
 }
