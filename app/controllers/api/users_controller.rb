@@ -15,7 +15,8 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(username: params[:id])
+    # debugger;
+    @user = User.find_by(username: params[:username])
 
     if @user
       render "api/users/show"

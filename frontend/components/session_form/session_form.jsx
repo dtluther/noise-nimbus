@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log('session form props', props);
     this.state = {
       email: "",
       first_name: "",
@@ -56,7 +55,6 @@ class SessionForm extends React.Component {
       if (this.state.imageFile) {
         formData.append("user[image]", this.state.imageFile);
       }
-      console.log('in sessionForm.handleSubmit, formData:', formData);
       this.props.processForm( formData )
         .then(() => {
           this.props.history.push(`/users/${this.state.username}`);

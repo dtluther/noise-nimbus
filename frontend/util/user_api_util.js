@@ -5,3 +5,10 @@ export const fetchAllUsers = () => (
     dataType: "JSON"
   })
 );
+
+export const fetchUser = username => {
+  $.ajax({
+    method: 'GET',
+    url: `/api/users/${username}`
+  });
+};

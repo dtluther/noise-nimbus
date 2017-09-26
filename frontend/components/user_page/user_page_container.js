@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import UserPage from './user_page';
+import { fetchUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('USER state', state);
-  console.log('USER ownprops', ownProps);
   return {
     currentUser: state.session.currentUser,
     entities: state.entities
@@ -11,10 +10,12 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-
+  return {
+    fetchUser: username => dispatch(fetchUser(username))
+  };
 };
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(UserPage);
