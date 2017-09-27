@@ -1,5 +1,6 @@
 import React from 'react';
-import { TrackIndexItem } from '../track_index/track_index_item';
+// import { TrackIndexItem } from '../track_index/track_index_item';
+import TrackIndexItemContainer from '../track_index/track_index_item_container';
 
 class UserPage extends React.Component {
   constructor() {
@@ -12,7 +13,7 @@ class UserPage extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log('user page will receive new props', newProps);
+    // console.log('user page will receive new props', newProps);
     if (newProps.match.params.username !== this.props.match.params.username) {
       this.props.fetchUser(newProps.match.params.username);
     }
@@ -25,16 +26,14 @@ class UserPage extends React.Component {
 
     let tracksIndex;
     if (tracks.ids.length > 0) {
-      console.log('> 0', tracks.ids);
       tracksIndex = (
         <ul className="tracks-or-listens-list">
           {tracks.ids.map( id => (
-            <TrackIndexItem key={`trackli-${id}`} track={tracks.byIds[id]} selectedUser={selectedUser}/>
+            <TrackIndexItemContainer key={`trackli-${id}`} tracks={tracks} track={tracks.byIds[id]} selectedUser={selectedUser}/>
           ))}
         </ul>
       );
     } else {
-      console.log('0');
       tracksIndex = <h1>No songs here</h1>;
     }
 

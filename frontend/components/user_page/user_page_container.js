@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import UserPage from './user_page';
 import { fetchUser } from '../../actions/user_actions';
+import { selectTrack } from '../../actions/now_playing_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUser: username => dispatch(fetchUser(username))
+    fetchUser: username => dispatch(fetchUser(username)),
+    selectTrack: track => dispatch(selectTrack(track))
   };
 };
 

@@ -18,11 +18,13 @@
   min-height: 100%;
   /*position: relative;*/
   /*margin: 0 auto;*/
-  background-color: lightpink;
+  background-color: rgb(242, 242, 242);
 }
 
 
 .mother-app .main-container {
+  /*border-left: 0.5px solid rgb(206, 206, 206);
+  border-right: 0.5px solid rgb(206, 206, 206);*/
   padding-top: 46px;
   margin: 0 30px;
   /*max-width: 1240px;*/

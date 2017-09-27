@@ -22,6 +22,20 @@ class PlayBar extends React.Component {
     };
   }
 
+  componentWillReceiveProps(newProps){
+    console.log('newprops in playbar', newProps);
+    let now = newProps.nowPlaying;
+    this.setState(
+      { url: `https:${now.currentTrack.track_upload_url}` },
+      this.onPlay()
+    );
+    // let url = now.currentTrack.track_upload_url;
+    // this.load();
+    // this.onPlay();
+
+
+  }
+
   load() {
     return url => {
       this.setState({
@@ -33,67 +47,99 @@ class PlayBar extends React.Component {
   }
 
   playPause() {
-    this.setState({ playing: !this.state.playing });
+    return () => {
+      this.setState({ playing: !this.state.playing });
+    };
   }
+
   stop() {
-    this.setState({ url: null, playing: false });
+    return () => {
+      this.setState({ url: null, playing: false });
+    };
   }
-  setVolume(e) {
-    this.setState({ volume: parseFloat(e.target.value) });
+
+  setVolume() {
+    return e => {
+      this.setState({ volume: parseFloat(e.target.value) });
+    };
   }
+
   toggleMuted() {
-    this.setState({ muted: !this.state.muted });
+    return e => {
+      this.setState({ muted: !this.state.muted });
+    };
   }
-  setPlaybackRate(e) {
-    this.setState({ playbackRate: parseFloat(e.target.value) });
+
+  setPlaybackRate() {
+    return e => {
+      this.setState({ playbackRate: parseFloat(e.target.value) });
+    };
   }
+
   onPlay() {
-    this.setState({ playing: true });
+    return () => {
+      this.setState({ playing: true });
+    };
   }
+
   onPause() {
-    this.setState({ playing: false });
+    return () => {
+      this.setState({ playing: false });
+    };
   }
-  onSeekMouseDown(e) {
-    this.setState({ seeking: true });
+
+  onSeekMouseDown() {
+    return e => {
+      this.setState({ seeking: true });
+    };
   }
-  onSeekChange(e) {
-    this.setState({ played: parseFloat(e.target.value) });
+
+  onSeekChange() {
+    return e => {
+      this.setState({ played: parseFloat(e.target.value) });
+    };
   }
-  onSeekMouseUp(e) {
-    this.setState({ seeking: false });
-    this.player.seekTo(parseFloat(e.target.value));
+
+  onSeekMouseUp() {
+    return e => {
+      this.setState({ seeking: false });
+      this.player.seekTo(parseFloat(e.target.value));
+    };
   }
-  onProgress(state) {
-    // We only want to update time slider if we are not currently seeking
-    if (!this.state.seeking) {
-      this.setState(state);
-    }
-  }
+  // onProgress(state) {
+  //   // We only want to update time slider if we are not currently seeking
+  //   if (!this.state.seeking) {
+  //     this.setState(state);
+  //   }
+  // }
 
 
   render() {
+    console.log('playbar render props', this.props);
+    console.log('playbar render state', this.state);
+
     const { url, playing, volume, muted, played, loaded, duration,
        playbackRate } = this.state;
 
     const playPauseIcon = playing === true ?
-      ( <i className="fa fa-pause" aria-hidden="true"></i> ) :
-      ( <i className="fa fa-play" aria-hidden="true"></i> );
+      ( <i onClick={this.playPause()} className="fa fa-pause" aria-hidden="true"></i> ) :
+      ( <i onClick={this.playPause()} className="fa fa-play" aria-hidden="true"></i> );
     return (
       <div className="play-bar-div">
         <div className="player-wrapper">
           <ReactPlayer className="react-player"
-            url="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/tracks/track_uploads/000/000/006/original/mindmapthat_-_Transmutation.mp3"
+            url={url}
             width='100%'
             height='100%'
-            playing={this.playing}
-            playbackRate={this.playbackRate}
-            volume={this.volume}
-            muted={this.muted}
+            playing={this.state.playing}
+            playbackRate={this.state.playbackRate}
+            volume={this.state.volume}
+            muted={this.state.muted}
             onReady={() => console.log('onReady')}
             onStart={() => console.log('onStart')}
-            onStart={this.onPlay}
-            onPause={this.onPause}
-            onPause={this.onPause}
+            onStart={this.state.onPlay}
+            onPause={this.state.onPause}
+            onPause={this.state.onPause}
             onBuffer={() => console.log('onBuffer')}
             onSeek={e => console.log('onSeek', e)}
             onEnded={() => this.setState({ playing: false })}

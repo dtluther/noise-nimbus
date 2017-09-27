@@ -5,11 +5,13 @@ import {
   REMOVE_TRACK
 } from '../actions/track_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
+import { SELECT_TRACK } from '../actions/now_playing_actions';
 
 const _nullTracks = {
   byIds: {},
   ids: [],
-  selectedTrack: {}
+  selectedTrack: {},
+  playingTrack: {}
 };
 
 const tracksReducer = (oldState = _nullTracks, action) => {
@@ -28,13 +30,15 @@ const tracksReducer = (oldState = _nullTracks, action) => {
       delete nextState.byIds[trackId];
       return nextState;
     case RECEIVE_USER:
-      console.log('tracks receive user action:', action);
       nextState.byIds = action.user.tracks;
       if (action.user.tracks) {
         nextState.ids = Object.keys(action.user.tracks);
       } else {
         nextState.ids = [];
       }
+      return nextState;
+    case SELECT_TRACK:
+      nextState.playingTrack = action.selectedTrack;
       return nextState;
 
     default:
