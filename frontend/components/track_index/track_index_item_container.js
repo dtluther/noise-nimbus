@@ -19,8 +19,6 @@ const mapDispatchToProps = dispatch => {
   return {
     selectTrack: (selectedTrack, tracks) => dispatch(selectTrack(selectedTrack, tracks)),
     playPauseSong: () => dispatch(playPauseSong()),
-    stepBackward: () => dispatch(stepBackward()),
-    stepForward: () => dispatch(stepForward()),
   };
 };
 

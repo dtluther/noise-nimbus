@@ -31,6 +31,28 @@ progress {
   margin-left: 30px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.play-bar-details {
+  font-family: Interstate, "Lucida Grande", Arial, sans-serif;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+}
+
+.play-bar-track-artist {
+  color: #999;
+}
+
+.play-bar-track-title {
+  color: #666;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.play-bar-details *:hover {
+  color: #333;
 }
 
 .volume-track-queue * {

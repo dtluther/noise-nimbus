@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PlayBar from './play_bar';
+import { stepBackward, stepForward } from '../../actions/now_playing_actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,7 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    stepBackward: () => dispatch(stepBackward()),
+    stepForward: () => dispatch(stepForward())
   };
 };
 

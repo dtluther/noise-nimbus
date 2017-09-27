@@ -35,7 +35,8 @@
 .user-page .tracks-or-listens {
   background-color: #f8f6fc;
   padding: 0 30px;
-  height: calc(100vh - 306px);
+
+  /*height: calc(100vh - 306px);*/
 
 }
 

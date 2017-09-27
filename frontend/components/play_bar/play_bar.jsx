@@ -1,6 +1,7 @@
 import React from 'react';
 // Attributed to https://github.com/CookPete/react-player
 import ReactPlayer from 'react-player';
+import Duration from './duration';
 
 
 class PlayBar extends React.Component {
@@ -22,7 +23,7 @@ class PlayBar extends React.Component {
     };
   }
 
-  componentWillReceiveProps(newProps){
+  componentWillReceiveProps(newProps) {
     console.log('newprops in playbar', newProps);
     let now = newProps.nowPlaying;
     this.setState(
@@ -32,8 +33,18 @@ class PlayBar extends React.Component {
     // let url = now.currentTrack.track_upload_url;
     // this.load();
     // this.onPlay();
+  }
 
+  stepBackward() {
+    return () => {
+      this.props.stepBackward();
+    };
+  }
 
+  stepForward() {
+    return () => {
+      this.props.stepForward();
+    };
   }
 
   load() {
@@ -78,7 +89,9 @@ class PlayBar extends React.Component {
 
   onPlay() {
     return () => {
-      this.setState({ playing: true });
+      if (this.state.url) {
+        this.setState({ playing: true });
+      }
     };
   }
 
@@ -88,7 +101,7 @@ class PlayBar extends React.Component {
     };
   }
 
-  onSeekMouseDown() {
+  onSeekMouseDown(value) {
     return e => {
       this.setState({ seeking: true });
     };
@@ -121,9 +134,20 @@ class PlayBar extends React.Component {
     const { url, playing, volume, muted, played, loaded, duration,
        playbackRate } = this.state;
 
+    let trackArtist;
+    let trackTitle;
+    if (this.props.nowPlaying.currentTrack) {
+      trackArtist = this.props.nowPlaying.currentTrack.username;
+      trackTitle = this.props.nowPlaying.currentTrack.title;
+    } else {
+      trackArtist = null;
+      trackTitle = null;
+    }
+
     const playPauseIcon = playing === true ?
-      ( <i onClick={this.playPause()} className="fa fa-pause" aria-hidden="true"></i> ) :
-      ( <i onClick={this.playPause()} className="fa fa-play" aria-hidden="true"></i> );
+      ( <i onClick={this.onPause()} className="fa fa-pause" aria-hidden="true"></i> ) :
+      ( <i onClick={this.onPlay()} className="fa fa-play" aria-hidden="true"></i> );
+
     return (
       <div className="play-bar-div">
         <div className="player-wrapper">
@@ -131,15 +155,15 @@ class PlayBar extends React.Component {
             url={url}
             width='100%'
             height='100%'
-            playing={this.state.playing}
-            playbackRate={this.state.playbackRate}
-            volume={this.state.volume}
-            muted={this.state.muted}
+            playing={playing}
+            playbackRate={playbackRate}
+            volume={volume}
+            muted={muted}
             onReady={() => console.log('onReady')}
             onStart={() => console.log('onStart')}
-            onStart={this.state.onPlay}
-            onPause={this.state.onPause}
-            onPause={this.state.onPause}
+            onStart={this.onPlay()}
+            onPause={() => console.log('onPause')}
+            onPause={this.onPause()}
             onBuffer={() => console.log('onBuffer')}
             onSeek={e => console.log('onSeek', e)}
             onEnded={() => this.setState({ playing: false })}
@@ -151,9 +175,9 @@ class PlayBar extends React.Component {
 
         <div className="react-player-container">
           <div className="player-buttons">
-            <i className="fa fa-step-backward" aria-hidden="true"></i>
+            <i onClick={this.stepBackward()} className="fa fa-step-backward" aria-hidden="true"></i>
             {playPauseIcon}
-            <i className="fa fa-step-forward" aria-hidden="true"></i>
+            <i onClick={this.stepForward()} className="fa fa-step-forward" aria-hidden="true"></i>
           </div>
 
           <div className="player-progress-meter">
@@ -164,7 +188,10 @@ class PlayBar extends React.Component {
 
           <div className="volume-track-queue">
             <i className="fa fa-volume-up" aria-hidden="true"></i>
-            <h1>Track name goes here</h1>
+            <div className="play-bar-details">
+              <h1 className="play-bar-track-artist">{trackArtist}</h1>
+              <h1 className="play-bar-track-title">{trackTitle}</h1>
+            </div>
             <i className="fa fa-list" aria-hidden="true"></i>
 
           </div>

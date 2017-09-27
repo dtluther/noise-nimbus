@@ -30,14 +30,17 @@ const nowPlayingReducer = (oldState = _nullNowPlaying, action) => {
       return nextState;
     case STEP_BACKWARD:
       if (currentTrackIndex > 0) {
+        // debugger;
         nextState.currentTrack = oldState.trackQueue[currentTrackIndex - 1];
+        nextState.isPlaying = false;
       }
       return nextState;
     case STEP_FORWARD:
       if (currentTrackIndex < (nextState.trackQueue.length - 1)) {
         nextState.currentTrack = oldState.trackQueue[currentTrackIndex + 1];
+        nextState.isPlaying = false;
       }
-
+      return nextState;
     default:
       return oldState;
   }

@@ -14,7 +14,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUser: username => dispatch(fetchUser(username)),
-    selectTrack: track => dispatch(selectTrack(track))
   };
 };
 
