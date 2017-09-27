@@ -13,6 +13,16 @@ class Api::CommentsController < ApplicationController
     @comments = Comment.all
   end
 
+  # def show
+  #   @comment = Comment.find_by(id: params[:id])
+  #
+  #   if @comment
+  #     render 'api/comments/show'
+  #   else
+  #     render json: ["Comment does not exist."], status: 404
+  #   end
+  # end
+
   def destroy
     comment = Comment.find_by(id: params[:id])
 
