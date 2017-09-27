@@ -10,7 +10,9 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.all
+    # track = Track.find_by(id: params[:track_id])
+    # @comments = track.comments
+    @comments = Comment.where("track_id = ?", track_id)
   end
 
   # def show

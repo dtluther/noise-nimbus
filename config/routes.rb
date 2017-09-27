@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create]
     resource :session, only: [:create, :destroy]
     resources :tracks, except: [:new, :edit]
-    resources :commnts, only: [:create, :index, :destroy]
+    resources :comments, only: [:create, :index, :destroy]
+
 
     get '/omnisearch', to: "users#omnisearch"
   end
