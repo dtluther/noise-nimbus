@@ -1,24 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import EditFormContainer from '../upload_page/edit_form_container';
-
-// attributed to https://react.rocks/tag/Dropdown and https://github.com/instructure-react/react-menu
-// import { Menu, MenuTrigger, MenuOptions, MenuOption } from 'react-menus';
-// const Menu = require('react-menu');
-// const MenuTrigger = Menu.MenuTrigger;
-// const MenuOptions = Menu.MenuOptions;
-// const MenuOption = Menu.MenuOption;
-//
-// <Menu className='track-menu'>
-//   <MenuTrigger>Test</MenuTrigger>
-//   <MenuOptions>
-//     <MenuOption>Option 1</MenuOption>
-//     <MenuOption>Option 2</MenuOption>
-//     <MenuOption>Option 3</MenuOption>
-//   </MenuOptions>
-// </Menu>
-
-
+import CommentsFormContainer from '../comments/comments_form_container.js';
 
 class TrackPage extends React.Component {
   constructor(props) {
@@ -77,6 +60,9 @@ class TrackPage extends React.Component {
 
     };
   }
+  // need to move this to User page
+  // {this.editModal()}
+
 
   handleDelete() {
     return e => {
@@ -85,6 +71,9 @@ class TrackPage extends React.Component {
         .then(() => this.props.history.push(`/users/${this.props.tracks.selectedTrack.username}`));
     };
   }
+// need to move this to user page
+  // <button onClick={this.handleDelete()}>Delete</button>
+
   render() {
     console.log('track page props', this.props);
     return (
@@ -109,9 +98,7 @@ class TrackPage extends React.Component {
         </section>
 
         <section className="track-comments">
-          <h1>This section will display and add comments</h1>
-          {this.editModal()}
-          <button onClick={this.handleDelete()}>Delete</button>
+          <CommentsFormContainer />
         </section>
       </div>
     );
