@@ -90,8 +90,22 @@ class TrackPage extends React.Component {
     return (
       <div className="tracks-page">
         <section className="track-header">
-          <h1>This is the tracks page</h1>
-          <h2 className="track-title">Song title: {this.props.match.params.title}</h2>
+          <div className="play-details-flexbox">
+            <div className="track-header-play-button-box">
+              <i className="track-header-play fa fa-play-circle fa-5x" aria-hidden="true"></i>
+            </div>
+            <div className="track-header-details">
+              <h3 className="track-header-username">{this.props.tracks.selectedTrack.username}</h3>
+              <h2 className="track-header-title">{this.props.tracks.selectedTrack.title}</h2>
+            </div>
+          </div>
+          <div className="track-profile-image-box">
+            <img className="track-profile-image" src={this.props.tracks.selectedTrack.user_image_url} />
+          </div>
+          <div className="track-waveform-box">
+            <img className="track-waveform" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/default-wave-form.png" />
+          </div>
+
         </section>
 
         <section className="track-comments">

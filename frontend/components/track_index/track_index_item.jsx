@@ -39,7 +39,7 @@ class TrackIndexItem extends React.Component {
         <div className="track-controls">
           <div className="select-play-pause-button"
             onClick={this.handlePlayPause}>
-            <i className="fa fa-play-circle fa-3x" aria-hidden="true"></i>
+            <i className="track-select-play fa fa-play-circle fa-3x" aria-hidden="true"></i>
           </div>
           <div className="track-details">
             <h2 className="user-track-artist">{this.track.username}</h2>

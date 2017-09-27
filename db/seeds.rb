@@ -58,30 +58,31 @@ end
 
 Track.destroy_all
 
-# genres = %w(
-#   pop
-#   rock
-#   hip-hop
-#   rap
-#   country
-#   alternative
-#   jazz
-#   R&B
-#   soul
-#   blues
-# )
+genres = %w(
+  pop
+  rock
+  hip-hop
+  rap
+  country
+  alternative
+  jazz
+  R&B
+  soul
+  blues
+)
 
-Track.create!(title: "Test Track", genre: "rock", user_id: 1,
+users = User.all
+Track.create!(title: "Test Track", genre: "rock", user_id: User.first.id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/kara_square/mindmapthat_-_Democrazy.mp3'))
 # Tracks all from http://dig.ccmixter.org/free
-Track.create!(title: "Democrazy", genre: "alternative", user_id: 2,
+Track.create!(title: "Democrazy", genre: "alternative", user_id: users[1].id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/kara_square/mindmapthat_-_Democrazy.mp3'))
-Track.create!(title: "Hanging Eleven", genre: "alternative", user_id: 2,
+Track.create!(title: "Hanging Eleven", genre: "alternative", user_id: users[1].id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/kara_square/mindmapthat_-_Hanging_Eleven.mp3'))
-Track.create!(title: "Hard Wired", genre: "pop", user_id: 2,
+Track.create!(title: "Hard Wired", genre: "pop", user_id: users[1].id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/kara_square/mindmapthat_-_Hard_Wired.mp3'))
 
-Track.create!(title: "Who We Are", genre: "alternative", user_id: 3,
+Track.create!(title: "Who We Are", genre: "alternative", user_id: users[2].id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/hans_atom/hansatom_-_Who_We_Are.mp3'))
 
 
@@ -91,6 +92,6 @@ Track.create!(title: "Who We Are", genre: "alternative", user_id: 3,
   Track.create!(
     title: Faker::ChuckNorris.fact,
     genre: genres.sample,
-    user_id: 1
+    user_id: User.first.id
   )
 end
