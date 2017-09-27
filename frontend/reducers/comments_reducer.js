@@ -6,15 +6,33 @@ import {
 import merge from 'lodash/merge';
 
 const _nullComments = {
-  commentIds: [],
-  trackId: null
+  byIds: {},
+  commentIds: []
 };
 
-const commentsReducer = (oldState = _nullComments, action) {
+const commentsReducer = (oldState = _nullComments, action) => {
   Object.freeze(oldState);
   let nextState = merge({}, oldState);
   switch(action.type) {
     case RECEIVE_COMMENTS:
-      nextState.commentIds = action.comments
+      nextState.byIds = action.comments;
+      nextState.commentIds = Object.keys(action.comments);
+      return nextState;
+    case RECEIVE_COMMENT:
+      const commentId = action.comment.id;
+      nextState.byIds[commentId] = action.comment;
+      nextState.commentIds.push(action.commentId);
+      return nextState;
+    case REMOVE_COMMENT:
+      const deletedId = action.comment.id;
+      delete nextState.byIds[deletedId];
+      const idIndex = nextState.commentIds.indexOf(deletedId);
+      nextState.commentIds.splice(idIndex, 1);
+      return nextState;
+
+    default:
+      return oldState;
   }
-}
+};
+
+export default commentsReducer;

@@ -32,9 +32,9 @@ export const fetchComments = trackId => dispatch => {
   );
 };
 
-export const postComment = (trackId, comment) => dispatch => {
+export const postComment = comment => dispatch => {
   return (
-    CommentAPIUtil.postComment(trackId, comment)
+    CommentAPIUtil.postComment(comment)
       .then(commentRes => dispatch(receiveComment(commentRes)))
   );
 };

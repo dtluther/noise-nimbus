@@ -5,7 +5,7 @@ export const fetchComments = trackId => {
   });
 };
 
-export const postComment = (trackId, comment) => {
+export const postComment = comment => {
   return $.ajax({
     method: 'POST',
     url: 'api/comments',
