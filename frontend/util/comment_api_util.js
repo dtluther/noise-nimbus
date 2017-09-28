@@ -1,5 +1,4 @@
 export const fetchComments = track_id => {
-  debugger;
   return $.ajax({
     method: 'GET',
     url: 'api/comments',

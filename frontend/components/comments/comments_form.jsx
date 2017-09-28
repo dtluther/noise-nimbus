@@ -1,21 +1,14 @@
 import React from 'react';
+import CommentIndexItem from './comment_index/item';
 
 class CommentsForm extends React.Component {
   constructor(props) {
     super(props);
-    //
-    // let commentsById = this.props.comments.byIds;
-    // let arrComments;
-    // let commentIds = this.props.comments.commentIds;
-    // for (let i = 0; i < commentIds.length; i++) {
-    //   arrComments.unshift(commentsById(commentIds[i]));
-    // }
 
     this.state = {
       body: "",
       author_id: this.props.currentUser.id,
       track_id: this.props.selectedTrack.id
-      // arrComments
     };
   }
 
@@ -29,12 +22,9 @@ class CommentsForm extends React.Component {
     console.log('comment form nextProps', nextProps);
     if (nextProps.selectedTrack.id !== this.props.selectedTrack.id) {
       this.props.fetchComments(nextProps.selectedTrack.id);
+      this.setState(({ track_id: nextProps.selectedTrack.id }));
 
     }
-    // if (nextProps.comments.commentIds.length !== this.props.comments.commentIds.length) {
-    //   this.setState({ track_id: nextProps.selectedTrack.id });
-    // }
-
   }
 
   update(field) {
@@ -46,10 +36,21 @@ class CommentsForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log('state in comments submit', this.state);
     this.props.postComment(this.state);
   }
 
   render() {
+    const commentsArray = this.props.commments.commentIds.map(
+      id => (this.props.comments.byIds[id]));
+    debugger;
+    const commentsIndex = (
+      <ul className="commentsIndex">
+        {commentsArray.reverse().map(
+          comment => <CommentIndexItem />
+        )}
+      </ul>
+    );
     const currentUserImage = this.props.currentUser.image_url;
     console.log('props in comments form', this.props);
     return (
@@ -62,6 +63,9 @@ class CommentsForm extends React.Component {
               type="text"
               placeholder="Add Comment..."/>
           </form>
+        </div>
+        <div className="comments-index-box">
+          {commentsIndex}
         </div>
       </div>
     );
