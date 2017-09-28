@@ -2,13 +2,35 @@
 .welcome-greeting {
   background-color: dimgray;
   height: 450px;
+  display: flex;
+  justify-content: center;
+  background: url("https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/concert.jpeg") no-repeat center center;
+  background-size: cover;
+}
+
+.connect-demo {
+max-width: 600px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+padding-bottom: 75px;
+flex-direction: column;
+}
+
+.connect, .discover {
+  color: white;
 }
 
 .demo-login {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  top: 200px;
+  outline: 0;
+  color: white;
+  background-color: #7251c8;
+  border-radius: 3px;
+  /*border*/
+  border-color: #7251c8;
+
+  height: 46px;
+  width: 210px;
 }
 
 .search-or-upload {

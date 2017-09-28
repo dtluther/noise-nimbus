@@ -17,7 +17,7 @@
 .mother-app {
   /*min-height: 100%;*/
   /*position: relative;*/
-  /*margin: 0 auto;*/
+  margin: 0 auto;
   background-color: rgb(242, 242, 242);
 }
 
@@ -27,12 +27,15 @@
   border-right: 0.5px solid rgb(206, 206, 206);*/
   padding: 46px 0;
   margin: 0 30px;
-  /*max-width: 1240px;*/
+  max-width: 1240px;
+  margin: 0 auto;
   background-color: lightgray;
   z-index: 100;
 }
 
 header {
+  /*background-color: #463f72;*/
+  background-color: #333;
   height: 46px;
   width: 100%;
   position: fixed;

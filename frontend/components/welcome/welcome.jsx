@@ -7,6 +7,7 @@ import SearchBarContainer from '../search_bar/search_bar_container';
 import LoginFormContainer from '../session_form/login_form_container';
 import { login } from '../../actions/session_actions';
 
+// background image attributed to
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
@@ -29,17 +30,19 @@ class Welcome extends React.Component {
         .then( () => this.props.history.push(`/users/Guest`));
     };
   }
-
+  
   render() {
     return (
       <div className="welcome-page">
         <section className="welcome-greeting">
-          <h1>This is the welcome page!</h1>
-          <h1>greeting and background image go here</h1>
-
-          <button className="demo-login"
-            onClick={this.demoLogin()}
-          >Demo Login</button>
+          <div className="connect-demo">
+            <h1 className="connect">Connect on NoiseNimbus</h1>
+            <p className="discover">Discover, upload, and get stream your favorite music from
+              emerging and major artists all over the world </p>
+            <button className="demo-login"
+              onClick={this.demoLogin()}
+            >Demo Login</button>
+        </div>
         </section>
 
         <section className="search-or-upload">

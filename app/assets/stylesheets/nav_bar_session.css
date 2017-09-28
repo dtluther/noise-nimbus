@@ -2,7 +2,7 @@
   z-index: 300;
 }
 .logo-button {
-  background-color: inherit;
+  background-color: #7251c8;
   border-width: 0.1px;
   border-color: #1c1838;
   color: white;
@@ -20,11 +20,13 @@
 }
 
 .nav-bar {
-  /*position: fixed;*/
-  padding: 0 30px;
+  max-width: 1240px;
+  margin: 0 auto;
+  /*padding: 0 30px;*/
   height: 46px;
   color: #ccc;
-  background-color: #463f72;
+  background-color: #333;
+  /*background-color: #463f72;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
