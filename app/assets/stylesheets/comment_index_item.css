@@ -1,0 +1,22 @@
+.comment-index-item img {
+  height: 40px;
+  width: 40px;
+  float: left;
+  border-radius: 50%;
+}
+
+.comment-index-item {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-delete-button {
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.comment-index-item:hover .comment-delete-button {
+  visibility: visible;
+}

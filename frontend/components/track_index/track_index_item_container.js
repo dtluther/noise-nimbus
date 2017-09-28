@@ -8,7 +8,6 @@ import {
 } from '../../actions/now_playing_actions';
 
 const mapStateToProps = state => {
-  // debugger;
   return {
     nowPlaying: state.nowPlaying,
     // tracks: state.entities.tracks

@@ -8,7 +8,18 @@
   align-items: center;
 }
 
+.comment-artist-image-box {
+  float: left;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+}
 .comments-user-image {
   width: 40px;
   height: 40px;
+}
+
+.comments-index-item-box {
+  padding-left: 150px;
 }

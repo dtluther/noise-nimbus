@@ -14,7 +14,6 @@ class Api::CommentsController < ApplicationController
     # @comments = track.comments
     track_id = params[:track_id]
     @comments = Comment.where("track_id = ?", track_id)
-    # debugger
   end
 
   # def show
@@ -29,8 +28,8 @@ class Api::CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find_by(id: params[:id])
-
-    if comment && comment.user_id == current_user.id
+    debugger;
+    if comment && comment.author_id == current_user.id
       comment.destroy!
       render comment
     else
@@ -39,6 +38,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:body, :author_id, :track_id)
+    params.require(:comment).permit( :body, :author_id, :track_id)
   end
 end

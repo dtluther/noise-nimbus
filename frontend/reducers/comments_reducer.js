@@ -22,7 +22,6 @@ const commentsReducer = (oldState = _nullComments, action) => {
       const commentId = action.comment.id;
       nextState.byIds[commentId] = action.comment;
       nextState.commentIds.push(commentId.toString());
-      debugger;
       return nextState;
     case REMOVE_COMMENT:
       const deletedId = action.comment.id;

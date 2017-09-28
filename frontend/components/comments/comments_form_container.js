@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchComments: trackId => dispatch(fetchComments(trackId)),
     postComment: comment => dispatch(postComment(comment)),
-    deleteComment: commentId => dispatch(postComment(commentId))
+    deleteComment: commentId => dispatch(deleteComment(commentId))
 
   };
 };

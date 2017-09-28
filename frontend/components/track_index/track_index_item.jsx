@@ -17,8 +17,6 @@ class TrackIndexItem extends React.Component {
   handlePlayPause(e) {
     e.preventDefault();
     this.props.selectTrack(this.track, this.props.tracks);
-    // debugger;
-    // this.props.playPauseSong();
   }
 
   render() {
