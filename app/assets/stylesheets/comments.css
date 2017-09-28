@@ -1,3 +1,8 @@
+.comments-box {
+  padding: 20px 30px;
+  border-bottom: 1px solid lightgray
+}
+
 .comment-input-form {
   display: flex;
   align-items: center;

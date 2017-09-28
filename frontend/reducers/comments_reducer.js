@@ -17,6 +17,7 @@ const commentsReducer = (oldState = _nullComments, action) => {
     case RECEIVE_COMMENTS:
       nextState.byIds = action.comments;
       nextState.commentIds = Object.keys(action.comments);
+      // debugger;
       return nextState;
     case RECEIVE_COMMENT:
       const commentId = action.comment.id;

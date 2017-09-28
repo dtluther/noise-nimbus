@@ -14,6 +14,7 @@ class Api::CommentsController < ApplicationController
     # @comments = track.comments
     track_id = params[:track_id]
     @comments = Comment.where("track_id = ?", track_id)
+    # debugger
   end
 
   # def show

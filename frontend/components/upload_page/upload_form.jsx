@@ -25,7 +25,7 @@ class UploadForm extends React.Component {
   }
 
   update(field) {
-    console.log('inside UploadForm.update, this.state:', this.state);
+    // console.log('inside UploadForm.update, this.state:', this.state);
     return e => {
       e.preventDefault();
       this.setState({ [field]: e.target.value });
