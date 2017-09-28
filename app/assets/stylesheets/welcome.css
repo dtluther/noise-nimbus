@@ -26,17 +26,35 @@ flex-direction: column;
   color: white;
   background-color: #7251c8;
   border-radius: 3px;
-  /*border*/
   border-color: #7251c8;
-
   height: 46px;
   width: 210px;
 }
 
 .search-or-upload {
+  display: flex;
+  align-items: center;
+  padding: 49px 180px;
   background-color: white;
   display: flex;
   justify-content: space-around;
+}
+
+.or {
+  color: #4a4a4a;
+}
+
+.welcome-upload {
+  color: 4a4a4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  background-color: white;
+  font-size: 14px;
+  height: 46px;;
+  width: 169px;
 }
 
 .pending {

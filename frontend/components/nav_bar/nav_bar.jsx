@@ -138,11 +138,29 @@ class NavBar extends React.Component {
 
   // {this.logoButton()}
   render() {
+    let logoHome;
+    if (this.props.currentUser) {
+      const currentUserUsername = this.props.currentUser.username;
+      logoHome = (
+        <Link className="logo-link-home" to={`/users/${currentUserUsername}`}>
+          <img className="logo-white" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/noisenimbus_logo.png" />
+          <h1 className="NOISENIMBUS">NOISENIMBUS</h1>
+        </Link>
+      );
+    } else {
+      logoHome = (
+        <div className="logo-link-home">
+          <img className="logo-white" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/noisenimbus_logo.png" />
+          <h1 className="NOISENIMBUS">NOISENIMBUS</h1>
+        </div>
+      );
+    }
+
     return (
       <div className="nav-bar">
-        <button className="logo-button">NOISENIMBUS logo</button>
+        {logoHome}
 
-        <SearchBarContainer />
+        <SearchBarContainer searchInputClass="search-input"/>
 
 
         {this.sessionButtons()}

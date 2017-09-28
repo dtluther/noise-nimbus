@@ -14,9 +14,12 @@
  *= require_self
  */
 
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .mother-app {
-  /*min-height: 100%;*/
-  /*position: relative;*/
   margin: 0 auto;
   background-color: rgb(242, 242, 242);
 }

@@ -30,7 +30,7 @@ class Welcome extends React.Component {
         .then( () => this.props.history.push(`/users/Guest`));
     };
   }
-  
+
   render() {
     return (
       <div className="welcome-page">
@@ -46,8 +46,9 @@ class Welcome extends React.Component {
         </section>
 
         <section className="search-or-upload">
-          <SearchBarContainer />
-          <button className="upload">Upload</button>
+          <SearchBarContainer searchInputClass="welcome-search" />
+          <p>or</p>
+          <h1 className="welcome-upload">Sign In & Upload</h1>
         </section>
 
         <section className="pending">
