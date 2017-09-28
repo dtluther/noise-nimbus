@@ -24,7 +24,7 @@
 .NOISENIMBUS {
   color: white;
   margin-left: 7%;
-  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 1px;
 }
 
 .nav-bar {
@@ -49,9 +49,7 @@
   width: 95px;
   background-color: inherit;
   border: none;
-  /*border-width: 0.1px;
-  border-color: #1c1838;*/
-  /*border-radius: 3px;*/
+  border-color: #1c1838;
   color: #ccc;
   padding: 0 30px;
   text-align: center;
@@ -67,20 +65,56 @@
 }
 
 .session-modal {
+  outline: none;
+  background-color: white;
   position: absolute;
   margin: 0;
   padding: 0;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 600px;
-  width: 400px;
+  height: 620px;
+  width: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.session-form-box * {
+.signup-inputs {
   display: flex;
   flex-direction: column;
+}
+.session-form-box > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.session-form-box input {
+  padding: 7px 8px;
+  margin-bottom: 15px;
+  font-family: 'Ubuntu', sans-serif;
+  /*color: #757575;*/
+  font-size: 18px;
+  border: 0.5px solid #cccccc;
+  border-radius: 3px;
+  width: 400px;
+  height: 40px;
+}
+.profile-pic-label {
+  color: #757575;
+  font-size: 18px;
+}
+
+#profile-picture {
+  border: none;
+}
+
+.user-submit-button {
+  background-color: #7251c8;
+  color: white;
+  border-radius: 3px;
+  width: 400px;
+  height: 40px;
 }

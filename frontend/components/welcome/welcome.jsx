@@ -47,7 +47,7 @@ class Welcome extends React.Component {
 
         <section className="search-or-upload">
           <SearchBarContainer searchInputClass="welcome-search" />
-          <p>or</p>
+          <p className="or">or</p>
           <h1 className="welcome-upload">Sign In & Upload</h1>
         </section>
 

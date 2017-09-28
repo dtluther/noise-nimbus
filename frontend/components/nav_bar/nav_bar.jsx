@@ -22,20 +22,22 @@ class NavBar extends React.Component {
     // this.handleCloseLoginModal = this.handleCloseLoginModal.bind(this);
   }
 
-  handleOpenSignupModal() {
-    this.setState({signupModalIsOpen: true});
-  }
 
   handleCloseModals() {
     this.setState({ signupModalIsOpen: false, loginModalIsOpen: false });
     this.props.clearSessionErrors();
   }
 
+  handleOpenSignupModal() {
+    this.handleCloseModals();
+    this.setState({signupModalIsOpen: true});
+  }
+
   signupModal() {
     return (
       <div>
         <button className="session-button" onClick={this.handleOpenSignupModal}>Sign Up</button>
-        <Modal className="session-modal"
+        <Modal className="session-modal animated infinite bounce"
           isOpen={this.state.signupModalIsOpen}
           onAfterOpen={this.handleAfterOpenSignupModal}
           onRequestClose={this.handleCloseModals}
@@ -54,6 +56,7 @@ class NavBar extends React.Component {
   }
 
   handleOpenLoginModal() {
+    this.handleCloseModals();
     this.setState({loginModalIsOpen: true});
   }
 
@@ -66,7 +69,7 @@ class NavBar extends React.Component {
     return (
       <div>
         <button className="session-button" onClick={this.handleOpenLoginModal}>Log In</button>
-        <Modal className="session-modal"
+        <Modal className="session-modal animated slideInDown"
           isOpen={this.state.loginModalIsOpen}
           onAfterOpen={this.afterOpenLoginModal}
           onRequestClose={this.handleCloseModals}

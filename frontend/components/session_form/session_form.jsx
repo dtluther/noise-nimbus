@@ -17,6 +17,7 @@ class SessionForm extends React.Component {
     // this.handleCloseLoginModal = this.props.handleCloseLoginModal.bind(this);
   }
 
+  componentDidMount
   update(field) {
     return e => {
       e.preventDefault();
@@ -82,73 +83,58 @@ class SessionForm extends React.Component {
   signup() {
     return (
       <div className="signup-inputs-container">
-        <section className="signup-inputs">
-
-          <input className="signup-input"
-            type="text"
-            value={this.state.email}
-            onChange={this.update('email')}
-            placeholder="E-mail"
-          />
-
-          <br/>
-
-          <input className="signup-input"
+        <input className="signup-input"
+          type="text"
+          value={this.state.email}
+          onChange={this.update('email')}
+          placeholder="E-mail"
+        />
+        <input className="signup-input"
             type="text"
             value={this.state.first_name}
             onChange={this.update('first_name')}
             placeholder="First Name"
           />
-
-          <input className="profile-picture"
-            type="file"
-            onChange={this.updateFile()}
-          />
-          <img src={this.state.imageUrl} />
-
-
-          <br/>
-
-        </section>
+        <label className="profile-pic-label">Please upload profile picture
+          <br />
+          (200x200 recommended)
+        <input className="profile-picture" id="profile-picture"
+          type="file"
+          value="Upload Photo"
+          onChange={this.updateFile()}
+        />
+        </label>
+        <img src={this.state.imageUrl} />
       </div>
     );
   }
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit()} className="session-form-box">
+      <form onSubmit={this.handleSubmit()} className="session-form-box">
 
-          <h1>Welcome to NoiseNimbus!</h1>
+        {this.renderErrors()}
 
-          <br/>
+        <div className="signup-inputs">
+          {this.props.formType === "login" ? null : this.signup() }
+        </div>
 
-          {this.renderErrors()}
-
-          <div className="signup-inputs">
-            {this.props.formType === "login" ? null : this.signup() }
-          </div>
-
-          <div className="login-form">
-              <br/>
-              <input className="login-input"
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                placeholder="Username"
-              />
-              <br/>
-              <input className="login-input"
-                type="text"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-              <br/>
-              <input className="submit-button" type="submit" value="Submit" />
-          </div>
-        </form>
-      </div>
+        <div className="login-form">
+          <input className="login-input"
+            type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            placeholder="Username"
+          />
+          <input className="login-input"
+            type="text"
+            value={this.state.password}
+            onChange={this.update('password')}
+            placeholder="Password"
+          />
+        <input id="user-submit-button" type="submit" value="Submit" />
+        </div>
+      </form>
     );
   }
 }
