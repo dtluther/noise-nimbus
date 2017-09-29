@@ -44,7 +44,7 @@ class TrackIndexItem extends React.Component {
           contentLabel="Edit Modal"
         >
           <div>
-            <EditFormContainer title={trackTitle} handleCloseEditModal={this.handleCloseEditModal} />
+            <EditFormContainer id={this.track.id} title={trackTitle} handleCloseEditModal={this.handleCloseEditModal} />
           </div>
 
         </Modal>

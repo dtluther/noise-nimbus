@@ -13,9 +13,10 @@ class UploadForm extends React.Component {
         trackUrl: null
       };
     } else if (this.props.formType === "edit") {
+      // debugger;
       this.state = {
-        id: this.props.tracks.selectedTrack.id,
-        title: this.props.tracks.selectedTrack.title,
+        id: this.props.id,
+        title: this.props.title,
         genre: this.props.tracks.selectedTrack.genre,
       };
     }
@@ -117,7 +118,6 @@ class UploadForm extends React.Component {
           </select>
 
           <div className="upload-flex">
-            <h2>Please upload an audio file</h2>
             {trackInput}
           </div>
 

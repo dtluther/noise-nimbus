@@ -46,6 +46,10 @@
   color: #ccc;
 }
 
+.to-stream:hover {
+  color: white;
+}
+
 .session-button {
   height: 45px;;
   width: 95px;

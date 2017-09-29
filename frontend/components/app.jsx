@@ -18,7 +18,7 @@ const App = () => (
     <section className="main-container">
       <Switch>
         <AuthRoute exact path="/" component={WelcomeContainer} />
-        <ProtectedRoute path="/users/:username" component={UserPageContainer} />
+        <Route path="/users/:username" component={UserPageContainer} />
         <ProtectedRoute path="/upload" component={UploadPage} />
         <Route path="/tracks/:title" component={TrackPageContainer} />
         <Route path="/stream" component={StreamPageContainer} />

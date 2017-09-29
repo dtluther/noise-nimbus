@@ -5,6 +5,7 @@ import SessionFormContainer from '../session_form/session_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import SearchBarContainer from '../search_bar/search_bar_container';
 import LoginFormContainer from '../session_form/login_form_container';
+import StreamPageContainer from '../stream_page/stream_page_container';
 import { login } from '../../actions/session_actions';
 
 // background image attributed to
@@ -51,8 +52,8 @@ class Welcome extends React.Component {
           <h1 className="welcome-upload">Sign In & Upload</h1>
         </section>
 
-        <section className="pending">
-          <h1>Pending</h1>
+        <section className="welcome-stream">
+          <StreamPageContainer />
         </section>
 
 

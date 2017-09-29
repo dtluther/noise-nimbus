@@ -20,8 +20,12 @@
   width: 200px;
 }
 
-.tracks-ul li > *{
+.stream-title, .stream-artist {
   text-decoration: none;
+  color: #333;
+}
+.stream-title:hover, .stream-artist:hover {
+  color: black;
 }
 
 .stream-title {

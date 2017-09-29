@@ -57,7 +57,7 @@ class SearchBar extends React.Component {
           onChange={this.handleChange}
           type="text"
           value={this.state.query}
-          placeholder="For Display Only"
+          placeholder="Search here..."
 
           />
       </form>
