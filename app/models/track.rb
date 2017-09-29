@@ -9,7 +9,7 @@ class Track < ApplicationRecord
     through: :plays,
     source: :listener
 
-  validates :title, :genre, :user_id, presence: true
+  validates :title, :genre, :user_id, :track_upload, presence: true
   has_attached_file :track_upload
   validates_attachment_content_type :track_upload, content_type: /\Aaudio\/.*\z/
 
