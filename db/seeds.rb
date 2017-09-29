@@ -146,7 +146,7 @@ track18 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: sio
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Nils_Frahm_You.mp3'))
 
 track19 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: gurdon.id,
-  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/The Echelon Effect_Your First Light My Eventide.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/The_Echelon_Effect_Your_First_Light_My_Eventide.mp3'))
 
 track20 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: ethan.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Ponies_and_Balloons.mp3'))
