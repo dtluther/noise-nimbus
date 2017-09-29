@@ -58,10 +58,6 @@ class TrackIndexItem extends React.Component {
   }
 
   render() {
-    // const playPauseButton = this.props.nowPlaying === false ?
-    //   (<i className="fa fa-play-circle fa-3x" aria-hidden="true"></i>) :
-    //   (<i class="fa fa-pause-circle" aria-hidden="true"></i>);
-    // console.log('track index item selectedUser:', this.selectedUser, 'track index item track:', this.track);
     const trackArtist = this.track.username;
     const trackTitle = this.track.title;
     const profileImage = this.selectedUser ?

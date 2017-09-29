@@ -12,34 +12,8 @@ class SearchBar extends React.Component {
   }
 
   handleChange(e) {
-    // no default behavior for an input
     this.setState({ query: e.currentTarget.value });
   }
-
-  // searchDropdown() {
-  //   let foundTracks = this.props.searchedTracks;
-  //
-  //     return (
-  //       <ul className="results">
-  //         {
-  //           foundTracks.map(trackObj => (
-  //           <Link className="results-link" to={`/users/${trackObj.username}`}>
-  //             <li className="results-item">
-  //               <div>
-  //                 <h2>{trackObj.title}</h2>
-  //                 <h2>{trackObj.username}</h2>
-  //               </div>
-  //             </li>
-  //         </Link>
-  //           ))
-  //         }
-  //       </ul>
-  //     );
-  //
-  //   // } else {
-  //   //   console.log('hiii');
-  //   // }
-  // }
 
   handleSubmit() {
     return e => {

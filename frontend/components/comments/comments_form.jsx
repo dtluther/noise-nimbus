@@ -17,7 +17,6 @@ class CommentsForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps',nextProps, 'this.props', this.props);
     if (nextProps.selectedTrack.id !== this.props.selectedTrack.id) {
       this.props.fetchComments(nextProps.selectedTrack.id);
       this.setState(({ track_id: nextProps.selectedTrack.id }));
@@ -40,14 +39,12 @@ class CommentsForm extends React.Component {
   render() {
     let commentsArray;
     if (this.props.comments.commentIds.length > 0) {
-      console.log(this.props.comments);
       commentsArray = this.props.comments.commentIds.map(
         id => (this.props.comments.byIds[id]));
     } else {
       commentsArray = [];
     }
 
-    console.log('commentsArray', commentsArray);
     const commentsIndex = (
       <ul className="commentsIndex">
         {commentsArray.reverse().map(

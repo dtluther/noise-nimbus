@@ -28,7 +28,6 @@ class PlayBar extends React.Component {
     const trackWasSelected = newProps.nowPlaying.trackWasSelected;
 
     if (trackWasSelected) {
-      console.log('in if statement');
       this.setState({
           url: `https:${newProps.nowPlaying.currentTrack.track_upload_url}`,
           played: 0,
