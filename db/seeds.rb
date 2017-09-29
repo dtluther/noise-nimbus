@@ -13,7 +13,7 @@ guest = User.create!(
   first_name: 'Guest',
   username: 'Guest',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/default_user_profile.png')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/default_user_profile.png')
 )
 
 ethan = User.create!(
@@ -21,7 +21,7 @@ ethan = User.create!(
   first_name: 'Ethan',
   username: 'emeixsell',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/reindeer-160879_640.png')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/reindeer-160879_640.png')
 )
 
 kara = User.create!(
@@ -29,7 +29,7 @@ kara = User.create!(
   first_name: 'Kara',
   username: 'karasquare',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/kara_square_200x200.jpg')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/kara_square_200x200.jpg')
 )
 
 # image from https://stackshare.io/atom
@@ -38,7 +38,7 @@ hans = User.create!(
   first_name: 'Jeris',
   username: 'hans_atom',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/hans_atom_profile.png')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/hans_atom_profile.png')
 )
 
 gurdon = User.create!(
@@ -46,7 +46,7 @@ gurdon = User.create!(
   first_name: 'Gurdon',
   username: 'gurdon_ark',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/clouds-2517650_640.jpg')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/clouds-2517650_640.jpg')
 
 )
 
@@ -55,7 +55,7 @@ siobhan = User.create!(
   first_name: 'Siobhan',
   username: 'SiobhanDakay',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/morning-2550629_640.jpg')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/morning-2550629_640.jpg')
 )
 
 jammy = User.create!(
@@ -63,7 +63,7 @@ jammy = User.create!(
   first_name: 'jammy',
   username: 'jammy',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/deer-1940369_640.jpg')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/deer-1940369_640.jpg')
 )
 
 country = User.create!(
@@ -71,7 +71,7 @@ country = User.create!(
   first_name: 'country',
   username: 'country',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/train-1728537_640.jpg')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/train-1728537_640.jpg')
 )
 
 bensound = User.create!(
@@ -79,7 +79,7 @@ bensound = User.create!(
   first_name: 'bensound',
   username: 'bensound',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/dj-1964727_640.jpg')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/dj-1964727_640.jpg')
 )
 
 otis = User.create!(
@@ -87,7 +87,7 @@ otis = User.create!(
   first_name: 'otis',
   username: 'otis',
   password: 'password',
-  image: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/hip-hop-1209499_640.jpg')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/hip-hop-1209499_640.jpg')
 )
 
 
@@ -98,65 +98,65 @@ Track.destroy_all
 users = User.all
 # Tracks from http://dig.ccmixter.org/free
 track1 = Track.create!(title: "Test Track", genre: "rock", user_id: User.first.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Democrazy.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Democrazy.mp3'))
 
 track2 = Track.create!(title: "Democrazy", genre: "alternative", user_id: kara.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Democrazy.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Democrazy.mp3'))
 
 track3 = Track.create!(title: "The Coming Storm", genre: "rock", user_id: users[2].id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hard_Wired.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hard_Wired.mp3'))
 
 track4 = Track.create!(title: "So Much Is Wrong", genre: "alternative", user_id: gurdon.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/gurdonark_-_So_Much_is_Wrong.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/gurdonark_-_So_Much_is_Wrong.mp3'))
 
 track5 = Track.create!(title: "Who We Are", genre: "alternative", user_id: hans.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/hansatom_-_Who_We_Are.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/hansatom_-_Who_We_Are.mp3'))
 
 track6 = Track.create!(title: "You Believed It Yourself", genre: "alternative", user_id: siobhan.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/SiobhanD_-_You_Believed_It_Yourself.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/SiobhanD_-_You_Believed_It_Yourself.mp3'))
 
 track7 = Track.create!(title: "Hanging Eleven", genre: "alternative", user_id: kara.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hanging_Eleven.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hanging_Eleven.mp3'))
 
 track8 = Track.create!(title: "Hard Wired", genre: "pop", user_id: kara.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hard_Wired.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hard_Wired.mp3'))
 
 track9 = Track.create!(title: "We Wish You a Merry Christmas", genre: "other", user_id: jingle.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/We_Wish_You_a_Merry_Christmas_Vocals.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/We_Wish_You_a_Merry_Christmas_Vocals.mp3'))
 
 track10 = Track.create!(title: "Deck the Halls", genre: "jazz", user_id: jammy.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Deck_the_Halls_Jazz.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Deck_the_Halls_Jazz.mp3'))
 
 track11 = Track.create!(title: "Lonesome Avenue", genre: "country", user_id: country.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Lonesome_Avenue.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Lonesome_Avenue.mp3'))
 
 # Music: https://www.bensound.com
 track12 = Track.create!(title: "Energy", genre: "pop", user_id: bensound.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/bensound-energy.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/bensound-energy.mp3'))
 
 track13 = Track.create!(title: "Black Polkadots", genre: "alternative", user_id: hans.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Black_Polkadots.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Black_Polkadots.mp3'))
 
 track14 = Track.create!(title: "Easy Breezy", genre: "pop", user_id: siobhan.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Easy_Breezy.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Easy_Breezy.mp3'))
 
 track15 = Track.create!(title: "Sports Car Driving Low Rumble", genre: "other", user_id: guest.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Sports_Car_Driving_Low_Rumble.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Sports_Car_Driving_Low_Rumble.mp3'))
 
 track16 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: guest.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Quill_Pen_Writing.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Quill_Pen_Writing.mp3'))
 
 track17 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: hans.id,
-  track_upload: File.open("https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Sleepmakeswaves - It's Dark, It's Cold, It's Winter.mp3"))
+  track_upload: open("https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Sleepmakeswaves - It's Dark, It's Cold, It's Winter.mp3"))
 
 track18 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: siobhan.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Nils Frahm - You.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Nils Frahm - You.mp3'))
 
 track19 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: gurdon.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/The Echelon Effect - Your First Light My Eventide.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/The Echelon Effect - Your First Light My Eventide.mp3'))
 
 track20 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: ethan.id,
-  track_upload: File.open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Ponies_and_Balloons.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Ponies_and_Balloons.mp3'))
 
 
 
