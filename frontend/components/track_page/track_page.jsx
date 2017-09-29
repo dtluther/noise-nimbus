@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import EditFormContainer from '../upload_page/edit_form_container';
 import CommentsFormContainer from '../comments/comments_form_container.js';
+import { Link } from 'react-router-dom';
 
 class TrackPage extends React.Component {
   constructor(props) {
@@ -83,7 +84,7 @@ class TrackPage extends React.Component {
               <i className="track-header-play fa fa-play-circle fa-5x" aria-hidden="true"></i>
 
               <div className="track-header-details">
-                <h3 className="track-header-username">{this.props.tracks.selectedTrack.username}</h3>
+                <Link to={`/users/${this.props.tracks.selectedTrack.username}`} className="track-header-username">{this.props.tracks.selectedTrack.username}</Link>
                 <h2 className="track-header-title">{this.props.tracks.selectedTrack.title}</h2>
               </div>
             </div>

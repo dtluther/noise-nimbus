@@ -63,14 +63,16 @@ class CommentsForm extends React.Component {
     const currentUserImage = this.props.currentUser.image_url;
     const artistImage = this.props.selectedTrack.user_image_url;
     return (
-      <div className="comments-box">
-        <div className="comments-input-box">
+      <div className="comments-top">
+        <div className="add-comments-box">
+          <img className="comments-user-image" src={currentUserImage} />
           <form className="comment-input-form" onSubmit={this.handleSubmit.bind(this)}>
-            <img className="comments-user-image" src={currentUserImage} />
-            <input className="comment-input"
-              onChange={this.update('body')}
-              type="text"
-              placeholder="Add Comment..."/>
+            <div className="comments-input-box">
+              <input className="comment-input"
+                onChange={this.update('body')}
+                type="text"
+                placeholder="Add Comment..."/>
+            </div>
           </form>
         </div>
         <div className="comments-index-box">

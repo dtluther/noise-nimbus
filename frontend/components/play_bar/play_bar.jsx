@@ -20,6 +20,8 @@ class PlayBar extends React.Component {
       width: 600,
       height: 50
     };
+
+    this.secondsToMinutes = this.secondsToMinutes.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -27,10 +29,10 @@ class PlayBar extends React.Component {
     const trackWasSelected = newProps.nowPlaying.trackWasSelected;
 
     if (trackWasSelected) {
-      if (this.state.url) {
-        console.log('about to run this.stop');
-        this.setState({ url: null, playing: false });
-      }
+      // if (this.state.url) {
+      //   console.log('about to run this.stop');
+      //   this.setState({ url: null, playing: false });
+      // }
       console.log('in if statement');
       this.setState({
           url: `https:${newProps.nowPlaying.currentTrack.track_upload_url}`,
@@ -41,6 +43,15 @@ class PlayBar extends React.Component {
       this.props.resetTrackWasSelected();
     }
   }
+
+  secondsToMinutes(duration) {
+    const minutes = Math.floor(duration / 60);
+    const durationSecs = Math.floor(duration % 60);
+
+    const seconds = durationSecs < 10 ? '0' + durationSecs : durationSecs;
+
+    return minutes + ":" + seconds;
+}
 
   stepBackward() {
     return () => {
@@ -195,9 +206,9 @@ class PlayBar extends React.Component {
           </div>
 
           <div className="player-progress-meter">
-            {played}
+            {this.secondsToMinutes(played * duration)}
             <progress max={1} value={played}></progress>
-            {duration}
+            {this.secondsToMinutes(duration)}
           </div>
 
           <div className="volume-track-queue">

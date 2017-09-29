@@ -3,16 +3,41 @@
   width: 40px;
   float: left;
   border-radius: 50%;
+  padding-right: 10px;
 }
 
+.comment-user-body {
+  display: flex;
+}
+
+.author-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+#author {
+  text-decoration: none;
+  color: #999;
+  font-size: 12px;
+}
+#author:hover {
+  color: #424242;
+}
+
+#body {
+  padding-top: 5px;
+  font-size: 12px;
+  color: 333;
+}
 .comment-index-item {
-  margin: 10px 0;
+  margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .comment-delete-button {
+  padding-right: 150px;
   cursor: pointer;
   visibility: hidden;
 }

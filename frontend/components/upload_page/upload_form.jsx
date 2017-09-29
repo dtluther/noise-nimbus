@@ -98,7 +98,7 @@ class UploadForm extends React.Component {
 
           <input className="track-title"
             type="text"
-            defaultValue={this.state.title}
+            defaultValue={this.props.title}
             onChange={this.update('title')}
             placeholder="Track Title"
           />
@@ -111,6 +111,9 @@ class UploadForm extends React.Component {
             <option value="hip-hop">Hip-Hop</option>
             <option value="rb">R&B</option>
             <option value="country">Country</option>
+            <option value="jazz">Jazz</option>
+            <option value="instrumental">instrumental</option>
+            <option value="rock">Rock</option>
           </select>
 
           <div className="upload-flex">

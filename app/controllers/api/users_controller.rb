@@ -25,9 +25,9 @@ class Api::UsersController < ApplicationController
   end
 
   def omnisearch
-    @users = User.where("LOWER(username) LIKE ?", "%#{params[:query]}%".downcase).limit(7)
-    render json: @users
-
+    @users = User.where("LOWER(username) LIKE ?", "%#{params[:query]}%".downcase).limit(5)
+    @tracks = Track.where("LOWER(title) LIKE ?", "%#{params[:query]}%".downcase).limit(5)
+    render 'api/omnisearch'
   end
 
   def user_params

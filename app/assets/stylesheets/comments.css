@@ -1,11 +1,39 @@
-.comments-box {
-  padding: 20px 30px;
-  border-bottom: 1px solid lightgray
+.comments-top {
+}
+
+.add-comments-box {
+  padding: 20px 0;
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+
+}
+
+.comments-user-image {
+  width: 40px;
+  height: 40px;
 }
 
 .comment-input-form {
+  border-radius: 4px;
+  width: 100%;
+}
+
+.comments-input-box {
+  border: 1px solid #e5e5e5;
+  padding: 5px;
+  background-color: #f2f2f2;
+  width: 805px;
+  height: 28px;
   display: flex;
-  align-items: center;
+  flex: 1;
+  justify-content: center;
+
+}
+
+.comment-input {
+  width: 100%;
 }
 
 .comment-artist-image-box {
@@ -15,9 +43,10 @@
   overflow: hidden;
   border-radius: 50%;
 }
-.comments-user-image {
-  width: 40px;
-  height: 40px;
+
+.comments-index-box {
+  margin-left: 50px;
+  padding: 40px 30px;
 }
 
 .comments-index-item-box {

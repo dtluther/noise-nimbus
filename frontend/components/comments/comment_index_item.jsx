@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CommentIndexItem extends React.Component {
   constructor(props) {
@@ -15,19 +16,19 @@ class CommentIndexItem extends React.Component {
     };
   }
   render() {
-    const author = this.props.currentUser.username;
-    const authorImage = this.props.currentUser.image_url;
-    const commentBody = this.props.comment.body;
-    console.log('inside comment index item', this.props);
+    const author = this.props.comment.author;
+    const authorImage = this.props.comment.authorImage;
     return (
       <li className="comment-index-item">
         <div className="comment-user-body">
           <img src={authorImage} />
-          <h1>{author}</h1>
-          <h1>{commentBody}</h1>
+          <div className="author-comment">
+            <Link id="author" to={`/users/${author}`}>{author}</Link>
+            <h1 id="body">{this.props.comment.body}</h1>
+          </div>
         </div>
         <div className="comment-delete-button-box">
-          <i onClick={this.handleDelete()} className="comment-delete-button fa fa-trash fa-1x" aria-hidden="true"></i>
+          <i onClick={this.handleDelete()} className="comment-delete-button fa fa-trash fa-2x" aria-hidden="true"></i>
         </div>
       </li>
     );

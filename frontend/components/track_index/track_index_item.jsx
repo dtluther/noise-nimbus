@@ -33,9 +33,10 @@ class TrackIndexItem extends React.Component {
   }
 
   editModal() {
+    const trackTitle = this.track.title;
     return (
       <div className="edit-button-modal">
-        <i onClick={this.handleOpenEditModal} className="edit-button track-update-button fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+        <i onClick={this.handleOpenEditModal}  className="edit-button track-update-button fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
         <Modal className="edit-modal"
           isOpen={this.state.editModalIsOpen}
           onAfterOpen={this.handleAfterOpenEditModal}
@@ -43,23 +44,13 @@ class TrackIndexItem extends React.Component {
           contentLabel="Edit Modal"
         >
           <div>
-            <EditFormContainer handleCloseEditModal={this.handleCloseEditModal} />
+            <EditFormContainer title={trackTitle} handleCloseEditModal={this.handleCloseEditModal} />
           </div>
 
         </Modal>
       </div>
     );
   }
-
-  handleEdit() {
-    return e => {
-      e.preventDefault();
-
-    };
-  }
-  // need to move this to User page
-  // {this.editModal()}
-
 
   handlePlayPause(e) {
     e.preventDefault();
@@ -104,11 +95,14 @@ class TrackIndexItem extends React.Component {
 
         <div className="track-button-box">
           {this.editModal()}
-          <i className="track-delete-button fa fa-trash fa-2x" aria-hidden="true"></i>
         </div>
       </li>
     );
   }
 }
+
+// can add delete track later
+// <i className="track-delete-button fa fa-trash fa-2x" aria-hidden="true"></i>
+
 
 export default TrackIndexItem;
