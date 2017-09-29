@@ -4,7 +4,7 @@ export const PLAY_PAUSE_SONG= 'PLAY_PAUSE_SONG';
 export const STEP_FORWARD = 'STEP_FORWARD';
 export const STEP_BACKWARD = 'STEP_BACKWARD';
 export const SELECT_TRACK = 'SELECT_TRACK';
-
+export const RESET_TRACK_WAS_SELECTED = 'RESET_TRACK_WAS_SELECTED';
 export const selectTrack = (selectedTrack, tracks) => {
   return {
     type: SELECT_TRACK,
@@ -20,18 +20,6 @@ export const playPauseSong = () => {
   };
 };
 
-// export const playSong = () => {
-//   return {
-//     type: PLAY_SONG
-//   };
-// };
-//
-// export const pauseSong = () => {
-//   return {
-//     type: PAUSE_SONG
-//   };
-// };
-
 export const stepForward = () => {
   return {
     type: STEP_FORWARD
@@ -41,5 +29,11 @@ export const stepForward = () => {
 export const stepBackward = () => {
   return {
     type: STEP_BACKWARD
+  };
+};
+
+export const resetTrackWasSelected = () => {
+  return {
+    type: RESET_TRACK_WAS_SELECTED
   };
 };

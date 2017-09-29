@@ -24,27 +24,23 @@ class PlayBar extends React.Component {
 
   componentWillReceiveProps(newProps) {
     console.log('newprops in willreceive playbar', newProps);
-    console.log('state in willreceive playbar', this.state);
-    let trackUrl = newProps.nowPlaying.currentTrack.track_upload_url;
-    if (`https:${trackUrl}` !== this.state.url) {
-      console.log('in the if statement')
+    const trackWasSelected = newProps.nowPlaying.trackWasSelected;
+
+    if (trackWasSelected) {
+      if (this.state.url) {
+        console.log('about to run this.stop');
+        this.setState({ url: null, playing: false });
+      }
+      console.log('in if statement');
       this.setState({
-        url: trackUrl,
-        played: 0,
-        loaded: 0
-      },
-      this.onPlay()
-    );
-    console.log('after if statement', this.state)
+          url: `https:${newProps.nowPlaying.currentTrack.track_upload_url}`,
+          played: 0,
+          loaded: 0
+        }, this.onPlay()
+      );
+      this.props.resetTrackWasSelected();
     }
   }
-  //   if (nowPlaying.isPlaying !== this.state.playing) {
-  //     this.setState(
-  //       { url: `https:${nowPlaying.currentTrack.track_upload_url}` },
-  //         this.playPause()
-  //     ); // make else if  statement for SELECT TRACK and play
-  //   }
-  // }
 
   stepBackward() {
     return () => {
@@ -147,7 +143,7 @@ class PlayBar extends React.Component {
 
   render() {
     // console.log('playbar render props', this.props);
-    // console.log('playbar render state', this.state);
+    console.log('playbar render state', this.state);
 
     const { url, playing, volume, muted, played, loaded, duration,
        playbackRate } = this.state;

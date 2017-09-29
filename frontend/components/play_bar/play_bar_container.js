@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PlayBar from './play_bar';
-import { playPauseSong, stepBackward, stepForward } from '../../actions/now_playing_actions';
+import { playPauseSong, stepBackward, stepForward, resetTrackWasSelected } from '../../actions/now_playing_actions';
 
 const mapStateToProps = state => {
   return {
@@ -13,7 +13,9 @@ const mapDispatchToProps = dispatch => {
   return {
     playPauseSong: () => dispatch(playPauseSong()),
     stepBackward: () => dispatch(stepBackward()),
-    stepForward: () => dispatch(stepForward())
+    stepForward: () => dispatch(stepForward()),
+    resetTrackWasSelected: () => dispatch(resetTrackWasSelected()),
+
   };
 };
 

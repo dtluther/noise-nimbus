@@ -4,13 +4,15 @@ import {
   PLAY_PAUSE_SONG,
   STEP_FORWARD,
   STEP_BACKWARD,
-  SELECT_TRACK
+  SELECT_TRACK,
+  RESET_TRACK_WAS_SELECTED
 } from '../actions/now_playing_actions';
 
 const _nullNowPlaying = {
   currentTrack: null,
   isPlaying: false,
-  trackQueue: []
+  trackQueue: [],
+  trackWasSelected: false
 };
 
 const nowPlayingReducer = (oldState = _nullNowPlaying, action) => {
@@ -24,9 +26,13 @@ const nowPlayingReducer = (oldState = _nullNowPlaying, action) => {
       nextState.trackQueue = queue;
       nextState.currentTrack = action.selectedTrack;
       nextState.isPlaying = true;
+      nextState.trackWasSelected = true;
       return nextState;
-    case PLAY_PAUSE_SONG:
-      nextState.isPlaying = !nextState.isPlaying;
+    // case PLAY_PAUSE_SONG:
+    //   nextState.isPlaying = !nextState.isPlaying;
+    //   return nextState;
+    case RESET_TRACK_WAS_SELECTED:
+      nextState.trackWasSelected = false;
       return nextState;
     case STEP_BACKWARD:
       if (currentTrackIndex > 0) {
@@ -41,7 +47,9 @@ const nowPlayingReducer = (oldState = _nullNowPlaying, action) => {
       }
       return nextState;
     default:
-      return oldState;
+      const oldStateSameTrack = Object.assign({}, oldState);
+      oldStateSameTrack.trackWasSelected = false;
+      return oldStateSameTrack;
   }
 
 };
