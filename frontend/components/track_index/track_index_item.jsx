@@ -67,10 +67,6 @@ class TrackIndexItem extends React.Component {
   }
 
   render() {
-    console.log('track item props', this.props);
-    console.log('track item state', this.state);
-    // console.log('track index item props:', this.props);
-    // console.log('props in track index item', this.props);
     // const playPauseButton = this.props.nowPlaying === false ?
     //   (<i className="fa fa-play-circle fa-3x" aria-hidden="true"></i>) :
     //   (<i class="fa fa-pause-circle" aria-hidden="true"></i>);

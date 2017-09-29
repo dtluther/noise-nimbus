@@ -9,7 +9,7 @@ import {
 
 const _nullNowPlaying = {
   currentTrack: null,
-  // isPlaying: false,
+  isPlaying: false,
   trackQueue: []
 };
 

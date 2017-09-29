@@ -20,7 +20,6 @@ class UserPage extends React.Component {
 
 
   render() {
-    console.log('user page, this.props', this.props);
     const tracks = this.props.tracks;
     const selectedUser = this.props.users.selectedUser;
 

@@ -23,15 +23,27 @@ class PlayBar extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    let nowPlaying = newProps.nowPlaying;
-    this.setState(
-      { url: `https:${nowPlaying.currentTrack.track_upload_url}` },
-      this.playPause()
+    console.log('newprops in willreceive playbar', newProps);
+    console.log('state in willreceive playbar', this.state);
+    let trackUrl = newProps.nowPlaying.currentTrack.track_upload_url;
+    if (`https:${trackUrl}` !== this.state.url) {
+      console.log('in the if statement')
+      this.setState({
+        url: trackUrl,
+        played: 0,
+        loaded: 0
+      },
+      this.onPlay()
     );
+    console.log('after if statement', this.state)
+    }
   }
-
-  // passTime() {
-  //   setInterval()
+  //   if (nowPlaying.isPlaying !== this.state.playing) {
+  //     this.setState(
+  //       { url: `https:${nowPlaying.currentTrack.track_upload_url}` },
+  //         this.playPause()
+  //     ); // make else if  statement for SELECT TRACK and play
+  //   }
   // }
 
   stepBackward() {
@@ -58,8 +70,9 @@ class PlayBar extends React.Component {
 
   playPause() {
     return () => {
-      this.props.playPauseSong();
-      // this.setState({ playing: !this.state.playing });
+      if (this.state.url) {
+        this.setState({ playing: !this.state.playing });
+      }
     };
   }
 
@@ -97,7 +110,9 @@ class PlayBar extends React.Component {
 
   onPause() {
     return () => {
-      this.setState({ playing: false });
+      if (this.state.url) {
+        this.setState({ playing: false });
+      }
     };
   }
 
@@ -131,8 +146,8 @@ class PlayBar extends React.Component {
 
 
   render() {
-    console.log('playbar render props', this.props);
-    console.log('playbar render state', this.state);
+    // console.log('playbar render props', this.props);
+    // console.log('playbar render state', this.state);
 
     const { url, playing, volume, muted, played, loaded, duration,
        playbackRate } = this.state;
