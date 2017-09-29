@@ -19,7 +19,7 @@ footer {
   justify-content: space-between;
 }
 
-i {
+i:not(.fa-volume-up) {
   cursor: pointer;
 }
 progress {

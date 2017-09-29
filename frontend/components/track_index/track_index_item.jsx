@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
+import EditFormContainer from '../upload_page/edit_form_container';
 
 // ATTRIBUTION TO https://pixabay.com/ for wave form
 // ATTRIBUTION TO http://resizeyourimage.com/EN/ for image size
@@ -12,8 +14,52 @@ class TrackIndexItem extends React.Component {
     this.selectedUser = this.props.selectedUser;
     this.track = this.props.track;
 
+    this.state = {
+      editModalIsOpen: false
+    };
+
     this.handlePlayPause = this.handlePlayPause.bind(this);
+    this.handleOpenEditModal = this.handleOpenEditModal.bind(this);
+    this.handleCloseEditModal = this.handleCloseEditModal.bind(this);
   }
+
+  handleOpenEditModal() {
+    this.setState({editModalIsOpen: true});
+  }
+
+  handleCloseEditModal() {
+    this.setState({ editModalIsOpen: false });
+    // this.props.clearTrackErrors();
+  }
+
+  editModal() {
+    return (
+      <div className="edit-button-modal">
+        <i onClick={this.handleOpenEditModal} className="edit-button track-update-button fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+        <Modal className="edit-modal"
+          isOpen={this.state.editModalIsOpen}
+          onAfterOpen={this.handleAfterOpenEditModal}
+          onRequestClose={this.handleCloseEditModal}
+          contentLabel="Edit Modal"
+        >
+          <div>
+            <EditFormContainer handleCloseEditModal={this.handleCloseEditModal} />
+          </div>
+
+        </Modal>
+      </div>
+    );
+  }
+
+  handleEdit() {
+    return e => {
+      e.preventDefault();
+
+    };
+  }
+  // need to move this to User page
+  // {this.editModal()}
+
 
   handlePlayPause(e) {
     e.preventDefault();
@@ -42,7 +88,6 @@ class TrackIndexItem extends React.Component {
           </div>
 
           <div className="track-item-wo-pic">
-
             <div className="track-controls">
               <div className="select-play-pause-button"
                 onClick={this.handlePlayPause}>
@@ -59,12 +104,11 @@ class TrackIndexItem extends React.Component {
               <img className="track-waveform" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/default-wave-form.png" />
             </div>
           </div>
-
         </div>
 
         <div className="track-button-box">
-          <i className="track-update-button fa fa-pencil-square-o" aria-hidden="true"></i>
-          <i className="track-delete-button fa fa-trash fa-1x" aria-hidden="true"></i>
+          {this.editModal()}
+          <i className="track-delete-button fa fa-trash fa-2x" aria-hidden="true"></i>
         </div>
       </li>
     );
@@ -72,34 +116,3 @@ class TrackIndexItem extends React.Component {
 }
 
 export default TrackIndexItem;
-
-
-// export function TrackIndexItem({ selectedUser, track }) {
-//
-//
-  // const playPauseButton = this.props.nowPlaying === false ?
-  //   (<i className="fa fa-play-circle fa-3x" aria-hidden="true"></i>) :
-  //   (<i class="fa fa-pause-circle" aria-hidden="true"></i>);
-//   console.log('track index item selectedUser:', selectedUser, 'track index item track:', track);
-//   const profileImage = selectedUser ?
-//     (<img src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/person-solid.png" width="150px" height="150px" />) :
-//     (<img src={selectedUser.image_url} width="150px" height="150px" />);
-//   return(
-//     <li key={`trackli-${track.id}`}>
-//       <div className="selected-profile-pic">
-//         {profileImage}
-//       </div>
-//       <div className="track-controls">
-//         <div className="play-button"
-//           onClick={this.handlePlayPause}>
-//           <i className="fa fa-play-circle fa-3x" aria-hidden="true"></i>
-//         </div>
-//         <div className="track-details">
-//           <h2 className="user-track-artist">{track.username}</h2>
-//           <h2 className="user-track-title">{track.title}</h2>
-//           <img className="waveform" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/default-wave-form.png" />
-//         </div>
-//       </div>
-//     </li>
-//   );
-// }

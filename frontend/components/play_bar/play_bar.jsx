@@ -9,14 +9,13 @@ class PlayBar extends React.Component {
     super(props);
 
     this.state = {
-      // hidden: true,
       url: null,
       playing: false,
       volume: 0.8,
       muted: false,
       played: 0,
       loaded: 0,
-      duration: 9,
+      duration: 0,
       playbackRate: 1.0,
       width: 600,
       height: 50
@@ -24,16 +23,16 @@ class PlayBar extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log('newprops in playbar', newProps);
-    let now = newProps.nowPlaying;
+    let nowPlaying = newProps.nowPlaying;
     this.setState(
-      { url: `https:${now.currentTrack.track_upload_url}` },
-      this.onPlay()
+      { url: `https:${nowPlaying.currentTrack.track_upload_url}` },
+      this.playPause()
     );
-    // let url = now.currentTrack.track_upload_url;
-    // this.load();
-    // this.onPlay();
   }
+
+  // passTime() {
+  //   setInterval()
+  // }
 
   stepBackward() {
     return () => {
@@ -59,7 +58,8 @@ class PlayBar extends React.Component {
 
   playPause() {
     return () => {
-      this.setState({ playing: !this.state.playing });
+      this.props.playPauseSong();
+      // this.setState({ playing: !this.state.playing });
     };
   }
 
@@ -119,12 +119,15 @@ class PlayBar extends React.Component {
       this.player.seekTo(parseFloat(e.target.value));
     };
   }
-  // onProgress(state) {
-  //   // We only want to update time slider if we are not currently seeking
-  //   if (!this.state.seeking) {
-  //     this.setState(state);
-  //   }
-  // }
+
+  onProgress() {
+    // We only want to update time slider if we are not currently seeking
+    return state => {
+      if (!this.state.seeking) {
+        this.setState(state);
+      }
+    };
+  }
 
 
   render() {
@@ -168,8 +171,8 @@ class PlayBar extends React.Component {
             onSeek={e => console.log('onSeek', e)}
             onEnded={() => this.setState({ playing: false })}
             onError={e => console.log('onError', e)}
-            onProgress={this.onProgress}
-            onDuration={() => this.setState({ duration })}
+            onProgress={this.onProgress()}
+            onDuration={(duration) => this.setState({ duration })}
           />
         </div>
 
@@ -188,6 +191,13 @@ class PlayBar extends React.Component {
 
           <div className="volume-track-queue">
             <i className="fa fa-volume-up" aria-hidden="true"></i>
+            <input className="volume-slider"
+              type="range"
+              min="0"
+              max="1"
+              step="any"
+              value={volume}
+              onChange={this.setVolume()}></input>
             <div className="play-bar-details">
               <h1 className="play-bar-track-artist">{trackArtist}</h1>
               <h1 className="play-bar-track-title">{trackTitle}</h1>

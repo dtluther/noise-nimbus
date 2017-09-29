@@ -6,7 +6,6 @@ class UploadPage extends React.Component {
   render() {
     return (
       <div className="upload-page">
-        <h1>Upload Page</h1>
 
         <UploadFormContainer />
 

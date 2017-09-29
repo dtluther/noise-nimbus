@@ -25,7 +25,6 @@ class UploadForm extends React.Component {
   }
 
   update(field) {
-    // console.log('inside UploadForm.update, this.state:', this.state);
     return e => {
       e.preventDefault();
       this.setState({ [field]: e.target.value });
@@ -92,8 +91,7 @@ class UploadForm extends React.Component {
     const submit = formTitle === "Upload Track" ? this.handleSubmit : this.handleUpdate;
 
     return (
-      <div className="upload-page">
-        <h1>Upload Page</h1>
+      <div className="upload-form-box">
         <form className="upload-track"
           onSubmit={submit()}>
           <h2>{formTitle}</h2>
@@ -105,8 +103,6 @@ class UploadForm extends React.Component {
             placeholder="Track Title"
           />
 
-          <br/>
-
           <select className="track-genre"
             onChange={this.update('genre')}
           >
@@ -117,13 +113,12 @@ class UploadForm extends React.Component {
             <option value="country">Country</option>
           </select>
 
-          <br/>
+          <div className="upload-flex">
+            <h2>Please upload an audio file</h2>
+            {trackInput}
+          </div>
 
-          {trackInput}
-
-          <br/>
-
-        <input type="submit" value="Submit" />
+        <input className="track-upload-submit" type="submit" value="Submit" />
         </form>
       </div>
     );

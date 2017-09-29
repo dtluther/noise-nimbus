@@ -7,6 +7,10 @@ html, body, div, p, span, h1, h2, h3, h4, a, ol, ul, li, form, label, article, a
   vertical-align: baseline;
 }
 
+input, button {
+  outline: none;
+}
+
 ol, ul {
   list-style: none;
 }

@@ -17,7 +17,6 @@ class SessionForm extends React.Component {
     // this.handleCloseLoginModal = this.props.handleCloseLoginModal.bind(this);
   }
 
-  componentDidMount
   update(field) {
     return e => {
       e.preventDefault();

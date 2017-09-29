@@ -7,12 +7,12 @@ class TrackPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      editModalIsOpen: false
-    };
-
-    this.handleOpenEditModal = this.handleOpenEditModal.bind(this);
-    this.handleCloseEditModal = this.handleCloseEditModal.bind(this);
+    // this.state = {
+    //   editModalIsOpen: false
+    // };
+    //
+    // this.handleOpenEditModal = this.handleOpenEditModal.bind(this);
+    // this.handleCloseEditModal = this.handleCloseEditModal.bind(this);
 
   }
 
@@ -26,42 +26,42 @@ class TrackPage extends React.Component {
     }
   }
 
-  handleOpenEditModal() {
-    this.setState({editModalIsOpen: true});
-  }
-
-  handleCloseEditModal() {
-    this.setState({ editModalIsOpen: false });
-    // this.props.clearTrackErrors();
-  }
-
-  editModal() {
-    return (
-      <div className="edit-button-modal">
-        <button className="edit-button" onClick={this.handleOpenEditModal}>Edit</button>
-        <Modal className="edit-modal"
-          isOpen={this.state.editModalIsOpen}
-          onAfterOpen={this.handleAfterOpenEditModal}
-          onRequestClose={this.handleCloseEditModal}
-          contentLabel="Edit Modal"
-        >
-          <div>
-            <EditFormContainer handleCloseEditModal={this.handleCloseEditModal} />
-          </div>
-
-        </Modal>
-      </div>
-    );
-  }
-
-  handleEdit() {
-    return e => {
-      e.preventDefault();
-
-    };
-  }
-  // need to move this to User page
-  // {this.editModal()}
+  // handleOpenEditModal() {
+  //   this.setState({editModalIsOpen: true});
+  // }
+  //
+  // handleCloseEditModal() {
+  //   this.setState({ editModalIsOpen: false });
+  //   // this.props.clearTrackErrors();
+  // }
+  //
+  // editModal() {
+  //   return (
+  //     <div className="edit-button-modal">
+  //       <button className="edit-button" onClick={this.handleOpenEditModal}>Edit</button>
+  //       <Modal className="edit-modal"
+  //         isOpen={this.state.editModalIsOpen}
+  //         onAfterOpen={this.handleAfterOpenEditModal}
+  //         onRequestClose={this.handleCloseEditModal}
+  //         contentLabel="Edit Modal"
+  //       >
+  //         <div>
+  //           <EditFormContainer handleCloseEditModal={this.handleCloseEditModal} />
+  //         </div>
+  //
+  //       </Modal>
+  //     </div>
+  //   );
+  // }
+  //
+  // handleEdit() {
+  //   return e => {
+  //     e.preventDefault();
+  //
+  //   };
+  // }
+  // // need to move this to User page
+  // // {this.editModal()}
 
 
   handleDelete() {

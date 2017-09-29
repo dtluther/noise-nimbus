@@ -5,19 +5,19 @@ import TrackIndexItemContainer from '../track_index/track_index_item_container';
 class UserPage extends React.Component {
   constructor() {
     super();
+
   }
 
   componentWillMount() {
-    // console.log('user page willmount props', this.props);
     this.props.fetchUser(this.props.match.params.username);
   }
 
   componentWillReceiveProps(newProps) {
-    // console.log('user page will receive new props', newProps);
     if (newProps.match.params.username !== this.props.match.params.username) {
       this.props.fetchUser(newProps.match.params.username);
     }
   }
+
 
   render() {
     console.log('user page, this.props', this.props);

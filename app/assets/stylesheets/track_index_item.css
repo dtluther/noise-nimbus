@@ -1,3 +1,9 @@
+.track-index-item-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .track-index-item-box {
   display: flex;
   align-items: center;
@@ -32,6 +38,18 @@
   flex-direction: column;
 }
 
+.track-details * {
+  text-decoration: none;
+}
+
+.user-track-artist:hover {
+  color: #424242;
+}
+
+.user-track-title:hover {
+  color: black;
+}
+
 .user-track-artist {
   font-size: 12px;
   color: #999;
@@ -42,8 +60,14 @@
   color: #333;
 }
 
-.waveform {
-  padding-top: 10px
+.track-waveform-box {
+  height: calc(160px - 48px);
+  width: auto;
+}
+
+.track-waveform {
+  height: 100%;
+  width: auto;
 }
 
 
@@ -54,10 +78,14 @@
 
 
 .track-button-box {
+  padding-right: 50px;
   cursor: pointer;
   visibility: hidden;
 }
+.track-button-box * {
+  margin-right: 75px;
+}
 
-.track-index-item:hover .track-button-box {
+.track-index-item-li:hover .track-button-box {
   visibility: visible;
 }

@@ -9,7 +9,7 @@ import {
 
 const _nullNowPlaying = {
   currentTrack: null,
-  isPlaying: false,
+  // isPlaying: false,
   trackQueue: []
 };
 
@@ -31,13 +31,13 @@ const nowPlayingReducer = (oldState = _nullNowPlaying, action) => {
     case STEP_BACKWARD:
       if (currentTrackIndex > 0) {
         nextState.currentTrack = oldState.trackQueue[currentTrackIndex - 1];
-        nextState.isPlaying = false;
+        nextState.isPlaying = true;
       }
       return nextState;
     case STEP_FORWARD:
       if (currentTrackIndex < (nextState.trackQueue.length - 1)) {
         nextState.currentTrack = oldState.trackQueue[currentTrackIndex + 1];
-        nextState.isPlaying = false;
+        nextState.isPlaying = true;
       }
       return nextState;
     default:

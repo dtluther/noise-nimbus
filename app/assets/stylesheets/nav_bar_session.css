@@ -120,7 +120,8 @@
   border: none;
 }
 
-.user-submit-button {
+#user-submit-button {
+  cursor: pointer;
   background-color: #7251c8;
   color: white;
   border-radius: 3px;
