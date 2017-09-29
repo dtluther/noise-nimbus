@@ -78,7 +78,15 @@ bensound = User.create!(
   first_name: 'bensound',
   username: 'bensound',
   password: 'password',
-  image: File.open('/Users/lexluther/Downloads/bensound-energy.mp3')
+  image: File.open('/Users/lexluther/Downloads/dj-1964727_640.jpg')
+)
+
+otis = User.create!(
+  email: 'otis@email.rando',
+  first_name: 'otis',
+  username: 'otis',
+  password: 'password',
+  image: File.open('/Users/lexluther/Downloads/hip-hop-1209499_640.jpg')
 )
 
 
@@ -124,3 +132,15 @@ Track.create!(title: "Lonesome Avenue", genre: "country", user_id: country.id,
 # Music: https://www.bensound.com
 Track.create!(title: "Energy", genre: "pop", user_id: bensound.id,
   track_upload: File.open('/Users/lexluther/Downloads/bensound-energy.mp3'))
+
+Track.create!(title: "Black Polkadots", genre: "alternative", user_id: hans.id,
+  track_upload: File.open('/Users/lexluther/Downloads/Black_Polkadots.mp3'))
+
+Track.create!(title: "Easy Breezy", genre: "pop", user_id: siobhan.id,
+  track_upload: File.open('/Users/lexluther/Downloads/Easy_Breezy.mp3'))
+
+Track.create!(title: "Sports Car Driving Low Rumble", genre: "other", user_id: guest.id,
+  track_upload: File.open('/Users/lexluther/Downloads/Sports_Car_Driving_Low_Rumble.mp3'))
+
+Track.create!(title: "Quill Pen Writing", genre: "other", user_id: guest.id,
+  track_upload: File.open('/Users/lexluther/Downloads/Quill_Pen_Writing.mp3'))
