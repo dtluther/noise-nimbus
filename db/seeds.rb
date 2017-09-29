@@ -142,14 +142,11 @@ track15 = Track.create!(title: "Sports Car Driving Low Rumble", genre: "other", 
 track16 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: guest.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Quill_Pen_Writing.mp3'))
 
-track17 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: hans.id,
-  track_upload: open("https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Sleepmakeswaves - It's Dark, It's Cold, It's Winter.mp3"))
-
 track18 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: siobhan.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Nils Frahm - You.mp3'))
 
 track19 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: gurdon.id,
-  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/The Echelon Effect - Your First Light My Eventide.mp3'))
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/The Echelon Effect_Your First Light My Eventide.mp3'))
 
 track20 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: ethan.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Ponies_and_Balloons.mp3'))
