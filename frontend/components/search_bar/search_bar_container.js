@@ -5,7 +5,7 @@ import { omnisearch } from '../../actions/search_actions';
 
 const mapStateToProps = state => {
   return {
-    searchState: state
+    searchedTracks: state.searchedTracks
   };
 };
 

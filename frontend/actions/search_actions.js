@@ -11,6 +11,6 @@ const receiveSearch = data => {
 
 export const omnisearch = query => dispatch => {
   return (
-    search(query).then(data => dispatch(receiveSearch(query)))
+    search(query).then(data => dispatch(receiveSearch(data)))
   );
 };

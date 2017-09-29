@@ -1,25 +1,5 @@
 import React from 'react';
-
-// class SearchBar extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//
-//   render() {
-//     return (
-//       <div className="search-bar">
-//         <input className="search-input"
-//           type="text"
-//           placeholder="Search Bar (Display for now)"
-//
-//           />
-//       </div>
-//     );
-//   }
-// // }
-//
-// export default SearchBar;
-
+import { Link } from 'react-router-dom';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -34,13 +14,45 @@ class SearchBar extends React.Component {
   handleChange(e) {
     // no default behavior for an input
     this.setState({ query: e.currentTarget.value });
-    this.props.omnisearch(e.currentTarget.value);
+  }
+
+  // searchDropdown() {
+  //   let foundTracks = this.props.searchedTracks;
+  //
+  //     return (
+  //       <ul className="results">
+  //         {
+  //           foundTracks.map(trackObj => (
+  //           <Link className="results-link" to={`/users/${trackObj.username}`}>
+  //             <li className="results-item">
+  //               <div>
+  //                 <h2>{trackObj.title}</h2>
+  //                 <h2>{trackObj.username}</h2>
+  //               </div>
+  //             </li>
+  //         </Link>
+  //           ))
+  //         }
+  //       </ul>
+  //     );
+  //
+  //   // } else {
+  //   //   console.log('hiii');
+  //   // }
+  // }
+
+  handleSubmit() {
+    return e => {
+      e.preventDefault();
+      this.props.omnisearch(e.currentTarget.value)
+        .then(() => this.props.history.push('/search'));
+    };
   }
 
   render() {
     const searchInputClass = this.props.searchInputClass;
     return (
-      <div className="search-bar">
+      <form onSubmit={this.handleSubmit()} className="search-bar">
         <input className={searchInputClass}
           onChange={this.handleChange}
           type="text"
@@ -48,7 +60,7 @@ class SearchBar extends React.Component {
           placeholder="For Display Only"
 
           />
-      </div>
+      </form>
     );
   }
 }

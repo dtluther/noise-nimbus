@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   errors: errorsReducer,
   session: sessionReducer,
   nowPlaying: nowPlayingReducer,
-  search: searchReducer
+  searchedTracks: searchReducer
 });
 
 export default rootReducer;
