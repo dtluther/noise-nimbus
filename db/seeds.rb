@@ -96,51 +96,88 @@ Track.destroy_all
 
 users = User.all
 # Tracks from http://dig.ccmixter.org/free
-Track.create!(title: "Test Track", genre: "rock", user_id: User.first.id,
+track1 = Track.create!(title: "Test Track", genre: "rock", user_id: User.first.id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/kara_square/mindmapthat_-_Democrazy.mp3'))
 
-Track.create!(title: "Democrazy", genre: "alternative", user_id: kara.id,
+track2 = Track.create!(title: "Democrazy", genre: "alternative", user_id: kara.id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/kara_square/mindmapthat_-_Democrazy.mp3'))
 
-Track.create!(title: "The Coming Storm", genre: "rock", user_id: users[2].id,
+track3 = Track.create!(title: "The Coming Storm", genre: "rock", user_id: users[2].id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/kara_square/mindmapthat_-_Hard_Wired.mp3'))
 
-Track.create!(title: "So Much Is Wrong", genre: "alternative", user_id: gurdon.id,
+track4 = Track.create!(title: "So Much Is Wrong", genre: "alternative", user_id: gurdon.id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/gurdonark/gurdonark_-_So_Much_is_Wrong.mp3'))
 
-Track.create!(title: "Who We Are", genre: "alternative", user_id: hans.id,
+track5 = Track.create!(title: "Who We Are", genre: "alternative", user_id: hans.id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/hans_atom/hansatom_-_Who_We_Are.mp3'))
 
-Track.create!(title: "You Believed It Yourself", genre: "alternative", user_id: siobhan.id,
+track6 = Track.create!(title: "You Believed It Yourself", genre: "alternative", user_id: siobhan.id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/siobhan_dakay/SiobhanD_-_You_Believed_It_Yourself.mp3'))
 
-Track.create!(title: "Hanging Eleven", genre: "alternative", user_id: kara.id,
+track7 = Track.create!(title: "Hanging Eleven", genre: "alternative", user_id: kara.id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/kara_square/mindmapthat_-_Hanging_Eleven.mp3'))
 
-Track.create!(title: "Hard Wired", genre: "pop", user_id: kara.id,
+track8 = Track.create!(title: "Hard Wired", genre: "pop", user_id: kara.id,
   track_upload: File.open('/Users/lexluther/Documents/appAcademy/kara_square/mindmapthat_-_Hard_Wired.mp3'))
 
-Track.create!(title: "We Wish You a Merry Christmas", genre: "other", user_id: jingle.id,
+track9 = Track.create!(title: "We Wish You a Merry Christmas", genre: "other", user_id: jingle.id,
   track_upload: File.open('/Users/lexluther/Downloads/We_Wish_You_a_Merry_Christmas_Vocals.mp3'))
 
-Track.create!(title: "Deck the Halls", genre: "jazz", user_id: jammy.id,
+track10 = Track.create!(title: "Deck the Halls", genre: "jazz", user_id: jammy.id,
   track_upload: File.open('/Users/lexluther/Downloads/Deck_the_Halls_Jazz.mp3'))
 
-Track.create!(title: "Lonesome Avenue", genre: "country", user_id: country.id,
+track11 = Track.create!(title: "Lonesome Avenue", genre: "country", user_id: country.id,
   track_upload: File.open('/Users/lexluther/Downloads/Lonesome_Avenue.mp3'))
 
 # Music: https://www.bensound.com
-Track.create!(title: "Energy", genre: "pop", user_id: bensound.id,
+track12 = Track.create!(title: "Energy", genre: "pop", user_id: bensound.id,
   track_upload: File.open('/Users/lexluther/Downloads/bensound-energy.mp3'))
 
-Track.create!(title: "Black Polkadots", genre: "alternative", user_id: hans.id,
+track13 = Track.create!(title: "Black Polkadots", genre: "alternative", user_id: hans.id,
   track_upload: File.open('/Users/lexluther/Downloads/Black_Polkadots.mp3'))
 
-Track.create!(title: "Easy Breezy", genre: "pop", user_id: siobhan.id,
+track14 = Track.create!(title: "Easy Breezy", genre: "pop", user_id: siobhan.id,
   track_upload: File.open('/Users/lexluther/Downloads/Easy_Breezy.mp3'))
 
-Track.create!(title: "Sports Car Driving Low Rumble", genre: "other", user_id: guest.id,
+track15 = Track.create!(title: "Sports Car Driving Low Rumble", genre: "other", user_id: guest.id,
   track_upload: File.open('/Users/lexluther/Downloads/Sports_Car_Driving_Low_Rumble.mp3'))
 
-Track.create!(title: "Quill Pen Writing", genre: "other", user_id: guest.id,
+track16 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: guest.id,
   track_upload: File.open('/Users/lexluther/Downloads/Quill_Pen_Writing.mp3'))
+
+track17 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: hans.id,
+  track_upload: File.open("/Users/lexluther/Downloads/Sleepmakeswaves - It's Dark, It's Cold, It's Winter.mp3"))
+
+track18 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: siobhan.id,
+  track_upload: File.open('/Users/lexluther/Downloads/Nils Frahm - You.mp3'))
+
+track19 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: gurdon.id,
+  track_upload: File.open('/Users/lexluther/Downloads/The Echelon Effect - Your First Light My Eventide.mp3'))
+
+track20 = Track.create!(title: "Quill Pen Writing", genre: "other", user_id: ethan.id,
+  track_upload: File.open('/Users/lexluther/Downloads/Ponies_and_Balloons.mp3'))
+
+
+
+Comment.destroy_all
+
+c1 = Comment.create!(body: "Best song I've ever heard!", author_id: guest.id, track_id: track13.id)
+c2 = Comment.create!(body: "Are they famous yet?", author_id: hans.id, track_id: track3.id)
+c3 = Comment.create!(body: "ehh.. not my favorite", author_id: kara.id, track_id: track1.id)
+c4 = Comment.create!(body: "This is my favorite of hers.", author_id: guest.id, track_id: track7.id)
+c5 = Comment.create!(body: "An oldie but a goodie.", author_id: siobhan.id, track_id: track19.id)
+c6 = Comment.create!(body: "This has a nice sound to it", author_id: ethan.id, track_id: track3.id)
+c7 = Comment.create!(body: "A very soothing sound", author_id: otis.id, track_id: track16.id)
+c8 = Comment.create!(body: "great song", author_id: guest.id, track_id: track2.id)
+c9 = Comment.create!(body: "it's pretty chill", author_id: kara.id, track_id: track1.id)
+c10 = Comment.create!(body: "Who doesn't like their own track?!", author_id: guest.id, track_id: track15.id)
+c11 = Comment.create!(body: "This song helps me get my day started.", author_id: bensound.id, track_id: track4.id)
+c12 = Comment.create!(body: "Been listening to this on repeat for the last week!", author_id: country.id, track_id: track5.id)
+c13 = Comment.create!(body: "check out this song!", author_id: jammy.id, track_id: track6.id)
+c14 = Comment.create!(body: "cool tune", author_id: gurdon.id, track_id: track7.id)
+c15 = Comment.create!(body: "This song will transcend times!", author_id: siobhan.id, track_id: track10.id)
+c16 = Comment.create!(body: "A modern day Bon Jovi!", author_id: guest.id, track_id: track9.id)
+c17 = Comment.create!(body: "Fantastic!!!!", author_id: kara.id, track_id: track8.id)
+c18 = Comment.create!(body: "meh", author_id: jammy.id, track_id: track3.id)
+c19 = Comment.create!(body: "VROOOOMMM", author_id: otis.id, track_id: track15.id)
+c20 = Comment.create!(body: "MY FAVORITE", author_id: guest.id, track_id: track2.id)
