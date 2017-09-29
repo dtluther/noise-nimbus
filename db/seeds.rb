@@ -130,10 +130,6 @@ track10 = Track.create!(title: "Deck the Halls", genre: "jazz", user_id: jammy.i
 track11 = Track.create!(title: "Lonesome Avenue", genre: "country", user_id: country.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Lonesome_Avenue.mp3'))
 
-# Music: https://www.bensound.com
-track12 = Track.create!(title: "Energy", genre: "pop", user_id: bensound.id,
-  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/bensound-energy.mp3'))
-
 track13 = Track.create!(title: "Black Polkadots", genre: "alternative", user_id: hans.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Black_Polkadots.mp3'))
 
