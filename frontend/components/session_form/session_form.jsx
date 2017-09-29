@@ -13,8 +13,6 @@ class SessionForm extends React.Component {
       password: ""
     };
 
-    // this.handleCloseSignupModal = this.props.handleCloseSignupModal.bind(this);
-    // this.handleCloseLoginModal = this.props.handleCloseLoginModal.bind(this);
   }
 
   update(field) {
@@ -121,7 +119,7 @@ class SessionForm extends React.Component {
             placeholder="Username"
           />
           <input className="login-input"
-            type="text"
+            type="password"
             onChange={this.update('password')}
             placeholder="Password"
           />
