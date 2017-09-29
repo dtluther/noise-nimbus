@@ -25,14 +25,9 @@ class PlayBar extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log('newprops in willreceive playbar', newProps);
     const trackWasSelected = newProps.nowPlaying.trackWasSelected;
 
     if (trackWasSelected) {
-      // if (this.state.url) {
-      //   console.log('about to run this.stop');
-      //   this.setState({ url: null, playing: false });
-      // }
       console.log('in if statement');
       this.setState({
           url: `https:${newProps.nowPlaying.currentTrack.track_upload_url}`,
@@ -153,9 +148,6 @@ class PlayBar extends React.Component {
 
 
   render() {
-    // console.log('playbar render props', this.props);
-    console.log('playbar render state', this.state);
-
     const { url, playing, volume, muted, played, loaded, duration,
        playbackRate } = this.state;
 

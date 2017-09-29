@@ -13,7 +13,6 @@ class UploadForm extends React.Component {
         trackUrl: null
       };
     } else if (this.props.formType === "edit") {
-      // debugger;
       this.state = {
         id: this.props.id,
         title: this.props.title,

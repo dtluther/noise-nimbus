@@ -22,15 +22,16 @@ const nowPlayingReducer = (oldState = _nullNowPlaying, action) => {
   const currentTrackIndex = oldState.trackQueue.indexOf(currentTrack);
   switch(action.type) {
     case SELECT_TRACK:
-      const queue = Object.values(action.tracks.byIds);
-      nextState.trackQueue = queue;
+      if (action.tracks.byIds) {
+        const queue = Object.values(action.tracks.byIds);
+        nextState.trackQueue = queue;
+      } else {
+        nextState.trackQueue = [ action.selectedTrack ];
+      }
       nextState.currentTrack = action.selectedTrack;
       nextState.isPlaying = true;
       nextState.trackWasSelected = true;
       return nextState;
-    // case PLAY_PAUSE_SONG:
-    //   nextState.isPlaying = !nextState.isPlaying;
-    //   return nextState;
     case RESET_TRACK_WAS_SELECTED:
       nextState.trackWasSelected = false;
       return nextState;

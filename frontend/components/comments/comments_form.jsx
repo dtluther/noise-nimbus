@@ -13,13 +13,11 @@ class CommentsForm extends React.Component {
   }
 
   componentWillMount() {
-    console.log('state in component will mount', this.state);
     this.props.fetchComments(this.state.track_id);
   }
-  //
+
   componentWillReceiveProps(nextProps) {
-    console.log('comment form this.props', this.props);
-    console.log('comment form nextProps', nextProps);
+    console.log('nextProps',nextProps, 'this.props', this.props);
     if (nextProps.selectedTrack.id !== this.props.selectedTrack.id) {
       this.props.fetchComments(nextProps.selectedTrack.id);
       this.setState(({ track_id: nextProps.selectedTrack.id }));
@@ -41,7 +39,7 @@ class CommentsForm extends React.Component {
 
   render() {
     let commentsArray;
-    if (this.props.comments.commentIds.length > 1) {
+    if (this.props.comments.commentIds.length > 0) {
       console.log(this.props.comments);
       commentsArray = this.props.comments.commentIds.map(
         id => (this.props.comments.byIds[id]));
@@ -49,10 +47,11 @@ class CommentsForm extends React.Component {
       commentsArray = [];
     }
 
+    console.log('commentsArray', commentsArray);
     const commentsIndex = (
       <ul className="commentsIndex">
         {commentsArray.reverse().map(
-          comment => <CommentIndexItem key={`comment${comment.id}`}
+          comment => <CommentIndexItem key={`comment-${comment.id}`}
                       comment={comment}
                       currentUser={this.props.currentUser}
                       deleteComment={this.props.deleteComment}

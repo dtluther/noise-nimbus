@@ -24,9 +24,10 @@ const commentsReducer = (oldState = _nullComments, action) => {
       nextState.commentIds.push(commentId.toString());
       return nextState;
     case REMOVE_COMMENT:
+      // debugger;
       const deletedId = action.comment.id;
       delete nextState.byIds[deletedId];
-      const idIndex = nextState.commentIds.indexOf(deletedId);
+      const idIndex = nextState.commentIds.indexOf(deletedId.toString());
       nextState.commentIds.splice(idIndex, 1);
       return nextState;
 

@@ -25,7 +25,7 @@ class StreamPage extends React.Component {
           <ul className="tracks-ul">
             {
               this.props.tracks.ids.map(id => (
-                <li>
+                <li key={`stream-track-li-${id}`}>
                   <img className="stream-user-img" src={trackObjs[id].user_image_url} />
                   <Link className="stream-title" to={`/tracks/${trackObjs[id].title}`}>{trackObjs[id].title}</Link>
                   <Link className="stream-artist" to={`/users/${trackObjs[id].username}`}>{trackObjs[id].username}</Link>

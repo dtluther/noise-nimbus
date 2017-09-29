@@ -37,7 +37,7 @@ class NavBar extends React.Component {
     return (
       <div>
         <button className="session-button" onClick={this.handleOpenSignupModal}>Sign Up</button>
-        <Modal className="session-modal animated infinite bounce"
+        <Modal className="session-modal"
           isOpen={this.state.signupModalIsOpen}
           onAfterOpen={this.handleAfterOpenSignupModal}
           onRequestClose={this.handleCloseModals}
@@ -69,7 +69,7 @@ class NavBar extends React.Component {
     return (
       <div>
         <button className="session-button" onClick={this.handleOpenLoginModal}>Log In</button>
-        <Modal className="session-modal animated slideInDown"
+        <Modal className="session-modal"
           isOpen={this.state.loginModalIsOpen}
           onAfterOpen={this.afterOpenLoginModal}
           onRequestClose={this.handleCloseModals}

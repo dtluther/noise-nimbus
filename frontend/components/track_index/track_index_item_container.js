@@ -11,7 +11,6 @@ import {
 const mapStateToProps = state => {
   return {
     nowPlaying: state.nowPlaying,
-    // tracks: state.entities.tracks
   };
 };
 

@@ -8,12 +8,7 @@ class TrackPage extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   editModalIsOpen: false
-    // };
-    //
-    // this.handleOpenEditModal = this.handleOpenEditModal.bind(this);
-    // this.handleCloseEditModal = this.handleCloseEditModal.bind(this);
+    this.handleSelectTrack = this.handleSelectTrack.bind(this);
 
   }
 
@@ -27,42 +22,11 @@ class TrackPage extends React.Component {
     }
   }
 
-  // handleOpenEditModal() {
-  //   this.setState({editModalIsOpen: true});
-  // }
-  //
-  // handleCloseEditModal() {
-  //   this.setState({ editModalIsOpen: false });
-  //   // this.props.clearTrackErrors();
-  // }
-  //
-  // editModal() {
-  //   return (
-  //     <div className="edit-button-modal">
-  //       <button className="edit-button" onClick={this.handleOpenEditModal}>Edit</button>
-  //       <Modal className="edit-modal"
-  //         isOpen={this.state.editModalIsOpen}
-  //         onAfterOpen={this.handleAfterOpenEditModal}
-  //         onRequestClose={this.handleCloseEditModal}
-  //         contentLabel="Edit Modal"
-  //       >
-  //         <div>
-  //           <EditFormContainer handleCloseEditModal={this.handleCloseEditModal} />
-  //         </div>
-  //
-  //       </Modal>
-  //     </div>
-  //   );
-  // }
-  //
-  // handleEdit() {
-  //   return e => {
-  //     e.preventDefault();
-  //
-  //   };
-  // }
-  // // need to move this to User page
-  // // {this.editModal()}
+  handleSelectTrack() {
+    console.log('props in handle select track', this.props);
+    this.props.selectTrack(this.props.selectedTrack, {});
+  }
+
 
 
   handleDelete() {
@@ -72,8 +36,6 @@ class TrackPage extends React.Component {
         .then(() => this.props.history.push(`/users/${this.props.tracks.selectedTrack.username}`));
     };
   }
-// need to move this to user page
-  // <button onClick={this.handleDelete()}>Delete</button>
 
   render() {
     return (
@@ -81,7 +43,7 @@ class TrackPage extends React.Component {
         <section className="track-header">
           <div className="except-profile-pic">
             <div className="play-details-flexbox">
-              <i className="track-header-play fa fa-play-circle fa-5x" aria-hidden="true"></i>
+              <i onClick={this.handleSelectTrack} className="track-header-play fa fa-play-circle fa-5x" aria-hidden="true"></i>
 
               <div className="track-header-details">
                 <Link to={`/users/${this.props.tracks.selectedTrack.username}`} className="track-header-username">{this.props.tracks.selectedTrack.username}</Link>
