@@ -51,7 +51,6 @@ class UploadForm extends React.Component {
   handleSubmit() {
     return e => {
       e.preventDefault();
-      console.log('uploadPage handlesubmit is happening');
       const trackUpload = new FormData();
       trackUpload.append("track[title]", this.state.title);
       trackUpload.append("track[genre]", this.state.genre);
@@ -61,18 +60,14 @@ class UploadForm extends React.Component {
       if (this.state.trackFile) {
         trackUpload.append("track[track_upload]", this.state.trackFile);
       }
-      console.log('before upload track_upload is:', trackUpload);
       this.props.createTrack(trackUpload)
         .then(() => this.props.history.push(`/tracks/${this.state.title}`));
-
-      console.log('after upload, it should have worked!');
     };
   }
 
   handleUpdate() {
     return e => {
       e.preventDefault();
-      console.log('handle update props:', this.props);
       this.props.updateTrack(this.state)
         .then(() => {
           this.props.handleCloseEditModal();

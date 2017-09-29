@@ -16,7 +16,6 @@ export const createTrack = track => {
 };
 
 export const showTrack = id => {
-  console.log('id in shotrack', id);
   return $.ajax({
     method: 'GET',
     url: `/api/tracks/${id}`
@@ -38,7 +37,6 @@ export const deleteTrack = id => {
 };
 
 export const updateTrack = track => {
-  console.log('inside trackAPIutil update track:', track);
   return $.ajax({
     method: 'PATCH',
     url: `api/tracks/${track.id}`,

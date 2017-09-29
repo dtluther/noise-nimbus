@@ -23,7 +23,6 @@ class TrackPage extends React.Component {
   }
 
   handleSelectTrack() {
-    console.log('props in handle select track', this.props);
     this.props.selectTrack(this.props.selectedTrack, {});
   }
 
