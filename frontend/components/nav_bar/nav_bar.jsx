@@ -130,16 +130,18 @@ class NavBar extends React.Component {
       );
     } else {
       logoHome = (
-        <div className="logo-link-home">
+        <Link className="logo-link-home" to={"/"}>
           <img className="logo-white" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/noisenimbus_logo.png" />
           <h1 className="NOISENIMBUS">NOISENIMBUS</h1>
-        </div>
+        </Link>
       );
     }
 
     return (
       <div className="nav-bar">
         {logoHome}
+
+        <Link className="to-stream" to={'/stream'}>Stream</Link>
 
         <SearchBarContainer searchInputClass="search-input"/>
 

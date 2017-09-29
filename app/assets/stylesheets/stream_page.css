@@ -1,0 +1,29 @@
+.stream-page {
+  min-height: calc(100vh - 92px);
+}
+
+.stream-user-img {
+  width: 200px;
+  height: 200px;
+}
+
+.tracks-ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tracks-ul li {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+
+.tracks-ul li > *{
+  text-decoration: none;
+}
+
+.stream-title {
+
+}

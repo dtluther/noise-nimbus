@@ -30,18 +30,20 @@
 .nav-bar {
   max-width: 1240px;
   margin: 0 auto;
-  /*padding: 0 30px;*/
   height: 46px;
   color: #ccc;
   background-color: #333;
-  /*background-color: #463f72;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .nav-bar > * {
   display: flex;
+}
 
+.to-stream {
+  text-decoration: none;
+  color: #ccc;
 }
 
 .session-button {
@@ -80,10 +82,6 @@
   align-items: center;
 }
 
-/*.signup-inputs {
-  display: flex;
-  flex-direction: column;
-}*/
 .session-form-box > * {
   display: flex;
   flex-direction: column;

@@ -33,9 +33,11 @@ class UserPage extends React.Component {
         </ul>
       );
     } else {
-      tracksIndex = <h1>No songs here</h1>;
+      tracksIndex = <h1>You have no songs! Why don't you upload some or check out the stream page?</h1>;
     }
 
+    // will add this later
+    // <a className="receently-listened-to">Recently Listened To</a>
     return (
       <div className="user-page">
         <div className="user-header-box">
@@ -51,7 +53,6 @@ class UserPage extends React.Component {
         <section className="tracks-or-listens">
           <div className="tracks-or-listens-links">
             <a className="my-tracks">My Tracks</a>
-            <a className="receently-listened-to">Recently Listened To</a>
           </div>
 
           <div className="tracks-or-listens-index">

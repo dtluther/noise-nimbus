@@ -84,13 +84,11 @@ class SessionForm extends React.Component {
       <div className="signup-inputs-container">
         <input className="signup-input"
           type="text"
-          value={this.state.email}
           onChange={this.update('email')}
           placeholder="E-mail"
         />
         <input className="signup-input"
             type="text"
-            value={this.state.first_name}
             onChange={this.update('first_name')}
             placeholder="First Name"
           />
@@ -119,13 +117,11 @@ class SessionForm extends React.Component {
         <div className="login-form">
           <input className="login-input"
             type="text"
-            value={this.state.username}
             onChange={this.update('username')}
             placeholder="Username"
           />
           <input className="login-input"
             type="text"
-            value={this.state.password}
             onChange={this.update('password')}
             placeholder="Password"
           />
