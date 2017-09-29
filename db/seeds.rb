@@ -121,7 +121,7 @@ track7 = Track.create!(title: "Hanging Eleven", genre: "alternative", user_id: k
 track8 = Track.create!(title: "Hard Wired", genre: "pop", user_id: kara.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hard_Wired.mp3'))
 
-track9 = Track.create!(title: "We Wish You a Merry Christmas", genre: "other", user_id: jingle.id,
+track9 = Track.create!(title: "We Wish You a Merry Christmas", genre: "other", user_id: jammy.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/We_Wish_You_a_Merry_Christmas_Vocals.mp3'))
 
 track10 = Track.create!(title: "Deck the Halls", genre: "jazz", user_id: jammy.id,
