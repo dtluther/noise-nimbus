@@ -1,11 +1,23 @@
+.track-index-item-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .selected-profile-pic {
   width: 160px;
+  height: 160px;
   box-shadow: rgba(0,0,0,.1)0 0 0 1px inset;
-  height: auto;
 }
 
 .track-controls {
   display: flex;
+}
+
+.track-item-wo-pic {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .track-select-play {
@@ -16,7 +28,8 @@
 
 .track-details {
   padding-top: 10px;
-  font-family: Interstate, "Lucida Grande", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .user-track-artist {
@@ -36,6 +49,15 @@
 
 .tracks-or-listens-list li {
   margin-top: 15px;
-  /*height: 300px;*/
   display: flex;
+}
+
+
+.track-button-box {
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.track-index-item:hover .track-button-box {
+  visibility: visible;
 }

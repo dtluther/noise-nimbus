@@ -80,10 +80,10 @@
   align-items: center;
 }
 
-.signup-inputs {
+/*.signup-inputs {
   display: flex;
   flex-direction: column;
-}
+}*/
 .session-form-box > * {
   display: flex;
   flex-direction: column;
@@ -101,6 +101,15 @@
   border-radius: 3px;
   width: 400px;
   height: 40px;
+}
+
+.session-form-box label {
+  padding: 7px 8px;
+  margin-bottom: 15px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  width: 400px;
+  height: 100px;
 }
 .profile-pic-label {
   color: #757575;

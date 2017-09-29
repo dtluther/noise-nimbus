@@ -39,13 +39,15 @@ class UserPage extends React.Component {
 
     return (
       <div className="user-page">
-        <section className="user-header">
-          <h1>{this.props.users.selectedUser.username}</h1>
-          <div className="user-image-container">
-            <img className="user-image" height="200px" width="200px"
-              src={selectedUser.image_url} />
-          </div>
-        </section>
+        <div className="user-header-box">
+          <section className="user-header">
+            <div className="user-image-container">
+              <img className="user-image" height="200px" width="200px"
+                src={selectedUser.image_url} />
+            </div>
+            <h1>{this.props.users.selectedUser.username}</h1>
+          </section>
+        </div>
 
         <section className="tracks-or-listens">
           <div className="tracks-or-listens-links">

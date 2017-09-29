@@ -28,7 +28,6 @@ class Api::CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find_by(id: params[:id])
-    debugger;
     if comment && comment.author_id == current_user.id
       comment.destroy!
       render comment

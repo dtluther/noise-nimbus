@@ -75,24 +75,26 @@ class TrackPage extends React.Component {
   // <button onClick={this.handleDelete()}>Delete</button>
 
   render() {
-    console.log('track page props', this.props);
     return (
       <div className="tracks-page">
         <section className="track-header">
-          <div className="play-details-flexbox">
-            <div className="track-header-play-button-box">
+          <div className="except-profile-pic">
+            <div className="play-details-flexbox">
               <i className="track-header-play fa fa-play-circle fa-5x" aria-hidden="true"></i>
+
+              <div className="track-header-details">
+                <h3 className="track-header-username">{this.props.tracks.selectedTrack.username}</h3>
+                <h2 className="track-header-title">{this.props.tracks.selectedTrack.title}</h2>
+              </div>
             </div>
-            <div className="track-header-details">
-              <h3 className="track-header-username">{this.props.tracks.selectedTrack.username}</h3>
-              <h2 className="track-header-title">{this.props.tracks.selectedTrack.title}</h2>
+
+            <div className="track-waveform-box">
+              <img className="track-waveform" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/waveform_high_quality.png" />
             </div>
           </div>
+
           <div className="track-profile-image-box">
             <img className="track-profile-image" src={this.props.tracks.selectedTrack.user_image_url} />
-          </div>
-          <div className="track-waveform-box">
-            <img className="track-waveform" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/default-wave-form.png" />
           </div>
 
         </section>

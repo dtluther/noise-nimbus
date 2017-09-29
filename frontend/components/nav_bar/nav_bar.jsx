@@ -95,28 +95,6 @@ class NavBar extends React.Component {
     };
   }
 
-//   logoButton() {
-//     let logoButton =
-//       (<img
-//         src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/users/images/default_image/noise_nimbus_logo.png"
-//       />);
-//     if (this.props.currentUser) {
-//       return (
-//         <div className="logo">
-//           {logoButton}
-//         </div>
-//       );
-//     } else {
-//       return (
-//         <div className="logo">
-//           <img className="logo-button"
-//             src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/users/images/000/000/001/original/noise_nimbus_purple.png
-// "
-//           />
-//         </div>
-//       );
-//     }
-//   }
 
   sessionButtons() {
     const { currentUser, logout } = this.props;

@@ -98,11 +98,11 @@ class SessionForm extends React.Component {
         <label className="profile-pic-label">Please upload profile picture
           <br />
           (200x200 recommended)
-        <input className="profile-picture" id="profile-picture"
-          type="file"
-          value="Upload Photo"
-          onChange={this.updateFile()}
-        />
+          <input className="profile-picture" id="profile-picture"
+            type="file"
+            value="Upload Photo"
+            onChange={this.updateFile()}
+          />
         </label>
         <img src={this.state.imageUrl} />
       </div>
@@ -115,9 +115,7 @@ class SessionForm extends React.Component {
 
         {this.renderErrors()}
 
-        <div className="signup-inputs">
-          {this.props.formType === "login" ? null : this.signup() }
-        </div>
+        {this.props.formType === "login" ? null : this.signup() }
 
         <div className="login-form">
           <input className="login-input"

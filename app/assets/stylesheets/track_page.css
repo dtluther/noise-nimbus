@@ -1,28 +1,36 @@
 .track-header {
-  height: 380px;
+  padding: 30px;
+  height: 320px;
   background: linear-gradient(135deg, rgb(250, 250, 250) 0%, rgb(128, 128, 128) 100%);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 
-/*.track-header {
-}*/
 
 .play-details-flexbox {
   display: flex;
-  flex-direction: row;
-  margin-top: 25px;
+  /*margin-top: 25px;*/
 }
-.track-header-play {
-  margin-left: 40px;
-  margin-right: 20px;
-}
+
 .track-header-details {
-  font-family: Interstate, "Lucida Grande", Arial, sans-serif;
   font-weight: 100;
   display: flex;
   flex-direction: column;
+}
+
+.except-profile-pic {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.track-waveform-box {
+  width: 50vw;
+}
+.track-header-play {
+  margin-right: 20px;
 }
 
 .track-profile-image-box {
@@ -41,6 +49,7 @@
   padding: 5px 8px;
 }
 .track-header-username {
+  display: inline-block;
   color: #ccc;
   font-size: 16px;
   background-color: rgba(0,0,0,.8);
