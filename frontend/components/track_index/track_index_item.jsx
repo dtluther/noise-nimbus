@@ -61,8 +61,8 @@ class TrackIndexItem extends React.Component {
     const trackArtist = this.track.username;
     const trackTitle = this.track.title;
     const profileImage = this.selectedUser ?
-      (<img src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/person-solid.png" width="150px" height="150px" />) :
-      (<img src={this.selectedUser.image_url} width="150px" height="150px" />);
+      (<img src={this.selectedUser.image_url} width="150px" height="150px" />) :
+      (<img src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/default_user_profile.png" width="150px" height="150px" />);
     return(
       <li className="track-index-item-li">
         <div className="track-index-item-box">
