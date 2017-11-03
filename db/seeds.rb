@@ -29,7 +29,7 @@ kara = User.create!(
   first_name: 'Kara',
   username: 'karasquare',
   password: 'password',
-  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/kara_square_200x200.jpg')
+  image: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/kara_avatar.jpg')
 )
 
 # image from https://stackshare.io/atom
