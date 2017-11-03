@@ -38,7 +38,7 @@ class Welcome extends React.Component {
         <section className="welcome-greeting">
           <div className="connect-demo">
             <h1 className="connect">Connect on NoiseNimbus</h1>
-            <p className="discover">Discover, upload, and get stream your favorite music from
+            <p className="discover">Discover, upload, and stream your favorite music from
               emerging and major artists all over the world </p>
             <button className="demo-login"
               onClick={this.demoLogin()}
