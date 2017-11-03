@@ -102,33 +102,33 @@ track1 = Track.create!(title: "Test Track", genre: "rock", user_id: User.first.i
 
 track2 = Track.create!(title: "Democrazy", genre: "alternative", user_id: kara.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Democrazy.mp3'))
-
-track3 = Track.create!(title: "The Coming Storm", genre: "rock", user_id: users[2].id,
-  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hard_Wired.mp3'))
-
+  
 track4 = Track.create!(title: "So Much Is Wrong", genre: "alternative", user_id: gurdon.id,
-  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/gurdonark_-_So_Much_is_Wrong.mp3'))
+track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/gurdonark_-_So_Much_is_Wrong.mp3'))
 
 track5 = Track.create!(title: "Who We Are", genre: "alternative", user_id: hans.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/hansatom_-_Who_We_Are.mp3'))
-
-track6 = Track.create!(title: "You Believed It Yourself", genre: "alternative", user_id: siobhan.id,
-  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/SiobhanD_-_You_Believed_It_Yourself.mp3'))
-
-track7 = Track.create!(title: "Hanging Eleven", genre: "alternative", user_id: kara.id,
-  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hanging_Eleven.mp3'))
-
-track8 = Track.create!(title: "Hard Wired", genre: "pop", user_id: kara.id,
+  
+track3 = Track.create!(title: "The Coming Storm", genre: "rock", user_id: users[2].id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hard_Wired.mp3'))
 
 track9 = Track.create!(title: "We Wish You a Merry Christmas", genre: "other", user_id: jammy.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/We_Wish_You_a_Merry_Christmas_Vocals.mp3'))
 
-track10 = Track.create!(title: "Deck the Halls", genre: "jazz", user_id: jammy.id,
-  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Deck_the_Halls_Jazz.mp3'))
+track6 = Track.create!(title: "You Believed It Yourself", genre: "alternative", user_id: siobhan.id,
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/SiobhanD_-_You_Believed_It_Yourself.mp3'))
+  
+track8 = Track.create!(title: "Hard Wired", genre: "pop", user_id: kara.id,
+track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hard_Wired.mp3'))
 
 track11 = Track.create!(title: "Lonesome Avenue", genre: "country", user_id: country.id,
-  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Lonesome_Avenue.mp3'))
+track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Lonesome_Avenue.mp3'))
+
+track10 = Track.create!(title: "Deck the Halls", genre: "jazz", user_id: jammy.id,
+track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Deck_the_Halls_Jazz.mp3'))
+
+track7 = Track.create!(title: "Hanging Eleven", genre: "alternative", user_id: kara.id,
+  track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/mindmapthat_-_Hanging_Eleven.mp3'))
 
 track13 = Track.create!(title: "Black Polkadots", genre: "alternative", user_id: hans.id,
   track_upload: open('https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/seed_files/Black_Polkadots.mp3'))
