@@ -33,7 +33,8 @@ class CommentsForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.postComment(this.state);
+    this.props.postComment(this.state)
+      .then(() => this.setState({ body: "" }));
   }
 
   render() {
@@ -66,6 +67,7 @@ class CommentsForm extends React.Component {
             <div className="comments-input-box">
               <input className="comment-input"
                 onChange={this.update('body')}
+                value={this.state.body}
                 type="text"
                 placeholder="Add Comment..."/>
             </div>

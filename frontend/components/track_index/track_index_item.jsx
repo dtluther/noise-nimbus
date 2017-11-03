@@ -11,11 +11,12 @@ class TrackIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.selectedUser = this.props.selectedUser;
     this.track = this.props.track;
+    // this.selectedUser = this.props.selectedUser;
 
     this.state = {
-      editModalIsOpen: false
+      editModalIsOpen: false,
+      selectedUser: null
     };
 
     this.handlePlayPause = this.handlePlayPause.bind(this);
@@ -30,6 +31,10 @@ class TrackIndexItem extends React.Component {
   handleCloseEditModal() {
     this.setState({ editModalIsOpen: false });
     // this.props.clearTrackErrors();
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({ selectedUser: this.props.selectedUser })
   }
 
   editModal() {
