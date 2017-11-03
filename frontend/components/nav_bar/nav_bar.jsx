@@ -124,14 +124,14 @@ class NavBar extends React.Component {
       const currentUserUsername = this.props.currentUser.username;
       logoHome = (
         <Link className="logo-link-home" to={`/users/${currentUserUsername}`}>
-          <img className="logo-white" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/noisenimbus_logo.png" />
+          <img className="logo-white" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/noise-nimbus_lightning.png" />
           <h1 className="NOISENIMBUS">NOISENIMBUS</h1>
         </Link>
       );
     } else {
       logoHome = (
         <Link className="logo-link-home" to={"/"}>
-          <img className="logo-white" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/noisenimbus_logo.png" />
+          <img className="logo-white" src="https://s3-us-west-1.amazonaws.com/noise-nimbus-dev/defaults/noise-nimbus_lightning.png" />
           <h1 className="NOISENIMBUS">NOISENIMBUS</h1>
         </Link>
       );
