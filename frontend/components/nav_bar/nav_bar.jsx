@@ -91,7 +91,7 @@ class NavBar extends React.Component {
     return e => {
       e.preventDefault();
       this.props.logout()
-      .then(() => this.props.history.push("/"));
+        .then(() => this.props.history.push("/"));
     };
   }
 

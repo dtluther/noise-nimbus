@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
       query: ""
     };
 
-    this.handleChange= this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
@@ -19,7 +19,8 @@ class SearchBar extends React.Component {
     return e => {
       e.preventDefault();
       this.props.omnisearch(e.currentTarget.value)
-        .then(() => this.props.history.push('/stream'));
+        .then((results) => this.props.history.push('/stream'))
+        .then(() => this.setState({ query: "" }));
     };
   }
 
