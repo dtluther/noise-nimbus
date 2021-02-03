@@ -2,7 +2,7 @@
 
 # NoiseNimbus
 
-NoiseNimbus is a Ruby-on-Rails/React clone of SoundCloud, the popular site for uploading and discovering music. A user can listen to and comment on others' users music, as well as upload their own. You can also listen to music while logged out.
+NoiseNimbus is a Ruby-on-Rails/React clone of SoundCloud, the popular site for uploading and discovering music. A user can listen to and comment on other user's music, as well as upload their own. You can also listen to music while logged out.
 
 Check it out here: [https://noise-nimbus.herokuapp.com](https://noise-nimbus.herokuapp.com/).
 
