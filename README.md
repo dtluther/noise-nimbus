@@ -68,4 +68,4 @@ Future objectives for this project include:
 
 ## Resources
 * https://devcenter.heroku.com/articles/paperclip-s3
-  * Setting up paperclip to
+  * Setting up paperclip to save photos and audo files to AWS S3
