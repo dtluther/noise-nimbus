@@ -65,3 +65,7 @@ Future objectives for this project include:
 * Search implementation by both user and track
 * Addition of playlists and recently-listened-to tracks
 * Increased click handling and UI interactivity with the media player bar
+
+## Resources
+* https://devcenter.heroku.com/articles/paperclip-s3
+  * Setting up paperclip to
